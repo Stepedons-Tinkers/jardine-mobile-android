@@ -34,5 +34,26 @@
 
     <!-- Content Description -->
     <string name="desc_list_item_icon">Item Icon</string>
+    
+    <!-- Customer View -->
+    <string name="customer_header_id">ID</string>
+    <string name="customer_header_name">Name</string>
+    <string name="customer_header_type">Type</string>
+    <string name="customer_header_province">Province</string>
+    
+    <!-- Profile Info View -->
+    <string name="profile_info_userinformation">User Information</string>
+    <string name="profile_info_username">Username</string>
+    <string name="profile_info_firstname">First Name</string>
+    <string name="profile_info_lastname">Last Name</string>
+    <string name="profile_info_area">Area(s) assigned</string>
+    <string name="profile_info_syncinformation">Syncing Information</string>
+    <string name="profile_info_lastsync">Last sync</string>
+    
+    <!-- Profile Notif View -->
+    <string name="profile_notif_date">Date</string>
+    <string name="profile_notif_notification">Notification</string>
+    <string name="profile_notif_action">Action</string>
+    <string name="profile_notif_remove">Remove</string>
 
 </resources>
