@@ -34,13 +34,13 @@
 
     <!-- Content Description -->
     <string name="desc_list_item_icon">Item Icon</string>
-    
+
     <!-- Customer View -->
     <string name="customer_header_id">ID</string>
     <string name="customer_header_name">Name</string>
     <string name="customer_header_type">Type</string>
     <string name="customer_header_province">Province</string>
-    
+
     <!-- Profile Info View -->
     <string name="profile_info_userinformation">User Information</string>
     <string name="profile_info_username">Username</string>
@@ -49,11 +49,44 @@
     <string name="profile_info_area">Area(s) assigned</string>
     <string name="profile_info_syncinformation">Syncing Information</string>
     <string name="profile_info_lastsync">Last sync</string>
-    
+
     <!-- Profile Notif View -->
     <string name="profile_notif_date">Date</string>
     <string name="profile_notif_notification">Notification</string>
     <string name="profile_notif_action">Action</string>
     <string name="profile_notif_remove">Remove</string>
+
+    <!-- View Activity Details -->
+    <string name="activity_information">Activity Information</string>
+    <string name="jdi_product_stock_check">JDI Product Stock Check</string>
+    <string name="jdi_merchandising_check">JDI Merchandising Check</string>
+    <string name="competitor_product_stock_check">Competitor Product Stock Check</string>
+    <string name="marketing_intel"> Marketing Intel</string>
+    <string name="project_requirements">Project Requirements</string>
+    <string name="diy_or_supermarket_photos">DIY or Supermarket Photos</string>
+    <string name="customer_contact_person">Customer Contact Person</string>
+    <string name="products">Products</string>
+
+    <!-- View Activity Details / General Information -->
+    <string name="general_info">General Information</string>
+    <string name="crm_no">CRM No.:</string>
+    <string name="start_time">Start Time:</string>
+    <string name="latitude">Latitude:</string>
+    <string name="objective">Objective:</string>
+    <string name="highlights">Highlights:</string>
+    <string name="follow_up_commitment_date">Follow-up Commitment Date:</string>
+    <string name="workplan_entry">Workplan Entry:</string>
+    <string name="first_time_visit">First Time Visit:</string>
+    <string name="created_time">Created Time:</string>
+    <string name="assigned_to">Assigned To:</string>
+    <string name="activity">Activity:</string>
+    <string name="end_time">End Time:</string>
+    <string name="longitude">Longitude:</string>
+    <string name="notes">Notes:</string>
+    <string name="next_steps">Next Steps:</string>
+    <string name="activity_type">Activity Type:</string>
+    <string name="customer">Customer:</string>
+    <string name="planned_visit">Planned Visit:</string>
+    <string name="modified_time">Modified Time:</string>
 
 </resources>

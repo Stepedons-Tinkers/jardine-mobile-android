@@ -9,6 +9,8 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.content.res.TypedArray;
+import android.graphics.LightingColorFilter;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.widget.DrawerLayout;
@@ -18,6 +20,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.Toast;
 import co.nextix.jardine.adapter.NavDrawerListAdapter;
@@ -122,9 +125,6 @@ public class DashBoardActivity extends ActionBarActivity {
 		// enabling action bar app icon and behaving it as toggle button
 		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 		getSupportActionBar().setHomeButtonEnabled(true);
-
-		// getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-		// getSupportActionBar().setHomeButtonEnabled(true);
 
 		this.mDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout,
 				R.drawable.ic_drawer, // nav menu toggle icon
@@ -346,6 +346,7 @@ public class DashBoardActivity extends ActionBarActivity {
 				Toast.LENGTH_LONG).show();
 	}
 
+	/************* Activites *********************/
 	public void startActivity(View view) {
 		android.support.v4.app.Fragment fragment = new StartActivityFragment();
 		android.support.v4.app.FragmentManager fragmentManager = getSupportFragmentManager();
@@ -353,6 +354,141 @@ public class DashBoardActivity extends ActionBarActivity {
 				.replace(R.id.frame_container, fragment).commit();
 
 		setTitle("Activities");
+	}
+
+	public void activityInfo(View view) {
+		view.getBackground().setColorFilter(
+				new LightingColorFilter(0x0033FF, 0x0066FF));
+
+		this.clearColorFilter(findViewById(R.id.jdi_stock_check));
+		this.clearColorFilter(findViewById(R.id.jdi_merchandising_check));
+		this.clearColorFilter(findViewById(R.id.competitor_stock_check));
+		this.clearColorFilter(findViewById(R.id.marketing_intel));
+		this.clearColorFilter(findViewById(R.id.project_requirements));
+		this.clearColorFilter(findViewById(R.id.diy_supermarket_photos));
+		this.clearColorFilter(findViewById(R.id.customer_contact_person));
+		this.clearColorFilter(findViewById(R.id.products));
+	}
+
+	public void jdiStockCheck(View view) {
+		view.getBackground().setColorFilter(
+				new LightingColorFilter(0x0033FF, 0x0066FF));
+
+		LinearLayout startActivity = (LinearLayout) findViewById(R.id.start_activity);
+		startActivity.setVisibility(View.GONE);
+
+		this.clearColorFilter(findViewById(R.id.activity_info));
+		this.clearColorFilter(findViewById(R.id.jdi_merchandising_check));
+		this.clearColorFilter(findViewById(R.id.competitor_stock_check));
+		this.clearColorFilter(findViewById(R.id.marketing_intel));
+		this.clearColorFilter(findViewById(R.id.project_requirements));
+		this.clearColorFilter(findViewById(R.id.diy_supermarket_photos));
+		this.clearColorFilter(findViewById(R.id.customer_contact_person));
+		this.clearColorFilter(findViewById(R.id.products));
+	}
+
+	public void jdiMerchandisingCheck(View view) {
+		view.getBackground().setColorFilter(
+				new LightingColorFilter(0x0033FF, 0x0066FF));
+
+		this.clearColorFilter(findViewById(R.id.activity_info));
+		this.clearColorFilter(findViewById(R.id.jdi_stock_check));
+		this.clearColorFilter(findViewById(R.id.competitor_stock_check));
+		this.clearColorFilter(findViewById(R.id.marketing_intel));
+		this.clearColorFilter(findViewById(R.id.project_requirements));
+		this.clearColorFilter(findViewById(R.id.diy_supermarket_photos));
+		this.clearColorFilter(findViewById(R.id.customer_contact_person));
+		this.clearColorFilter(findViewById(R.id.products));
+	}
+
+	public void competitorStockCheck(View view) {
+		view.getBackground().setColorFilter(
+				new LightingColorFilter(0x0033FF, 0x0066FF));
+
+		this.clearColorFilter(findViewById(R.id.activity_info));
+		this.clearColorFilter(findViewById(R.id.jdi_merchandising_check));
+		this.clearColorFilter(findViewById(R.id.jdi_stock_check));
+		this.clearColorFilter(findViewById(R.id.marketing_intel));
+		this.clearColorFilter(findViewById(R.id.project_requirements));
+		this.clearColorFilter(findViewById(R.id.diy_supermarket_photos));
+		this.clearColorFilter(findViewById(R.id.customer_contact_person));
+		this.clearColorFilter(findViewById(R.id.products));
+	}
+
+	public void marketingIntel(View view) {
+		view.getBackground().setColorFilter(
+				new LightingColorFilter(0x0033FF, 0x0066FF));
+
+		this.clearColorFilter(findViewById(R.id.activity_info));
+		this.clearColorFilter(findViewById(R.id.jdi_merchandising_check));
+		this.clearColorFilter(findViewById(R.id.competitor_stock_check));
+		this.clearColorFilter(findViewById(R.id.jdi_stock_check));
+		this.clearColorFilter(findViewById(R.id.project_requirements));
+		this.clearColorFilter(findViewById(R.id.diy_supermarket_photos));
+		this.clearColorFilter(findViewById(R.id.customer_contact_person));
+		this.clearColorFilter(findViewById(R.id.products));
+	}
+
+	public void projectRequirements(View view) {
+		view.getBackground().setColorFilter(
+				new LightingColorFilter(0x0033FF, 0x0066FF));
+
+		this.clearColorFilter(findViewById(R.id.activity_info));
+		this.clearColorFilter(findViewById(R.id.jdi_merchandising_check));
+		this.clearColorFilter(findViewById(R.id.competitor_stock_check));
+		this.clearColorFilter(findViewById(R.id.marketing_intel));
+		this.clearColorFilter(findViewById(R.id.jdi_stock_check));
+		this.clearColorFilter(findViewById(R.id.diy_supermarket_photos));
+		this.clearColorFilter(findViewById(R.id.customer_contact_person));
+		this.clearColorFilter(findViewById(R.id.products));
+	}
+
+	public void diySupermarketPhotos(View view) {
+		view.getBackground().setColorFilter(
+				new LightingColorFilter(0x0033FF, 0x0066FF));
+
+		this.clearColorFilter(findViewById(R.id.activity_info));
+		this.clearColorFilter(findViewById(R.id.jdi_merchandising_check));
+		this.clearColorFilter(findViewById(R.id.competitor_stock_check));
+		this.clearColorFilter(findViewById(R.id.marketing_intel));
+		this.clearColorFilter(findViewById(R.id.project_requirements));
+		this.clearColorFilter(findViewById(R.id.jdi_stock_check));
+		this.clearColorFilter(findViewById(R.id.customer_contact_person));
+		this.clearColorFilter(findViewById(R.id.products));
+	}
+
+	public void customerContactPerson(View view) {
+		view.getBackground().setColorFilter(
+				new LightingColorFilter(0x0033FF, 0x0066FF));
+
+		this.clearColorFilter(findViewById(R.id.activity_info));
+		this.clearColorFilter(findViewById(R.id.jdi_merchandising_check));
+		this.clearColorFilter(findViewById(R.id.competitor_stock_check));
+		this.clearColorFilter(findViewById(R.id.marketing_intel));
+		this.clearColorFilter(findViewById(R.id.project_requirements));
+		this.clearColorFilter(findViewById(R.id.diy_supermarket_photos));
+		this.clearColorFilter(findViewById(R.id.jdi_stock_check));
+		this.clearColorFilter(findViewById(R.id.products));
+	}
+
+	public void products(View view) {
+		view.getBackground().setColorFilter(
+				new LightingColorFilter(0x0033FF, 0x0066FF));
+
+		this.clearColorFilter(findViewById(R.id.activity_info));
+		this.clearColorFilter(findViewById(R.id.jdi_merchandising_check));
+		this.clearColorFilter(findViewById(R.id.competitor_stock_check));
+		this.clearColorFilter(findViewById(R.id.marketing_intel));
+		this.clearColorFilter(findViewById(R.id.project_requirements));
+		this.clearColorFilter(findViewById(R.id.diy_supermarket_photos));
+		this.clearColorFilter(findViewById(R.id.customer_contact_person));
+		this.clearColorFilter(findViewById(R.id.jdi_stock_check));
+	}
+
+	protected void clearColorFilter(View view) {
+		Drawable d = view.getBackground();
+		view.invalidateDrawable(d);
+		d.clearColorFilter();
 	}
 
 	public void viewTodaysWorkplan(View view) {
