@@ -9,8 +9,10 @@
     <color name="counter_text_bg">#626262</color>
     <color name="counter_text_color">#c5c4c4</color>
     
-    <!-- customer -->
-    <color name="customer_list_header">#b0b0b0</color>
+    <!-- list layouts -->
+    <color name="list_header">#b0b0b0</color>
+    <color name="list_cell_white">#dcdcdc</color>
+    <color name="list_cell_gray">#cac9c9</color>
 
     <!-- profile -->
     <color name="text_color">#A9A9A9</color>
