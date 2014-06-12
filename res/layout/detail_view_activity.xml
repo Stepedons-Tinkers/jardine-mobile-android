@@ -20,7 +20,7 @@
             android:padding="14dip"
             android:scrollHorizontally="true"
             android:singleLine="true"
-            android:text="General Information "
+            android:text="@string/general_info"
             android:textColor="#fff"
             android:textSize="14dp"
             android:textStyle="bold" />
@@ -49,7 +49,7 @@
                 android:padding="14dip"
                 android:scrollHorizontally="true"
                 android:singleLine="true"
-                android:text="CRM No.: "
+                android:text="@string/crm_no"
                 android:textColor="#000"
                 android:textSize="14dp"
                 android:textStyle="bold" />
@@ -91,7 +91,7 @@
                 android:scrollHorizontally="true"
                 android:singleLine="true"
                 android:state_selected="true"
-                android:text="Activity: "
+                android:text="@string/activity"
                 android:textColor="#000"
                 android:textSize="14dp"
                 android:textStyle="bold" />
@@ -153,7 +153,7 @@
                 android:padding="14dip"
                 android:scrollHorizontally="true"
                 android:singleLine="true"
-                android:text="Start Time: "
+                android:text="@string/start_time"
                 android:textColor="#000000"
                 android:textStyle="bold" />
         </HorizontalScrollView>
@@ -192,7 +192,7 @@
                 android:padding="14dip"
                 android:scrollHorizontally="true"
                 android:singleLine="true"
-                android:text="End Time: "
+                android:text="@string/end_time"
                 android:textColor="#000000"
                 android:textStyle="bold" />
         </HorizontalScrollView>
@@ -242,7 +242,7 @@
                 android:padding="14dip"
                 android:scrollHorizontally="true"
                 android:singleLine="true"
-                android:text="Latitude: "
+                android:text="@string/latitude"
                 android:textColor="#000000"
                 android:textStyle="bold" />
         </HorizontalScrollView>
@@ -281,7 +281,7 @@
                 android:padding="14dip"
                 android:scrollHorizontally="true"
                 android:singleLine="true"
-                android:text="Longitude: "
+                android:text="@string/longitude"
                 android:textColor="#000000"
                 android:textStyle="bold" />
         </HorizontalScrollView>
@@ -331,7 +331,7 @@
                 android:padding="14dip"
                 android:scrollHorizontally="true"
                 android:singleLine="true"
-                android:text="Objective: "
+                android:text="@string/objective"
                 android:textColor="#000000"
                 android:textStyle="bold" />
         </HorizontalScrollView>
@@ -370,7 +370,7 @@
                 android:padding="14dip"
                 android:scrollHorizontally="true"
                 android:singleLine="true"
-                android:text="Notes: "
+                android:text="@string/notes"
                 android:textColor="#000000"
                 android:textStyle="bold" />
         </HorizontalScrollView>
@@ -420,7 +420,7 @@
                 android:padding="14dip"
                 android:scrollHorizontally="true"
                 android:singleLine="true"
-                android:text="Highlights: "
+                android:text="@string/highlights"
                 android:textColor="#000000"
                 android:textStyle="bold" />
         </HorizontalScrollView>
@@ -459,7 +459,7 @@
                 android:padding="14dip"
                 android:scrollHorizontally="true"
                 android:singleLine="true"
-                android:text="Next Steps: "
+                android:text="@string/next_steps"
                 android:textColor="#000000"
                 android:textStyle="bold" />
         </HorizontalScrollView>
@@ -509,7 +509,7 @@
                 android:padding="14dip"
                 android:scrollHorizontally="true"
                 android:singleLine="true"
-                android:text="Follow-up Commitment Date: "
+                android:text="@string/follow_up_commitment_date"
                 android:textColor="#000000"
                 android:textStyle="bold" />
         </HorizontalScrollView>
@@ -548,7 +548,7 @@
                 android:padding="14dip"
                 android:scrollHorizontally="true"
                 android:singleLine="true"
-                android:text="Activity Type: "
+                android:text="@string/activity_type"
                 android:textColor="#000000"
                 android:textStyle="bold" />
         </HorizontalScrollView>
@@ -598,7 +598,7 @@
                 android:padding="14dip"
                 android:scrollHorizontally="true"
                 android:singleLine="true"
-                android:text="Workplan Entry: "
+                android:text="@string/workplan_entry"
                 android:textColor="#000000"
                 android:textStyle="bold" />
         </HorizontalScrollView>
@@ -637,7 +637,7 @@
                 android:padding="14dip"
                 android:scrollHorizontally="true"
                 android:singleLine="true"
-                android:text="Customer: "
+                android:text="@string/customer"
                 android:textColor="#000000"
                 android:textStyle="bold" />
         </HorizontalScrollView>
@@ -687,7 +687,7 @@
                 android:padding="14dip"
                 android:scrollHorizontally="true"
                 android:singleLine="true"
-                android:text="First Time Visit: "
+                android:text="@string/first_time_visit"
                 android:textColor="#000000"
                 android:textStyle="bold" />
         </HorizontalScrollView>
@@ -726,7 +726,7 @@
                 android:padding="14dip"
                 android:scrollHorizontally="true"
                 android:singleLine="true"
-                android:text="Plannned Visit: "
+                android:text="@string/planned_visit"
                 android:textColor="#000000"
                 android:textStyle="bold" />
         </HorizontalScrollView>
@@ -776,7 +776,7 @@
                 android:padding="14dip"
                 android:scrollHorizontally="true"
                 android:singleLine="true"
-                android:text="Created Time: "
+                android:text="@string/created_time"
                 android:textColor="#000000"
                 android:textStyle="bold" />
         </HorizontalScrollView>
@@ -815,7 +815,7 @@
                 android:padding="14dip"
                 android:scrollHorizontally="true"
                 android:singleLine="true"
-                android:text="Modified Time: "
+                android:text="@string/modified_time"
                 android:textColor="#000000"
                 android:textStyle="bold" />
         </HorizontalScrollView>
@@ -866,7 +866,7 @@
                 android:padding="14dip"
                 android:scrollHorizontally="true"
                 android:singleLine="true"
-                android:text="Assigned To: "
+                android:text="@string/assigned_to"
                 android:textColor="#000000"
                 android:textStyle="bold" />
         </HorizontalScrollView>

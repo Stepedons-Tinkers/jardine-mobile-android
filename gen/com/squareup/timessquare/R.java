@@ -32,7 +32,7 @@ public final class R {
 		public static final int calendar_text_active = 0x7f050008;
 		public static final int calendar_text_inactive = 0x7f050007;
 		public static final int calendar_text_selected = 0x7f050009;
-		public static final int calendar_text_selector = 0x7f050015;
+		public static final int calendar_text_selector = 0x7f05001e;
 		public static final int calendar_text_unselectable = 0x7f05000a;
 	}
 	public static final class dimen {
@@ -46,12 +46,12 @@ public final class R {
 		public static final int calendar_bg_selector = 0x7f02006a;
 	}
 	public static final class id {
-		public static final int calendar_grid = 0x7f090064;
+		public static final int calendar_grid = 0x7f09006e;
 		public static final int title = 0x7f09002b;
 	}
 	public static final class layout {
-		public static final int month = 0x7f030029;
-		public static final int week = 0x7f03002c;
+		public static final int month = 0x7f03002b;
+		public static final int week = 0x7f030032;
 	}
 	public static final class string {
 		public static final int day_name_format = 0x7f070000;
