@@ -20,9 +20,17 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.Toast;
+import co.nextix.jardine.activites.fragments.ActivityInfoFragment;
+import co.nextix.jardine.activites.fragments.CompetitorStockCheckFragment;
+import co.nextix.jardine.activites.fragments.CustomerContactPersonFragment;
+import co.nextix.jardine.activites.fragments.DIYSupermarketPhotosFragment;
+import co.nextix.jardine.activites.fragments.JDIMerchandisingCheckFragment;
+import co.nextix.jardine.activites.fragments.JDIProductStockFragment;
+import co.nextix.jardine.activites.fragments.MarketingIntelFragment;
+import co.nextix.jardine.activites.fragments.ProductsFragment;
+import co.nextix.jardine.activites.fragments.ProjectRequirementsFragment;
 import co.nextix.jardine.adapter.NavDrawerListAdapter;
 import co.nextix.jardine.fragments.ActivitiesMenuBarFragment;
 import co.nextix.jardine.fragments.CollateralsMenuBarFragment;
@@ -154,6 +162,7 @@ public class DashBoardActivity extends ActionBarActivity {
 			// on first time display view for first nav item
 			displayView(0);
 		}
+
 	}
 
 	/**
@@ -354,6 +363,16 @@ public class DashBoardActivity extends ActionBarActivity {
 				.replace(R.id.frame_container, fragment).commit();
 
 		setTitle("Activities");
+
+		// get an instance of FragmentTransaction from your Activity
+		android.support.v4.app.FragmentManager fragmentActivityDetailManager = getSupportFragmentManager();
+		android.support.v4.app.FragmentTransaction fragmentTransaction = fragmentActivityDetailManager
+				.beginTransaction();
+
+		// Add a fucking fragment
+		ActivityInfoFragment myFragment = new ActivityInfoFragment();
+		fragmentTransaction.add(R.id.activity_fragment, myFragment);
+		fragmentTransaction.commit();
 	}
 
 	public void activityInfo(View view) {
@@ -368,14 +387,42 @@ public class DashBoardActivity extends ActionBarActivity {
 		this.clearColorFilter(findViewById(R.id.diy_supermarket_photos));
 		this.clearColorFilter(findViewById(R.id.customer_contact_person));
 		this.clearColorFilter(findViewById(R.id.products));
+
+		android.support.v4.app.Fragment newFragment = new ActivityInfoFragment();
+
+		// Create new transaction
+		android.support.v4.app.FragmentTransaction transaction = getSupportFragmentManager()
+				.beginTransaction();
+
+		// Replace whatever is in the fragment_container view with this
+		// fragment,
+		// and add the transaction to the back stack
+
+		transaction.replace(R.id.activity_fragment, newFragment);
+		transaction.addToBackStack(null);
+
+		// Commit the transaction
+		transaction.commit();
 	}
 
 	public void jdiStockCheck(View view) {
 		view.getBackground().setColorFilter(
 				new LightingColorFilter(0x0033FF, 0x0066FF));
 
-		LinearLayout startActivity = (LinearLayout) findViewById(R.id.start_activity);
-		startActivity.setVisibility(View.GONE);
+		android.support.v4.app.Fragment newFragment = new JDIProductStockFragment();
+
+		// Create new transaction
+		android.support.v4.app.FragmentTransaction transaction = getSupportFragmentManager()
+				.beginTransaction();
+
+		// Replace whatever is in the fragment_container view with this
+		// fragment,
+		// and add the transaction to the back stack
+		transaction.replace(R.id.activity_fragment, newFragment);
+		transaction.addToBackStack(null);
+
+		// Commit the transaction
+		transaction.commit();
 
 		this.clearColorFilter(findViewById(R.id.activity_info));
 		this.clearColorFilter(findViewById(R.id.jdi_merchandising_check));
@@ -391,6 +438,21 @@ public class DashBoardActivity extends ActionBarActivity {
 		view.getBackground().setColorFilter(
 				new LightingColorFilter(0x0033FF, 0x0066FF));
 
+		android.support.v4.app.Fragment newFragment = new JDIMerchandisingCheckFragment();
+
+		// Create new transaction
+		android.support.v4.app.FragmentTransaction transaction = getSupportFragmentManager()
+				.beginTransaction();
+
+		// Replace whatever is in the fragment_container view with this
+		// fragment,
+		// and add the transaction to the back stack
+		transaction.replace(R.id.activity_fragment, newFragment);
+		transaction.addToBackStack(null);
+
+		// Commit the transaction
+		transaction.commit();
+
 		this.clearColorFilter(findViewById(R.id.activity_info));
 		this.clearColorFilter(findViewById(R.id.jdi_stock_check));
 		this.clearColorFilter(findViewById(R.id.competitor_stock_check));
@@ -404,6 +466,21 @@ public class DashBoardActivity extends ActionBarActivity {
 	public void competitorStockCheck(View view) {
 		view.getBackground().setColorFilter(
 				new LightingColorFilter(0x0033FF, 0x0066FF));
+
+		android.support.v4.app.Fragment newFragment = new CompetitorStockCheckFragment();
+
+		// Create new transaction
+		android.support.v4.app.FragmentTransaction transaction = getSupportFragmentManager()
+				.beginTransaction();
+
+		// Replace whatever is in the fragment_container view with this
+		// fragment,
+		// and add the transaction to the back stack
+		transaction.replace(R.id.activity_fragment, newFragment);
+		transaction.addToBackStack(null);
+
+		// Commit the transaction
+		transaction.commit();
 
 		this.clearColorFilter(findViewById(R.id.activity_info));
 		this.clearColorFilter(findViewById(R.id.jdi_merchandising_check));
@@ -419,6 +496,21 @@ public class DashBoardActivity extends ActionBarActivity {
 		view.getBackground().setColorFilter(
 				new LightingColorFilter(0x0033FF, 0x0066FF));
 
+		android.support.v4.app.Fragment newFragment = new MarketingIntelFragment();
+
+		// Create new transaction
+		android.support.v4.app.FragmentTransaction transaction = getSupportFragmentManager()
+				.beginTransaction();
+
+		// Replace whatever is in the fragment_container view with this
+		// fragment,
+		// and add the transaction to the back stack
+		transaction.replace(R.id.activity_fragment, newFragment);
+		transaction.addToBackStack(null);
+
+		// Commit the transaction
+		transaction.commit();
+
 		this.clearColorFilter(findViewById(R.id.activity_info));
 		this.clearColorFilter(findViewById(R.id.jdi_merchandising_check));
 		this.clearColorFilter(findViewById(R.id.competitor_stock_check));
@@ -432,6 +524,21 @@ public class DashBoardActivity extends ActionBarActivity {
 	public void projectRequirements(View view) {
 		view.getBackground().setColorFilter(
 				new LightingColorFilter(0x0033FF, 0x0066FF));
+
+		android.support.v4.app.Fragment newFragment = new ProjectRequirementsFragment();
+
+		// Create new transaction
+		android.support.v4.app.FragmentTransaction transaction = getSupportFragmentManager()
+				.beginTransaction();
+
+		// Replace whatever is in the fragment_container view with this
+		// fragment,
+		// and add the transaction to the back stack
+		transaction.replace(R.id.activity_fragment, newFragment);
+		transaction.addToBackStack(null);
+
+		// Commit the transaction
+		transaction.commit();
 
 		this.clearColorFilter(findViewById(R.id.activity_info));
 		this.clearColorFilter(findViewById(R.id.jdi_merchandising_check));
@@ -447,6 +554,21 @@ public class DashBoardActivity extends ActionBarActivity {
 		view.getBackground().setColorFilter(
 				new LightingColorFilter(0x0033FF, 0x0066FF));
 
+		android.support.v4.app.Fragment newFragment = new DIYSupermarketPhotosFragment();
+
+		// Create new transaction
+		android.support.v4.app.FragmentTransaction transaction = getSupportFragmentManager()
+				.beginTransaction();
+
+		// Replace whatever is in the fragment_container view with this
+		// fragment,
+		// and add the transaction to the back stack
+		transaction.replace(R.id.activity_fragment, newFragment);
+		transaction.addToBackStack(null);
+
+		// Commit the transaction
+		transaction.commit();
+
 		this.clearColorFilter(findViewById(R.id.activity_info));
 		this.clearColorFilter(findViewById(R.id.jdi_merchandising_check));
 		this.clearColorFilter(findViewById(R.id.competitor_stock_check));
@@ -461,6 +583,21 @@ public class DashBoardActivity extends ActionBarActivity {
 		view.getBackground().setColorFilter(
 				new LightingColorFilter(0x0033FF, 0x0066FF));
 
+		android.support.v4.app.Fragment newFragment = new CustomerContactPersonFragment();
+
+		// Create new transaction
+		android.support.v4.app.FragmentTransaction transaction = getSupportFragmentManager()
+				.beginTransaction();
+
+		// Replace whatever is in the fragment_container view with this
+		// fragment,
+		// and add the transaction to the back stack
+		transaction.replace(R.id.activity_fragment, newFragment);
+		transaction.addToBackStack(null);
+
+		// Commit the transaction
+		transaction.commit();
+
 		this.clearColorFilter(findViewById(R.id.activity_info));
 		this.clearColorFilter(findViewById(R.id.jdi_merchandising_check));
 		this.clearColorFilter(findViewById(R.id.competitor_stock_check));
@@ -474,6 +611,21 @@ public class DashBoardActivity extends ActionBarActivity {
 	public void products(View view) {
 		view.getBackground().setColorFilter(
 				new LightingColorFilter(0x0033FF, 0x0066FF));
+
+		android.support.v4.app.Fragment newFragment = new ProductsFragment();
+
+		// Create new transaction
+		android.support.v4.app.FragmentTransaction transaction = getSupportFragmentManager()
+				.beginTransaction();
+
+		// Replace whatever is in the fragment_container view with this
+		// fragment,
+		// and add the transaction to the back stack
+		transaction.replace(R.id.activity_fragment, newFragment);
+		transaction.addToBackStack(null);
+
+		// Commit the transaction
+		transaction.commit();
 
 		this.clearColorFilter(findViewById(R.id.activity_info));
 		this.clearColorFilter(findViewById(R.id.jdi_merchandising_check));

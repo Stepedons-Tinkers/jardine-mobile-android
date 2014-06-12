@@ -24,6 +24,20 @@
             android:textColor="#fff"
             android:textSize="14dp"
             android:textStyle="bold" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <Button
+                android:id="@+id/edit_activity"
+                android:layout_width="154dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_gravity="right"
+                android:onClick="editActivity"
+                android:text="@string/edit_activity" />
+        </RelativeLayout>
     </TableRow>
 
     <!-- Row 2 with 2 columns -->
@@ -91,7 +105,7 @@
                 android:scrollHorizontally="true"
                 android:singleLine="true"
                 android:state_selected="true"
-                android:text="@string/activity"
+                android:text="@string/activity_gen"
                 android:textColor="#000"
                 android:textSize="14dp"
                 android:textStyle="bold" />

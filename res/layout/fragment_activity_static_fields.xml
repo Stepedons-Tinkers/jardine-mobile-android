@@ -110,7 +110,7 @@
             android:onClick="customerContactPerson"
             android:paddingLeft="4dp"
             android:paddingRight="4dp"
-            android:text="@string/customer_contact_person"
+            android:text="@string/customer_view_details"
             android:textSize="9sp" />
 
         <Button
@@ -127,6 +127,12 @@
             android:textSize="9sp" />
     </LinearLayout>
 
-    <include layout="@layout/fragment_start_activity" />
+    <LinearLayout
+        android:id="@+id/activity_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" />
+
+    <!-- <include layout="@layout/fragment_start_activity" /> -->
 
 </LinearLayout>

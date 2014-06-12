@@ -56,7 +56,7 @@
     <string name="profile_notif_notification">Notification</string>
     <string name="profile_notif_action">Action</string>
     <string name="profile_notif_remove">Remove</string>
-    
+
     <!-- Workplan View -->
     <string name="workplan_title">Workplan</string>
     <string name="workplan_header_id">WPID</string>
@@ -72,7 +72,7 @@
     <string name="marketing_intel"> Marketing Intel</string>
     <string name="project_requirements">Project Requirements</string>
     <string name="diy_or_supermarket_photos">DIY or Supermarket Photos</string>
-    <string name="customer_contact_person">Customer Contact Person</string>
+    <string name="customer_view_details">Customer Contact Person</string>
     <string name="products">Products</string>
 
     <!-- View Activity Details / General Information -->
@@ -87,7 +87,7 @@
     <string name="first_time_visit">First Time Visit:</string>
     <string name="created_time">Created Time:</string>
     <string name="assigned_to">Assigned To:</string>
-    <string name="activity">Activity:</string>
+    <string name="activity_gen">Activity:</string>
     <string name="end_time">End Time:</string>
     <string name="longitude">Longitude:</string>
     <string name="notes">Notes:</string>
@@ -96,5 +96,82 @@
     <string name="customer">Customer:</string>
     <string name="planned_visit">Planned Visit:</string>
     <string name="modified_time">Modified Time:</string>
+    <string name="edit_activity">Edit Activity</string>
+
+    <!-- JDI Product Stock Check ListView Details -->
+    <string name="crm_no_jdi">CRM No.</string>
+    <string name="activity_jdi">Activity</string>
+    <string name="product_jdi">Product</string>
+    <string name="jdi_stock_status">Stock Status</string>
+    <string name="jdi_quantity">Quantity</string>
+    <string name="loaded_on_shelves_jdi">Loaded On Shelves</string>
+    <string name="assigned_to_jdi">Assigned To</string>
+    <string name="action_jdi">Action</string>
+    <string name="add_jdi_product_stock_check"> Add JDI Product Stock Check</string>
+
+    <!-- JDI Merchandising Check -->
+    <string name="crm_no_jdi_merchandising">CRM No</string>
+    <string name="activity_jdi_merchandising">Activity</string>
+    <string name="product_jdi_merchandising">Product</string>
+    <string name="status_jdi_merchandising">Status</string>
+    <string name="assigned_to_merchandising">Assigned To</string>
+    <string name="action_merchandising">Action</string>
+    <string name="add_jdi_merchandising_check">Add JDI Merchandising Check</string>
+
+    <!-- Competitor Product Stock Check -->
+    <string name="crm_no_competitor_stock_check">CRM No</string>
+    <string name="activity_competitor_stock_check">Activity</string>
+    <string name="competitor_product">Competitor Product</string>
+    <string name="stock_status_competitor_product">Stock Status</string>
+    <string name="loaded_on_shelves_competitor_product">Loaded On Shelves</string>
+    <string name="assigned_to_competitor_product">Assigned To</string>
+    <string name="action_competitor_product_stock_check">Action</string>
+    <string name="add_competitor_product_stock_check">Add Competitor Product Stock Check</string>
+
+    <!-- Marketing Intel -->
+    <string name="crm_no_marketing_intel">CRM No</string>
+    <string name="activity_marketing_intel">Activity</string>
+    <string name="competitor_marketing_intel">Competitor</string>
+    <string name="details_marketing_intel">Details</string>
+    <string name="remarks_marketing_intel">Remarks</string>
+    <string name="assigned_to_marketing_intel">Assigned To</string>
+    <string name="action_marketing_intel">Action</string>
+    <string name="add_marketing_intel">Add Marketing Intel</string>
+
+    <!-- Project Requirements -->
+    <string name="crm_proj_requirements">CRM No</string>
+    <string name="activity_proj_requirements">Activity</string>
+    <string name="project_requirement_type">Project Requirement Type</string>
+    <string name="date_needed">Date Needed</string>
+    <string name="assigned_to_proj_requirement">Assigned To</string>
+    <string name="action_proj_requirement">Action</string>
+    <string name="add_proj_requirement">Add Project Requirement</string>
+
+    <!-- DIY or Supermarket Photos -->
+    <string name="title">Title</string>
+    <string name="filename">Filename</string>
+    <string name="modified_time">Modified Time</string>
+    <string name="add_diy_or_supermarket_photos">Add DIY or Supermarket Photo</string>
+
+    <!-- Customer Contact Person -->
+    <string name="crm_no_contact_person">CRM No</string>
+    <string name="firstname_contact_person">First Name</string>
+    <string name="lastname_contact_person">Last Name</string>
+    <string name="position_contact_person">Position</string>
+    <string name="customer_contact_person">Customer</string>
+    <string name="mobile_no_contact_person">Mobile No</string>
+    <string name="assigned_to_contact_person">Assigned To</string>
+    <string name="action_contact_person">Action</string>
+    <string name="add_customer_contact_person">Add Customer Contact Person</string>
+    <string name="select_customer_contact_person">Select Customer Contact Person</string>
+
+    <!-- Products -->
+    <string name="crm_no_products">CRM No</string>
+    <string name="product_number">Product Number</string>
+    <string name="product_brand">Product Brand</string>
+    <string name="product_desc">Product Description</string>
+    <string name="assigned_to_products">Assigned To</string>
+    <string name="action_products">Action</string>
+    <string name="select_products">Select Product</string>
 
 </resources>

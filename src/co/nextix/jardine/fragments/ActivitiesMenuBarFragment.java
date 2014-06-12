@@ -24,7 +24,7 @@ public class ActivitiesMenuBarFragment extends Fragment {
 		getActivity().setRequestedOrientation(
 				ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
 
-		View rootView = inflater.inflate(R.layout.fragment_activity_details,
+		View rootView = inflater.inflate(R.layout.fragment_activity_static_fields,
 				container, false);
 
 		this.activityInfo = (Button) rootView.findViewById(R.id.activity_info);
