@@ -16,6 +16,7 @@ import co.nextix.jardine.database.tables.CustomerTable;
 import co.nextix.jardine.database.tables.EventProtocolTable;
 import co.nextix.jardine.database.tables.JDIproductStockCheckTable;
 import co.nextix.jardine.database.tables.MarketingIntelTable;
+import co.nextix.jardine.database.tables.MarketingMaterialsTable;
 import co.nextix.jardine.database.tables.ProductTable;
 import co.nextix.jardine.database.tables.ProjectRequirementTable;
 import co.nextix.jardine.database.tables.SMRTable;
@@ -286,6 +287,16 @@ public class DatabaseAdapter {
 	private final String KEY_WORKPLAN_MODIFIEDTIME = "modified_time";
 	private final String KEY_WORKPLAN_USER = "user";
 
+	// Marketing Materials
+	private final String KEY_MARKETINGMATERIALS_ROWID = "_id";
+	private final String KEY_MARKETINGMATERIALS_NO = "no";
+	private final String KEY_MARKETINGMATERIALS_DESCRIPTION = "description";
+	private final String KEY_MARKETINGMATERIALS_LASTUPDATE = "last_update";
+	private final String KEY_MARKETINGMATERIALS_TAGS = "tags";
+	private final String KEY_MARKETINGMATERIALS_CREATEDTIME = "created_time";
+	private final String KEY_MARKETINGMATERIALS_MODIFIEDTIME = "modified_time";
+	private final String KEY_MARKETINGMATERIALS_USER = "user";
+
 	// ===========================================================
 	// Table Create String
 	// ===========================================================
@@ -309,6 +320,7 @@ public class DatabaseAdapter {
 	private String TABLE_CREATE_SUPPLIER = "create table %s (%s integer primary key autoincrement, %s text , %s text, %s text, %s text, %s text, %s text, %s text, %s integer, %s text, %s text, %s real, foreign key(%s) references %s(%s))";
 	private String TABLE_CREATE_WORKPLAN_ENTRY = "create table %s (%s integer primary key autoincrement, %s text , %s real, %s text, %s real, %s real, %s real, %s real, %s text, %s real, %s real, %s text, %s text, %s real, foreign key(%s) references %s(%s), foreign key(%s) references %s(%s), foreign key(%s) references %s(%s), foreign key(%s) references %s(%s))";
 	private String TABLE_CREATE_WORKPLAN = "create table %s (%s integer primary key autoincrement, %s text , %s text, %s text, %s integer, %s text, %s text, %s real, foreign key(%s) references %s(%s))";
+	private String TABLE_CREATE_MARKETING_MATERIALS = "create table %s (%s integer primary key autoincrement, %s text , %s text, %s text, %s text, %s text, %s text, %s real, foreign key(%s) references %s(%s))";
 
 	// ===========================================================
 	// Public static field
@@ -333,6 +345,7 @@ public class DatabaseAdapter {
 	public static final String SUPPLIER_TABLE = "Supplier";
 	public static final String WORKPLAN_ENTRY_TABLE = "Workplan_Entry";
 	public static final String WORKPLAN_TABLE = "Workplan";
+	public static final String MARKETING_MATERIALS_TABLE = "Marketing_Materials";
 
 	// ===========================================================
 	// Private fields
@@ -360,6 +373,7 @@ public class DatabaseAdapter {
 	private SupplierTable mSupplier;
 	private WorkplanEntryTable mWorkplanEntry;
 	private WorkplanTable mWorkplan;
+	private MarketingMaterialsTable mMarketingMaterials;
 
 	// ===========================================================
 	// Private constructor
@@ -540,6 +554,14 @@ public class DatabaseAdapter {
 			mWorkplan = new WorkplanTable(mDb, WORKPLAN_TABLE);
 		}
 		return mWorkplan;
+	}
+
+	public MarketingMaterialsTable getMarketingMaterials() {
+		if (mMarketingMaterials == null) {
+			mMarketingMaterials = new MarketingMaterialsTable(mDb,
+					MARKETING_MATERIALS_TABLE);
+		}
+		return mMarketingMaterials;
 	}
 
 	// ===========================================================
@@ -805,6 +827,17 @@ public class DatabaseAdapter {
 					KEY_WORKPLAN_STATUS, KEY_WORKPLAN_CREATEDTIME,
 					KEY_WORKPLAN_MODIFIEDTIME, KEY_WORKPLAN_USER,
 					KEY_WORKPLAN_USER, USER_TABLE, KEY_USER_ROWID);
+			String marketingMaterials = String.format(
+					TABLE_CREATE_MARKETING_MATERIALS,
+					MARKETING_MATERIALS_TABLE, KEY_MARKETINGMATERIALS_ROWID,
+					KEY_MARKETINGMATERIALS_NO,
+					KEY_MARKETINGMATERIALS_DESCRIPTION,
+					KEY_MARKETINGMATERIALS_LASTUPDATE,
+					KEY_MARKETINGMATERIALS_TAGS,
+					KEY_MARKETINGMATERIALS_CREATEDTIME,
+					KEY_MARKETINGMATERIALS_MODIFIEDTIME,
+					KEY_MARKETINGMATERIALS_USER, KEY_MARKETINGMATERIALS_USER,
+					USER_TABLE, KEY_USER_ROWID);
 			db.execSQL(user);
 			db.execSQL(activity);
 			db.execSQL(activityType);
@@ -824,6 +857,7 @@ public class DatabaseAdapter {
 			db.execSQL(supplier);
 			db.execSQL(workplanEntry);
 			db.execSQL(workplan);
+			db.execSQL(marketingMaterials);
 		}
 		// private void dropTable(SQLiteDatabase db, String tableName) {
 		// db.execSQL(String.format("DROP TABLE IF EXISTS %s", tableName));

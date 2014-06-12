@@ -1,4 +1,4 @@
-package co.nextix.jardine.database.tables;
+package co.nextix.jardine.database.tables.picklists;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -12,13 +12,13 @@ import android.util.Log;
 import co.nextix.jardine.database.DatabaseAdapter;
 import co.nextix.jardine.database.records.PicklistRecord;
 
-public class CustomerTypeTable {
+public class ProjectRequirementTypeTable {
 	// ===========================================================
 	// Private static fields
 	// ===========================================================
 
-	private final String KEY_CUSTOMER_TYPE_ROWID = "_id";
-	private final String KEY_CUSTOMER_TYPE_NAME = "name";
+	private final String KEY_PROJECT_REQUIREMENT_TYPE_ROWID = "_id";
+	private final String KEY_PROJECT_REQUIREMENT_TYPE_NAME = "name";
 
 	// ===========================================================
 	// Private fields
@@ -32,7 +32,7 @@ public class CustomerTypeTable {
 	// Public constructor
 	// ===========================================================
 
-	public CustomerTypeTable(SQLiteDatabase database, String tableName) {
+	public ProjectRequirementTypeTable(SQLiteDatabase database, String tableName) {
 		mDb = database;
 		mDatabaseTable = tableName;
 
@@ -57,10 +57,11 @@ public class CustomerTypeTable {
 			c = mDb.rawQuery(MY_QUERY, null);
 			if (c.moveToFirst()) {
 				do {
-					long id = c.getLong(c
-							.getColumnIndex(KEY_CUSTOMER_TYPE_ROWID));
+					long id = c
+							.getLong(c
+									.getColumnIndex(KEY_PROJECT_REQUIREMENT_TYPE_ROWID));
 					String name = c.getString(c
-							.getColumnIndex(KEY_CUSTOMER_TYPE_NAME));
+							.getColumnIndex(KEY_PROJECT_REQUIREMENT_TYPE_NAME));
 
 					list.add(new PicklistRecord(id, name));
 				} while (c.moveToNext());
@@ -80,7 +81,7 @@ public class CustomerTypeTable {
 	public boolean isExisting(String webID) {
 		boolean exists = false;
 		String MY_QUERY = "SELECT * FROM " + mDatabaseTable + " WHERE "
-				+ KEY_CUSTOMER_TYPE_NAME + "='" + webID + "'";
+				+ KEY_PROJECT_REQUIREMENT_TYPE_NAME + "='" + webID + "'";
 		Cursor c = null;
 		try {
 			c = mDb.rawQuery(MY_QUERY, null);
@@ -108,8 +109,8 @@ public class CustomerTypeTable {
 		// Arrays.toString()
 		ids = ids.replace("[", "").replace("]", "");
 
-		int rowsDeleted = mDb.delete(mDatabaseTable, KEY_CUSTOMER_TYPE_ROWID
-				+ " IN (" + ids + ")", null);
+		int rowsDeleted = mDb.delete(mDatabaseTable,
+				KEY_PROJECT_REQUIREMENT_TYPE_ROWID + " IN (" + ids + ")", null);
 
 		// if (rowsDeleted > 0) {
 		//
@@ -123,15 +124,16 @@ public class CustomerTypeTable {
 	public PicklistRecord getById(int ID) {
 		PicklistRecord record = null;
 		String MY_QUERY = "SELECT * FROM " + mDatabaseTable + " WHERE "
-				+ KEY_CUSTOMER_TYPE_ROWID + "=?";
+				+ KEY_PROJECT_REQUIREMENT_TYPE_ROWID + "=?";
 		Cursor c = null;
 		try {
 			c = mDb.rawQuery(MY_QUERY, new String[] { String.valueOf(ID) });
 
 			if ((c != null) && c.moveToFirst()) {
-				long id = c.getLong(c.getColumnIndex(KEY_CUSTOMER_TYPE_ROWID));
+				long id = c.getLong(c
+						.getColumnIndex(KEY_PROJECT_REQUIREMENT_TYPE_ROWID));
 				String name = c.getString(c
-						.getColumnIndex(KEY_CUSTOMER_TYPE_NAME));
+						.getColumnIndex(KEY_PROJECT_REQUIREMENT_TYPE_NAME));
 
 				record = new PicklistRecord(id, name);
 			}
@@ -147,15 +149,16 @@ public class CustomerTypeTable {
 	public PicklistRecord getByWebId(String ID) {
 		PicklistRecord record = null;
 		String MY_QUERY = "SELECT * FROM " + mDatabaseTable + " WHERE "
-				+ KEY_CUSTOMER_TYPE_NAME + "=?";
+				+ KEY_PROJECT_REQUIREMENT_TYPE_NAME + "=?";
 		Cursor c = null;
 		try {
 			c = mDb.rawQuery(MY_QUERY, new String[] { String.valueOf(ID) });
 
 			if ((c != null) && c.moveToFirst()) {
-				long id = c.getLong(c.getColumnIndex(KEY_CUSTOMER_TYPE_ROWID));
+				long id = c.getLong(c
+						.getColumnIndex(KEY_PROJECT_REQUIREMENT_TYPE_ROWID));
 				String name = c.getString(c
-						.getColumnIndex(KEY_CUSTOMER_TYPE_NAME));
+						.getColumnIndex(KEY_PROJECT_REQUIREMENT_TYPE_NAME));
 
 				record = new PicklistRecord(id, name);
 			}
@@ -173,7 +176,7 @@ public class CustomerTypeTable {
 
 		ContentValues initialValues = new ContentValues();
 
-		initialValues.put(KEY_CUSTOMER_TYPE_NAME, no);
+		initialValues.put(KEY_PROJECT_REQUIREMENT_TYPE_NAME, no);
 
 		long ids = mDb.insert(mDatabaseTable, null, initialValues);
 		if (ids >= 0) {
@@ -186,8 +189,8 @@ public class CustomerTypeTable {
 	}
 
 	public boolean deleteUser(long rowId) {
-		if (mDb.delete(mDatabaseTable, KEY_CUSTOMER_TYPE_ROWID + "=" + rowId,
-				null) > 0) {
+		if (mDb.delete(mDatabaseTable, KEY_PROJECT_REQUIREMENT_TYPE_ROWID + "="
+				+ rowId, null) > 0) {
 			// getRecords().deleteById(rowId);
 			return true;
 		} else {
@@ -198,9 +201,9 @@ public class CustomerTypeTable {
 	public boolean updateUser(long id, String no, long category, int isActive,
 			long user) {
 		ContentValues args = new ContentValues();
-		args.put(KEY_CUSTOMER_TYPE_NAME, no);
-		if (mDb.update(mDatabaseTable, args,
-				KEY_CUSTOMER_TYPE_ROWID + "=" + id, null) > 0) {
+		args.put(KEY_PROJECT_REQUIREMENT_TYPE_NAME, no);
+		if (mDb.update(mDatabaseTable, args, KEY_PROJECT_REQUIREMENT_TYPE_ROWID
+				+ "=" + id, null) > 0) {
 			// getRecords().update(id, no, category, isActive, user);
 			return true;
 		} else {

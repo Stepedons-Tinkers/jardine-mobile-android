@@ -1,4 +1,4 @@
-package co.nextix.jardine.database.tables;
+package co.nextix.jardine.database.tables.picklists;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -12,13 +12,13 @@ import android.util.Log;
 import co.nextix.jardine.database.DatabaseAdapter;
 import co.nextix.jardine.database.records.PicklistRecord;
 
-public class JDIstockStatusTable {
+public class ActivityProjectStageTable {
 	// ===========================================================
 	// Private static fields
 	// ===========================================================
 
-	private final String KEY_JDI_STOCK_STATUS_ROWID = "_id";
-	private final String KEY_JDI_STOCK_STATUS_NAME = "name";
+	private final String KEY_ACTIVITY_PROJECT_STAGE_ROWID = "_id";
+	private final String KEY_ACTIVITY_PROJECT_STAGE_NAME = "name";
 
 	// ===========================================================
 	// Private fields
@@ -32,7 +32,7 @@ public class JDIstockStatusTable {
 	// Public constructor
 	// ===========================================================
 
-	public JDIstockStatusTable(SQLiteDatabase database, String tableName) {
+	public ActivityProjectStageTable(SQLiteDatabase database, String tableName) {
 		mDb = database;
 		mDatabaseTable = tableName;
 
@@ -58,9 +58,9 @@ public class JDIstockStatusTable {
 			if (c.moveToFirst()) {
 				do {
 					long id = c.getLong(c
-							.getColumnIndex(KEY_JDI_STOCK_STATUS_ROWID));
+							.getColumnIndex(KEY_ACTIVITY_PROJECT_STAGE_ROWID));
 					String name = c.getString(c
-							.getColumnIndex(KEY_JDI_STOCK_STATUS_NAME));
+							.getColumnIndex(KEY_ACTIVITY_PROJECT_STAGE_NAME));
 
 					list.add(new PicklistRecord(id, name));
 				} while (c.moveToNext());
@@ -80,7 +80,7 @@ public class JDIstockStatusTable {
 	public boolean isExisting(String webID) {
 		boolean exists = false;
 		String MY_QUERY = "SELECT * FROM " + mDatabaseTable + " WHERE "
-				+ KEY_JDI_STOCK_STATUS_NAME + "='" + webID + "'";
+				+ KEY_ACTIVITY_PROJECT_STAGE_NAME + "='" + webID + "'";
 		Cursor c = null;
 		try {
 			c = mDb.rawQuery(MY_QUERY, null);
@@ -108,8 +108,8 @@ public class JDIstockStatusTable {
 		// Arrays.toString()
 		ids = ids.replace("[", "").replace("]", "");
 
-		int rowsDeleted = mDb.delete(mDatabaseTable, KEY_JDI_STOCK_STATUS_ROWID
-				+ " IN (" + ids + ")", null);
+		int rowsDeleted = mDb.delete(mDatabaseTable,
+				KEY_ACTIVITY_PROJECT_STAGE_ROWID + " IN (" + ids + ")", null);
 
 		// if (rowsDeleted > 0) {
 		//
@@ -123,16 +123,16 @@ public class JDIstockStatusTable {
 	public PicklistRecord getById(int ID) {
 		PicklistRecord record = null;
 		String MY_QUERY = "SELECT * FROM " + mDatabaseTable + " WHERE "
-				+ KEY_JDI_STOCK_STATUS_ROWID + "=?";
+				+ KEY_ACTIVITY_PROJECT_STAGE_ROWID + "=?";
 		Cursor c = null;
 		try {
 			c = mDb.rawQuery(MY_QUERY, new String[] { String.valueOf(ID) });
 
 			if ((c != null) && c.moveToFirst()) {
 				long id = c.getLong(c
-						.getColumnIndex(KEY_JDI_STOCK_STATUS_ROWID));
+						.getColumnIndex(KEY_ACTIVITY_PROJECT_STAGE_ROWID));
 				String name = c.getString(c
-						.getColumnIndex(KEY_JDI_STOCK_STATUS_NAME));
+						.getColumnIndex(KEY_ACTIVITY_PROJECT_STAGE_NAME));
 
 				record = new PicklistRecord(id, name);
 			}
@@ -148,16 +148,16 @@ public class JDIstockStatusTable {
 	public PicklistRecord getByWebId(String ID) {
 		PicklistRecord record = null;
 		String MY_QUERY = "SELECT * FROM " + mDatabaseTable + " WHERE "
-				+ KEY_JDI_STOCK_STATUS_NAME + "=?";
+				+ KEY_ACTIVITY_PROJECT_STAGE_NAME + "=?";
 		Cursor c = null;
 		try {
 			c = mDb.rawQuery(MY_QUERY, new String[] { String.valueOf(ID) });
 
 			if ((c != null) && c.moveToFirst()) {
 				long id = c.getLong(c
-						.getColumnIndex(KEY_JDI_STOCK_STATUS_ROWID));
+						.getColumnIndex(KEY_ACTIVITY_PROJECT_STAGE_ROWID));
 				String name = c.getString(c
-						.getColumnIndex(KEY_JDI_STOCK_STATUS_NAME));
+						.getColumnIndex(KEY_ACTIVITY_PROJECT_STAGE_NAME));
 
 				record = new PicklistRecord(id, name);
 			}
@@ -175,7 +175,7 @@ public class JDIstockStatusTable {
 
 		ContentValues initialValues = new ContentValues();
 
-		initialValues.put(KEY_JDI_STOCK_STATUS_NAME, no);
+		initialValues.put(KEY_ACTIVITY_PROJECT_STAGE_NAME, no);
 
 		long ids = mDb.insert(mDatabaseTable, null, initialValues);
 		if (ids >= 0) {
@@ -188,8 +188,8 @@ public class JDIstockStatusTable {
 	}
 
 	public boolean deleteUser(long rowId) {
-		if (mDb.delete(mDatabaseTable,
-				KEY_JDI_STOCK_STATUS_ROWID + "=" + rowId, null) > 0) {
+		if (mDb.delete(mDatabaseTable, KEY_ACTIVITY_PROJECT_STAGE_ROWID + "="
+				+ rowId, null) > 0) {
 			// getRecords().deleteById(rowId);
 			return true;
 		} else {
@@ -200,9 +200,9 @@ public class JDIstockStatusTable {
 	public boolean updateUser(long id, String no, long category, int isActive,
 			long user) {
 		ContentValues args = new ContentValues();
-		args.put(KEY_JDI_STOCK_STATUS_NAME, no);
-		if (mDb.update(mDatabaseTable, args, KEY_JDI_STOCK_STATUS_ROWID + "="
-				+ id, null) > 0) {
+		args.put(KEY_ACTIVITY_PROJECT_STAGE_NAME, no);
+		if (mDb.update(mDatabaseTable, args, KEY_ACTIVITY_PROJECT_STAGE_ROWID
+				+ "=" + id, null) > 0) {
 			// getRecords().update(id, no, category, isActive, user);
 			return true;
 		} else {

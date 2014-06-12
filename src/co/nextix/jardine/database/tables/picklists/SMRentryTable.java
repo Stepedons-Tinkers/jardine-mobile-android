@@ -1,4 +1,4 @@
-package co.nextix.jardine.database.tables;
+package co.nextix.jardine.database.tables.picklists;
 
 import java.util.ArrayList;
 import java.util.Arrays;

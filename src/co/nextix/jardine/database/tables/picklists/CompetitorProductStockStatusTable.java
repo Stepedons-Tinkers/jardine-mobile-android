@@ -1,4 +1,4 @@
-package co.nextix.jardine.database.tables;
+package co.nextix.jardine.database.tables.picklists;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -12,13 +12,13 @@ import android.util.Log;
 import co.nextix.jardine.database.DatabaseAdapter;
 import co.nextix.jardine.database.records.PicklistRecord;
 
-public class ActivityProjectCategoryTable {
+public class CompetitorProductStockStatusTable {
 	// ===========================================================
 	// Private static fields
 	// ===========================================================
 
-	private final String KEY_ACTIVITY_PROJECT_CATEGORY_ROWID = "_id";
-	private final String KEY_ACTIVITY_PROJECT_CATEGORY_NAME = "name";
+	private final String KEY_COMPETITOR_PRODUCT_STOCK_STATUS_ROWID = "_id";
+	private final String KEY_COMPETITOR_PRODUCT_STOCK_STATUS_NAME = "name";
 
 	// ===========================================================
 	// Private fields
@@ -32,7 +32,8 @@ public class ActivityProjectCategoryTable {
 	// Public constructor
 	// ===========================================================
 
-	public ActivityProjectCategoryTable(SQLiteDatabase database, String tableName) {
+	public CompetitorProductStockStatusTable(SQLiteDatabase database,
+			String tableName) {
 		mDb = database;
 		mDatabaseTable = tableName;
 
@@ -57,10 +58,12 @@ public class ActivityProjectCategoryTable {
 			c = mDb.rawQuery(MY_QUERY, null);
 			if (c.moveToFirst()) {
 				do {
-					long id = c.getLong(c
-							.getColumnIndex(KEY_ACTIVITY_PROJECT_CATEGORY_ROWID));
-					String name = c.getString(c
-							.getColumnIndex(KEY_ACTIVITY_PROJECT_CATEGORY_NAME));
+					long id = c
+							.getLong(c
+									.getColumnIndex(KEY_COMPETITOR_PRODUCT_STOCK_STATUS_ROWID));
+					String name = c
+							.getString(c
+									.getColumnIndex(KEY_COMPETITOR_PRODUCT_STOCK_STATUS_NAME));
 
 					list.add(new PicklistRecord(id, name));
 				} while (c.moveToNext());
@@ -80,7 +83,7 @@ public class ActivityProjectCategoryTable {
 	public boolean isExisting(String webID) {
 		boolean exists = false;
 		String MY_QUERY = "SELECT * FROM " + mDatabaseTable + " WHERE "
-				+ KEY_ACTIVITY_PROJECT_CATEGORY_NAME + "='" + webID + "'";
+				+ KEY_COMPETITOR_PRODUCT_STOCK_STATUS_NAME + "='" + webID + "'";
 		Cursor c = null;
 		try {
 			c = mDb.rawQuery(MY_QUERY, null);
@@ -108,8 +111,10 @@ public class ActivityProjectCategoryTable {
 		// Arrays.toString()
 		ids = ids.replace("[", "").replace("]", "");
 
-		int rowsDeleted = mDb.delete(mDatabaseTable,
-				KEY_ACTIVITY_PROJECT_CATEGORY_ROWID + " IN (" + ids + ")", null);
+		int rowsDeleted = mDb
+				.delete(mDatabaseTable,
+						KEY_COMPETITOR_PRODUCT_STOCK_STATUS_ROWID + " IN ("
+								+ ids + ")", null);
 
 		// if (rowsDeleted > 0) {
 		//
@@ -123,16 +128,18 @@ public class ActivityProjectCategoryTable {
 	public PicklistRecord getById(int ID) {
 		PicklistRecord record = null;
 		String MY_QUERY = "SELECT * FROM " + mDatabaseTable + " WHERE "
-				+ KEY_ACTIVITY_PROJECT_CATEGORY_ROWID + "=?";
+				+ KEY_COMPETITOR_PRODUCT_STOCK_STATUS_ROWID + "=?";
 		Cursor c = null;
 		try {
 			c = mDb.rawQuery(MY_QUERY, new String[] { String.valueOf(ID) });
 
 			if ((c != null) && c.moveToFirst()) {
-				long id = c.getLong(c
-						.getColumnIndex(KEY_ACTIVITY_PROJECT_CATEGORY_ROWID));
-				String name = c.getString(c
-						.getColumnIndex(KEY_ACTIVITY_PROJECT_CATEGORY_NAME));
+				long id = c
+						.getLong(c
+								.getColumnIndex(KEY_COMPETITOR_PRODUCT_STOCK_STATUS_ROWID));
+				String name = c
+						.getString(c
+								.getColumnIndex(KEY_COMPETITOR_PRODUCT_STOCK_STATUS_NAME));
 
 				record = new PicklistRecord(id, name);
 			}
@@ -148,16 +155,18 @@ public class ActivityProjectCategoryTable {
 	public PicklistRecord getByWebId(String ID) {
 		PicklistRecord record = null;
 		String MY_QUERY = "SELECT * FROM " + mDatabaseTable + " WHERE "
-				+ KEY_ACTIVITY_PROJECT_CATEGORY_NAME + "=?";
+				+ KEY_COMPETITOR_PRODUCT_STOCK_STATUS_NAME + "=?";
 		Cursor c = null;
 		try {
 			c = mDb.rawQuery(MY_QUERY, new String[] { String.valueOf(ID) });
 
 			if ((c != null) && c.moveToFirst()) {
-				long id = c.getLong(c
-						.getColumnIndex(KEY_ACTIVITY_PROJECT_CATEGORY_ROWID));
-				String name = c.getString(c
-						.getColumnIndex(KEY_ACTIVITY_PROJECT_CATEGORY_NAME));
+				long id = c
+						.getLong(c
+								.getColumnIndex(KEY_COMPETITOR_PRODUCT_STOCK_STATUS_ROWID));
+				String name = c
+						.getString(c
+								.getColumnIndex(KEY_COMPETITOR_PRODUCT_STOCK_STATUS_NAME));
 
 				record = new PicklistRecord(id, name);
 			}
@@ -175,7 +184,7 @@ public class ActivityProjectCategoryTable {
 
 		ContentValues initialValues = new ContentValues();
 
-		initialValues.put(KEY_ACTIVITY_PROJECT_CATEGORY_NAME, no);
+		initialValues.put(KEY_COMPETITOR_PRODUCT_STOCK_STATUS_NAME, no);
 
 		long ids = mDb.insert(mDatabaseTable, null, initialValues);
 		if (ids >= 0) {
@@ -188,8 +197,8 @@ public class ActivityProjectCategoryTable {
 	}
 
 	public boolean deleteUser(long rowId) {
-		if (mDb.delete(mDatabaseTable, KEY_ACTIVITY_PROJECT_CATEGORY_ROWID + "="
-				+ rowId, null) > 0) {
+		if (mDb.delete(mDatabaseTable,
+				KEY_COMPETITOR_PRODUCT_STOCK_STATUS_ROWID + "=" + rowId, null) > 0) {
 			// getRecords().deleteById(rowId);
 			return true;
 		} else {
@@ -200,9 +209,9 @@ public class ActivityProjectCategoryTable {
 	public boolean updateUser(long id, String no, long category, int isActive,
 			long user) {
 		ContentValues args = new ContentValues();
-		args.put(KEY_ACTIVITY_PROJECT_CATEGORY_NAME, no);
-		if (mDb.update(mDatabaseTable, args, KEY_ACTIVITY_PROJECT_CATEGORY_ROWID
-				+ "=" + id, null) > 0) {
+		args.put(KEY_COMPETITOR_PRODUCT_STOCK_STATUS_NAME, no);
+		if (mDb.update(mDatabaseTable, args,
+				KEY_COMPETITOR_PRODUCT_STOCK_STATUS_ROWID + "=" + id, null) > 0) {
 			// getRecords().update(id, no, category, isActive, user);
 			return true;
 		} else {
