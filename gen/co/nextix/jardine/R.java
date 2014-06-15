@@ -1226,10 +1226,10 @@ containing a value of this type.
     public static final class id {
         public static final int TextView04=0x7f050044;
         public static final int TextView05=0x7f050045;
-        public static final int TextView06=0x7f05004c;
-        public static final int TextView07=0x7f05004d;
-        public static final int TextView08=0x7f05004e;
-        public static final int TextView09=0x7f05004f;
+        public static final int TextView06=0x7f05004d;
+        public static final int TextView07=0x7f05004e;
+        public static final int TextView08=0x7f05004f;
+        public static final int TextView09=0x7f050050;
         public static final int action_bar=0x7f05001c;
         public static final int action_bar_activity_content=0x7f050015;
         public static final int action_bar_container=0x7f05001b;
@@ -1241,40 +1241,41 @@ containing a value of this type.
         public static final int action_menu_divider=0x7f050016;
         public static final int action_menu_presenter=0x7f050017;
         public static final int action_mode_close_button=0x7f050024;
-        public static final int action_search=0x7f050083;
-        public static final int action_settings=0x7f050084;
-        public static final int activites=0x7f050068;
+        public static final int action_search=0x7f05008b;
+        public static final int action_settings=0x7f05008c;
+        public static final int activites=0x7f050069;
         public static final int activity_chooser_view_content=0x7f050025;
-        public static final int activity_fragment=0x7f05005f;
-        public static final int activity_info=0x7f050056;
-        public static final int activity_type=0x7f05004a;
-        public static final int add_btn_jdi_product_stock_check=0x7f050050;
+        public static final int activity_fragment=0x7f050060;
+        public static final int activity_info=0x7f050057;
+        public static final int activity_type=0x7f05004b;
+        public static final int add_btn_jdi_product_stock_check=0x7f050051;
         public static final int always=0x7f05000b;
-        public static final int anim_layout=0x7f050065;
-        public static final int assigned_to=0x7f05004b;
+        public static final int anim_layout=0x7f050066;
+        public static final int assigned_to=0x7f05004c;
         public static final int beginning=0x7f050011;
-        public static final int calendar_grid=0x7f050078;
+        public static final int calendar_grid=0x7f05007a;
         public static final int calendar_view=0x7f05003f;
         public static final int checkbox=0x7f05002d;
-        public static final int checkin=0x7f050066;
-        public static final int checkout=0x7f050067;
+        public static final int checkin=0x7f050067;
+        public static final int checkout=0x7f050068;
         public static final int collapseActionView=0x7f05000d;
-        public static final int competitor_stock_check=0x7f050059;
+        public static final int competitor_stock_check=0x7f05005a;
+        public static final int competitor_table=0x7f05004a;
         public static final int counter=0x7f050048;
         public static final int crm_no=0x7f050041;
         public static final int customer=0x7f050042;
-        public static final int customer_contact_person=0x7f05005d;
-        public static final int date_today=0x7f050064;
+        public static final int customer_contact_person=0x7f05005e;
+        public static final int date_today=0x7f050065;
         public static final int default_activity_button=0x7f050028;
         public static final int dialog=0x7f05000e;
         public static final int disableHome=0x7f050008;
-        public static final int diy_supermarket_photos=0x7f05005c;
+        public static final int diy_supermarket_photos=0x7f05005d;
         public static final int drawer_layout=0x7f05003c;
         public static final int dropdown=0x7f05000f;
-        public static final int editMonth=0x7f050070;
+        public static final int editMonth=0x7f050072;
         public static final int edit_activity=0x7f050040;
         public static final int edit_query=0x7f050030;
-        public static final int email=0x7f050075;
+        public static final int email=0x7f050077;
         public static final int end=0x7f050013;
         public static final int expand_activities_button=0x7f050026;
         public static final int expanded_menu=0x7f05002c;
@@ -1284,34 +1285,41 @@ containing a value of this type.
         public static final int icon=0x7f05002a;
         public static final int ifRoom=0x7f05000a;
         public static final int image=0x7f050027;
-        public static final int imageButton1=0x7f050052;
+        public static final int imageButton1=0x7f050053;
         public static final int imageButton2=0x7f050046;
-        public static final int imageButton3=0x7f050051;
-        public static final int jdi_merchandising_check=0x7f050058;
-        public static final int jdi_stock_check=0x7f050057;
+        public static final int imageButton3=0x7f050052;
+        public static final int jdi_merchandising_check=0x7f050059;
+        public static final int jdi_stock_check=0x7f050058;
         public static final int listMode=0x7f050001;
         public static final int list_item=0x7f050029;
         public static final int list_slidermenu=0x7f05003e;
-        public static final int marketing_intel=0x7f05005a;
+        public static final int marketing_intel=0x7f05005b;
         public static final int middle=0x7f050012;
         public static final int never=0x7f050009;
         public static final int none=0x7f050010;
         public static final int normal=0x7f050000;
-        public static final int password=0x7f050076;
-        public static final int products=0x7f05005e;
-        public static final int profileinfo_txt_area=0x7f05007d;
-        public static final int profileinfo_txt_firstname=0x7f05007b;
-        public static final int profileinfo_txt_infoheader=0x7f05007a;
-        public static final int profileinfo_txt_lastname=0x7f05007c;
-        public static final int profileinfo_txt_lastsync=0x7f05007f;
-        public static final int profileinfo_txt_name=0x7f050079;
-        public static final int profileinfo_txt_syncheader=0x7f05007e;
-        public static final int profilenotif_image_clear=0x7f050080;
-        public static final int profilenotif_listview=0x7f050082;
-        public static final int profilenotif_text_clear=0x7f050081;
+        public static final int password=0x7f050078;
+        public static final int products=0x7f05005f;
+        public static final int profile_fl=0x7f050070;
+        public static final int profileinfo_txt_area=0x7f05007f;
+        public static final int profileinfo_txt_firstname=0x7f05007d;
+        public static final int profileinfo_txt_infoheader=0x7f05007c;
+        public static final int profileinfo_txt_lastname=0x7f05007e;
+        public static final int profileinfo_txt_lastsync=0x7f050081;
+        public static final int profileinfo_txt_name=0x7f05007b;
+        public static final int profileinfo_txt_syncheader=0x7f050080;
+        public static final int profilenotif_action=0x7f050087;
+        public static final int profilenotif_date=0x7f050083;
+        public static final int profilenotif_image_clear=0x7f050088;
+        public static final int profilenotif_laction=0x7f050086;
+        public static final int profilenotif_ldate=0x7f050082;
+        public static final int profilenotif_listview=0x7f05008a;
+        public static final int profilenotif_lnotif=0x7f050084;
+        public static final int profilenotif_notif=0x7f050085;
+        public static final int profilenotif_text_clear=0x7f050089;
         public static final int progress_circular=0x7f050018;
         public static final int progress_horizontal=0x7f050019;
-        public static final int project_requirements=0x7f05005b;
+        public static final int project_requirements=0x7f05005c;
         public static final int radio=0x7f05002f;
         public static final int scrollView=0x7f050047;
         public static final int search_badge=0x7f050032;
@@ -1324,39 +1332,39 @@ containing a value of this type.
         public static final int search_plate=0x7f050036;
         public static final int search_src_text=0x7f050037;
         public static final int search_voice_btn=0x7f05003b;
-        public static final int select_btn_product_stock_check=0x7f050054;
+        public static final int select_btn_product_stock_check=0x7f050055;
         public static final int shortcut=0x7f05002e;
         public static final int showCustom=0x7f050007;
         public static final int showHome=0x7f050004;
         public static final int showTitle=0x7f050006;
-        public static final int sign_in=0x7f050077;
-        public static final int spinner1=0x7f05006f;
+        public static final int sign_in=0x7f050079;
+        public static final int spinner1=0x7f050071;
         public static final int split_action_bar=0x7f05001e;
-        public static final int start_activity=0x7f050055;
-        public static final int status_count_text=0x7f050053;
+        public static final int start_activity=0x7f050056;
+        public static final int status_count_text=0x7f050054;
         public static final int submit_area=0x7f050039;
         public static final int tabMode=0x7f050002;
         public static final int tableRow1=0x7f050043;
-        public static final int textView1=0x7f05006b;
-        public static final int textView2=0x7f05006c;
-        public static final int textView3=0x7f05006d;
-        public static final int textView4=0x7f05006e;
+        public static final int textView1=0x7f05006c;
+        public static final int textView2=0x7f05006d;
+        public static final int textView3=0x7f05006e;
+        public static final int textView4=0x7f05006f;
         public static final int title=0x7f05002b;
         public static final int top_action_bar=0x7f050020;
         public static final int txtLabel=0x7f050049;
-        public static final int txt_add_contact=0x7f050063;
-        public static final int txt_add_customers=0x7f050061;
-        public static final int txt_view_contact=0x7f050062;
-        public static final int txt_view_customers=0x7f050060;
+        public static final int txt_add_contact=0x7f050064;
+        public static final int txt_add_customers=0x7f050062;
+        public static final int txt_view_contact=0x7f050063;
+        public static final int txt_view_customers=0x7f050061;
         public static final int up=0x7f050021;
-        public static final int update_activities=0x7f050069;
+        public static final int update_activities=0x7f05006a;
         public static final int useLogo=0x7f050003;
         public static final int withText=0x7f05000c;
-        public static final int workplan=0x7f05006a;
-        public static final int workplan_img_next=0x7f050074;
-        public static final int workplan_img_prev=0x7f050072;
-        public static final int workplan_listview=0x7f050071;
-        public static final int workplan_txt_num=0x7f050073;
+        public static final int workplan=0x7f05006b;
+        public static final int workplan_img_next=0x7f050076;
+        public static final int workplan_img_prev=0x7f050074;
+        public static final int workplan_listview=0x7f050073;
+        public static final int workplan_txt_num=0x7f050075;
     }
     public static final class integer {
         /**  The maximum number of action buttons that should be permitted within
@@ -1415,36 +1423,45 @@ containing a value of this type.
         public static final int detail_view_activity=0x7f03001c;
         public static final int detail_workplan=0x7f03001d;
         public static final int drawer_list_item=0x7f03001e;
-        public static final int fragment_activity=0x7f03001f;
-        public static final int fragment_activity_competitor_stock_check=0x7f030020;
-        public static final int fragment_activity_customer_contact_person=0x7f030021;
-        public static final int fragment_activity_detail=0x7f030022;
-        public static final int fragment_activity_diy_or_supermarket_photos=0x7f030023;
-        public static final int fragment_activity_jdi_merchandising_check=0x7f030024;
-        public static final int fragment_activity_jdi_product_stock_check=0x7f030025;
-        public static final int fragment_activity_marketing_intel=0x7f030026;
-        public static final int fragment_activity_products=0x7f030027;
-        public static final int fragment_activity_project_requirements=0x7f030028;
-        public static final int fragment_activity_static_fields=0x7f030029;
-        public static final int fragment_collaterals=0x7f03002a;
-        public static final int fragment_customers=0x7f03002b;
-        public static final int fragment_dashboard=0x7f03002c;
-        public static final int fragment_logout=0x7f03002d;
-        public static final int fragment_profile=0x7f03002e;
-        public static final int fragment_sync=0x7f03002f;
-        public static final int fragment_view_todays_workplan=0x7f030030;
-        public static final int fragment_workplan=0x7f030031;
-        public static final int login=0x7f030032;
-        public static final int month=0x7f030033;
-        public static final int profile_info_layout=0x7f030034;
-        public static final int profile_notif_list_header=0x7f030035;
-        public static final int profile_notif_list_item=0x7f030036;
-        public static final int profile_notifications_layout=0x7f030037;
-        public static final int splash_screen=0x7f030038;
-        public static final int support_simple_spinner_dropdown_item=0x7f030039;
-        public static final int week=0x7f03003a;
-        public static final int workplan_list_header=0x7f03003b;
-        public static final int workplan_menubar=0x7f03003c;
+        public static final int fragment_activites=0x7f03001f;
+        public static final int fragment_activity=0x7f030020;
+        public static final int fragment_activity_competitor_stock_check=0x7f030021;
+        public static final int fragment_activity_customer_contact_person=0x7f030022;
+        public static final int fragment_activity_detail=0x7f030023;
+        public static final int fragment_activity_detail_competitor_stock_check=0x7f030024;
+        public static final int fragment_activity_detail_customer_contact_person=0x7f030025;
+        public static final int fragment_activity_detail_jdi_merchandising_check=0x7f030026;
+        public static final int fragment_activity_detail_jdi_product_stock_check=0x7f030027;
+        public static final int fragment_activity_detail_marketing_intel=0x7f030028;
+        public static final int fragment_activity_detail_project_requirements=0x7f030029;
+        public static final int fragment_activity_diy_or_supermarket_photos=0x7f03002a;
+        public static final int fragment_activity_jdi_merchandising_check=0x7f03002b;
+        public static final int fragment_activity_jdi_product_stock_check=0x7f03002c;
+        public static final int fragment_activity_marketing_intel=0x7f03002d;
+        public static final int fragment_activity_products=0x7f03002e;
+        public static final int fragment_activity_project_requirements=0x7f03002f;
+        public static final int fragment_activity_static_fields=0x7f030030;
+        public static final int fragment_collaterals=0x7f030031;
+        public static final int fragment_customers=0x7f030032;
+        public static final int fragment_dashboard=0x7f030033;
+        public static final int fragment_logout=0x7f030034;
+        public static final int fragment_profile=0x7f030035;
+        public static final int fragment_start_activity=0x7f030036;
+        public static final int fragment_sync=0x7f030037;
+        public static final int fragment_view_todays_workplan=0x7f030038;
+        public static final int fragment_workplan=0x7f030039;
+        public static final int login=0x7f03003a;
+        public static final int month=0x7f03003b;
+        public static final int profile_info_layout=0x7f03003c;
+        public static final int profile_notif_list_header=0x7f03003d;
+        public static final int profile_notif_list_item=0x7f03003e;
+        public static final int profile_notifications_layout=0x7f03003f;
+        public static final int splash_screen=0x7f030040;
+        public static final int support_simple_spinner_dropdown_item=0x7f030041;
+        public static final int table_row_item=0x7f030042;
+        public static final int week=0x7f030043;
+        public static final int workplan_list_header=0x7f030044;
+        public static final int workplan_menubar=0x7f030045;
     }
     public static final class menu {
         public static final int main=0x7f0d0000;
@@ -1490,155 +1507,204 @@ containing a value of this type.
         /**  Description of a share target (both in the list of such or the default share button) in a ShareActionProvider (share UI). [CHAR LIMIT=NONE] 
          */
         public static final int abc_shareactionprovider_share_with_application=0x7f0a000b;
-        public static final int action_competitor_product_stock_check=0x7f0a005f;
-        public static final int action_contact_person=0x7f0a007a;
-        public static final int action_jdi=0x7f0a0050;
-        public static final int action_marketing_intel=0x7f0a0067;
-        public static final int action_merchandising=0x7f0a0057;
-        public static final int action_products=0x7f0a0082;
-        public static final int action_proj_requirement=0x7f0a006e;
+        public static final int action_competitor_product_stock_check=0x7f0a006b;
+        public static final int action_contact_person=0x7f0a0096;
+        public static final int action_jdi=0x7f0a0053;
+        public static final int action_marketing_intel=0x7f0a0077;
+        public static final int action_merchandising=0x7f0a005f;
+        public static final int action_products=0x7f0a00a5;
+        public static final int action_proj_requirement=0x7f0a0082;
         public static final int action_settings=0x7f0a0011;
-        public static final int activity_competitor_stock_check=0x7f0a005a;
-        public static final int activity_gen=0x7f0a003f;
+        public static final int activity_competitor_stock_check=0x7f0a0066;
+        public static final int activity_gen=0x7f0a0041;
         /**  View Activity Details 
          */
-        public static final int activity_information=0x7f0a002b;
-        public static final int activity_jdi=0x7f0a004a;
-        public static final int activity_jdi_merchandising=0x7f0a0053;
-        public static final int activity_marketing_intel=0x7f0a0062;
-        public static final int activity_proj_requirements=0x7f0a006a;
-        public static final int activity_type=0x7f0a0044;
-        public static final int add_competitor_product_stock_check=0x7f0a0060;
-        public static final int add_customer_contact_person=0x7f0a007b;
-        public static final int add_diy_or_supermarket_photos=0x7f0a0072;
-        public static final int add_jdi_merchandising_check=0x7f0a0058;
-        public static final int add_jdi_product_stock_check=0x7f0a0051;
-        public static final int add_marketing_intel=0x7f0a0068;
-        public static final int add_proj_requirement=0x7f0a006f;
+        public static final int activity_information=0x7f0a002d;
+        public static final int activity_jdi=0x7f0a004d;
+        public static final int activity_jdi_merchandising=0x7f0a005b;
+        public static final int activity_marketing_intel=0x7f0a0072;
+        public static final int activity_proj_requirements=0x7f0a007e;
+        public static final int activity_type=0x7f0a0046;
+        public static final int add_competitor_product_stock_check=0x7f0a006c;
+        public static final int add_customer_contact_person=0x7f0a0097;
+        public static final int add_diy_or_supermarket_photos=0x7f0a008e;
+        public static final int add_jdi_merchandising_check=0x7f0a0060;
+        public static final int add_jdi_product_stock_check=0x7f0a0054;
+        public static final int add_marketing_intel=0x7f0a0078;
+        public static final int add_proj_requirement=0x7f0a0083;
         public static final int app_name=0x7f0a0010;
-        public static final int assigned_to=0x7f0a003e;
-        public static final int assigned_to_competitor_product=0x7f0a005e;
-        public static final int assigned_to_contact_person=0x7f0a0079;
-        public static final int assigned_to_jdi=0x7f0a004f;
-        public static final int assigned_to_marketing_intel=0x7f0a0066;
-        public static final int assigned_to_merchandising=0x7f0a0056;
-        public static final int assigned_to_products=0x7f0a0081;
-        public static final int assigned_to_proj_requirement=0x7f0a006d;
-        public static final int competitor_marketing_intel=0x7f0a0063;
-        public static final int competitor_product=0x7f0a005b;
-        public static final int competitor_product_stock_check=0x7f0a002e;
-        public static final int created_time=0x7f0a003d;
-        public static final int crm_no=0x7f0a0035;
+        public static final int assigned_to=0x7f0a0040;
+        public static final int assigned_to_competitor_product=0x7f0a006a;
+        public static final int assigned_to_contact_person=0x7f0a0095;
+        public static final int assigned_to_jdi=0x7f0a0052;
+        public static final int assigned_to_marketing_intel=0x7f0a0076;
+        public static final int assigned_to_merchandising=0x7f0a005e;
+        public static final int assigned_to_products=0x7f0a00a4;
+        public static final int assigned_to_proj_requirement=0x7f0a0081;
+        public static final int back_to_activity=0x7f0a004b;
+        public static final int birthday_contact_person=0x7f0a009a;
+        public static final int competitor_marketing_intel=0x7f0a0073;
+        public static final int competitor_product=0x7f0a0067;
+        public static final int competitor_product_stock_check=0x7f0a0030;
+        /**  Competitor Product Stock Check Detail 
+         */
+        public static final int competitor_product_stock_check_details=0x7f0a006d;
+        public static final int created_time=0x7f0a003f;
+        public static final int created_time_competitor_stock_check=0x7f0a006f;
+        public static final int created_time_contact_person=0x7f0a009d;
+        public static final int created_time_jdi_merchandising=0x7f0a0062;
+        public static final int created_time_jdi_product_stock_check=0x7f0a0057;
+        public static final int created_time_marketing_intel=0x7f0a007a;
+        public static final int created_time_proj_requirements=0x7f0a0088;
+        public static final int crm_no=0x7f0a0037;
         /**  Competitor Product Stock Check 
          */
-        public static final int crm_no_competitor_stock_check=0x7f0a0059;
+        public static final int crm_no_competitor_stock_check=0x7f0a0065;
         /**  Customer Contact Person 
          */
-        public static final int crm_no_contact_person=0x7f0a0073;
+        public static final int crm_no_contact_person=0x7f0a008f;
         /**  JDI Product Stock Check ListView Details 
          */
-        public static final int crm_no_jdi=0x7f0a0049;
+        public static final int crm_no_jdi=0x7f0a004c;
         /**  JDI Merchandising Check 
          */
-        public static final int crm_no_jdi_merchandising=0x7f0a0052;
+        public static final int crm_no_jdi_merchandising=0x7f0a005a;
         /**  Marketing Intel 
          */
-        public static final int crm_no_marketing_intel=0x7f0a0061;
+        public static final int crm_no_marketing_intel=0x7f0a0071;
         /**  Products 
          */
-        public static final int crm_no_products=0x7f0a007d;
+        public static final int crm_no_products=0x7f0a00a0;
         /**  Project Requirements 
          */
-        public static final int crm_proj_requirements=0x7f0a0069;
-        public static final int customer=0x7f0a0045;
-        public static final int customer_contact_person=0x7f0a0077;
+        public static final int crm_proj_requirements=0x7f0a007d;
+        public static final int customer=0x7f0a0047;
+        public static final int customer_contact_person=0x7f0a0093;
+        /**  Customer Contact Person Details 
+         */
+        public static final int customer_contact_person_details=0x7f0a0099;
         /**  Customer View 
          */
         public static final int customer_header_id=0x7f0a0017;
         public static final int customer_header_name=0x7f0a0018;
         public static final int customer_header_province=0x7f0a001a;
         public static final int customer_header_type=0x7f0a0019;
-        public static final int customer_view_details=0x7f0a0032;
-        public static final int date_needed=0x7f0a006c;
+        public static final int customer_view_details=0x7f0a0034;
+        public static final int date_needed=0x7f0a0080;
         public static final int day_name_format=0x7f0a000d;
         /**  Content Description 
          */
         public static final int desc_list_item_icon=0x7f0a0016;
-        public static final int details_marketing_intel=0x7f0a0064;
-        public static final int diy_or_supermarket_photos=0x7f0a0031;
+        public static final int details_marketing_intel=0x7f0a0074;
+        public static final int diy_or_supermarket_photos=0x7f0a0033;
         public static final int drawer_close=0x7f0a0014;
         public static final int drawer_open=0x7f0a0013;
-        public static final int edit_activity=0x7f0a0048;
-        public static final int end_time=0x7f0a0040;
-        public static final int filename=0x7f0a0071;
-        public static final int first_time_visit=0x7f0a003c;
-        public static final int firstname_contact_person=0x7f0a0074;
-        public static final int follow_up_commitment_date=0x7f0a003a;
+        public static final int edit_activity=0x7f0a004a;
+        public static final int edit_competitor_product_stock_check_details=0x7f0a006e;
+        public static final int edit_customer_contact_person=0x7f0a009f;
+        public static final int edit_jdi_merchandising_check_details=0x7f0a0064;
+        public static final int edit_jdi_product_stock_check_detail=0x7f0a0059;
+        public static final int edit_marketing_intel=0x7f0a007c;
+        public static final int edit_proj_requirements=0x7f0a008a;
+        public static final int email_contact_person=0x7f0a009b;
+        public static final int end_time=0x7f0a0042;
+        public static final int filename=0x7f0a008c;
+        public static final int first_time_visit=0x7f0a003e;
+        public static final int firstname_contact_person=0x7f0a0090;
+        public static final int follow_up_commitment_date=0x7f0a003c;
         /**  View Activity Details / General Information 
          */
-        public static final int general_info=0x7f0a0034;
+        public static final int general_info=0x7f0a0036;
         public static final int hello_world=0x7f0a0012;
-        public static final int highlights=0x7f0a0039;
+        public static final int highlights=0x7f0a003b;
         public static final int invalid_date=0x7f0a000e;
-        public static final int jdi_merchandising_check=0x7f0a002d;
-        public static final int jdi_product_stock_check=0x7f0a002c;
-        public static final int jdi_quantity=0x7f0a004d;
-        public static final int jdi_stock_status=0x7f0a004c;
-        public static final int lastname_contact_person=0x7f0a0075;
-        public static final int latitude=0x7f0a0037;
-        public static final int loaded_on_shelves_competitor_product=0x7f0a005d;
-        public static final int loaded_on_shelves_jdi=0x7f0a004e;
-        public static final int longitude=0x7f0a0041;
-        public static final int marketing_intel=0x7f0a002f;
-        public static final int mobile_no_contact_person=0x7f0a0078;
-        public static final int modified_time=0x7f0a0047;
+        public static final int is_active_contact_person=0x7f0a009c;
+        public static final int jdi_merchandising_check=0x7f0a002f;
+        /**  JDI Merchandising Check Detail 
+         */
+        public static final int jdi_merchandising_check_details=0x7f0a0061;
+        public static final int jdi_product_stock_check=0x7f0a002e;
+        /**  JDI Product Stock Check Details 
+         */
+        public static final int jdi_product_stock_check_details=0x7f0a0055;
+        public static final int jdi_quantity=0x7f0a0050;
+        public static final int jdi_stock_status=0x7f0a004f;
+        public static final int lastname_contact_person=0x7f0a0091;
+        public static final int latitude=0x7f0a0039;
+        public static final int loaded_on_shelves_competitor_product=0x7f0a0069;
+        public static final int loaded_on_shelves_jdi=0x7f0a0051;
+        public static final int longitude=0x7f0a0043;
+        public static final int marketing_intel=0x7f0a0031;
+        /**  Marketing Intel Details 
+         */
+        public static final int marketing_intel_details=0x7f0a0079;
+        public static final int mobile_no_contact_person=0x7f0a0094;
+        public static final int modified_time=0x7f0a0049;
+        public static final int modified_time_competitor_stock_check=0x7f0a0070;
+        public static final int modified_time_contact_person=0x7f0a009e;
+        public static final int modified_time_diy_supermarket_photos=0x7f0a008d;
+        public static final int modified_time_jdi_merchandising=0x7f0a0063;
+        public static final int modified_time_jdi_product_stock_check=0x7f0a0058;
+        public static final int modified_time_marketing_intel=0x7f0a007b;
+        public static final int modified_time_proj_requirements=0x7f0a0089;
         public static final int month_name_format=0x7f0a000f;
-        public static final int next_steps=0x7f0a0043;
-        public static final int notes=0x7f0a0042;
-        public static final int objective=0x7f0a0038;
-        public static final int planned_visit=0x7f0a0046;
-        public static final int position_contact_person=0x7f0a0076;
-        public static final int product_brand=0x7f0a007f;
-        public static final int product_desc=0x7f0a0080;
-        public static final int product_jdi=0x7f0a004b;
-        public static final int product_jdi_merchandising=0x7f0a0054;
-        public static final int product_number=0x7f0a007e;
-        public static final int products=0x7f0a0033;
-        public static final int profile_info_area=0x7f0a001f;
-        public static final int profile_info_firstname=0x7f0a001d;
-        public static final int profile_info_lastname=0x7f0a001e;
-        public static final int profile_info_lastsync=0x7f0a0021;
-        public static final int profile_info_syncinformation=0x7f0a0020;
+        public static final int next_steps=0x7f0a0045;
+        public static final int notes=0x7f0a0044;
+        public static final int objective=0x7f0a003a;
+        public static final int other_details_proj_requirements=0x7f0a0087;
+        public static final int planned_visit=0x7f0a0048;
+        public static final int position_contact_person=0x7f0a0092;
+        public static final int product_brand=0x7f0a00a2;
+        public static final int product_desc=0x7f0a00a3;
+        public static final int product_jdi=0x7f0a004e;
+        public static final int product_jdi_merchandising=0x7f0a005c;
+        public static final int product_number=0x7f0a00a1;
+        public static final int products=0x7f0a0035;
+        public static final int products_used_proj_requirements=0x7f0a0086;
+        public static final int profile_info_area=0x7f0a0021;
+        public static final int profile_info_firstname=0x7f0a001f;
+        public static final int profile_info_lastname=0x7f0a0020;
+        public static final int profile_info_lastsync=0x7f0a0023;
+        public static final int profile_info_syncinformation=0x7f0a0022;
         /**  Profile Info View 
          */
-        public static final int profile_info_userinformation=0x7f0a001b;
-        public static final int profile_info_username=0x7f0a001c;
-        public static final int profile_notif_action=0x7f0a0024;
+        public static final int profile_info_userinformation=0x7f0a001d;
+        public static final int profile_info_username=0x7f0a001e;
+        /**  Profile 
+         */
+        public static final int profile_information=0x7f0a001b;
+        public static final int profile_notif_action=0x7f0a0026;
         /**  Profile Notif View 
          */
-        public static final int profile_notif_date=0x7f0a0022;
-        public static final int profile_notif_notification=0x7f0a0023;
-        public static final int profile_notif_remove=0x7f0a0025;
-        public static final int project_requirement_type=0x7f0a006b;
-        public static final int project_requirements=0x7f0a0030;
-        public static final int remarks_marketing_intel=0x7f0a0065;
+        public static final int profile_notif_date=0x7f0a0024;
+        public static final int profile_notif_notification=0x7f0a0025;
+        public static final int profile_notif_remove=0x7f0a0027;
+        public static final int profile_notification=0x7f0a001c;
+        /**  Project Requirements Detail 
+         */
+        public static final int project_requirement_details=0x7f0a0084;
+        public static final int project_requirement_type=0x7f0a007f;
+        public static final int project_requirements=0x7f0a0032;
+        public static final int remarks_marketing_intel=0x7f0a0075;
         public static final int search=0x7f0a0015;
-        public static final int select_customer_contact_person=0x7f0a007c;
-        public static final int select_products=0x7f0a0083;
-        public static final int start_time=0x7f0a0036;
-        public static final int status_jdi_merchandising=0x7f0a0055;
-        public static final int stock_status_competitor_product=0x7f0a005c;
+        public static final int select_customer_contact_person=0x7f0a0098;
+        public static final int select_products=0x7f0a00a6;
+        public static final int square_meters_proj_requirements=0x7f0a0085;
+        public static final int start_time=0x7f0a0038;
+        public static final int status_jdi_merchandising=0x7f0a005d;
+        public static final int stock_status_competitor_product=0x7f0a0068;
+        public static final int supplier_jdi_product_stock_check=0x7f0a0056;
         /**  DIY or Supermarket Photos 
          */
-        public static final int title=0x7f0a0070;
-        public static final int workplan_entry=0x7f0a003b;
-        public static final int workplan_header_activity=0x7f0a002a;
-        public static final int workplan_header_customer=0x7f0a0028;
-        public static final int workplan_header_date=0x7f0a0029;
-        public static final int workplan_header_id=0x7f0a0027;
+        public static final int title=0x7f0a008b;
+        public static final int workplan_entry=0x7f0a003d;
+        public static final int workplan_header_activity=0x7f0a002c;
+        public static final int workplan_header_customer=0x7f0a002a;
+        public static final int workplan_header_date=0x7f0a002b;
+        public static final int workplan_header_id=0x7f0a0029;
         /**  Workplan View 
          */
-        public static final int workplan_title=0x7f0a0026;
+        public static final int workplan_title=0x7f0a0028;
     }
     public static final class style {
         public static final int ActionBar_Solid_Example=0x7f0b008d;

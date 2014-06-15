@@ -16,6 +16,7 @@
         android:orientation="vertical" >
 
         <TableLayout
+            android:id="@+id/competitor_table"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingBottom="5dp"
@@ -203,7 +204,6 @@
                 android:clickable="true"
                 android:focusable="true"
                 android:focusableInTouchMode="true"
-                android:onClick="displayDetailedWorkplanView"
                 android:orientation="horizontal" >
 
                 <HorizontalScrollView

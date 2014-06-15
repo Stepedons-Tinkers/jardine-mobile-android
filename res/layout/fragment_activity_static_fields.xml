@@ -133,6 +133,6 @@
         android:layout_height="wrap_content"
         android:orientation="vertical" />
 
-    <!-- <include layout="@layout/fragment_start_activity" /> -->
+    <include layout="@layout/fragment_start_activity" />
 
 </LinearLayout>

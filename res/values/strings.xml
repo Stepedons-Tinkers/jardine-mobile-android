@@ -41,7 +41,7 @@
     <string name="customer_header_name">Name</string>
     <string name="customer_header_type">Type</string>
     <string name="customer_header_province">Province</string>
-    
+
     <!-- Profile -->
     <string name="profile_information">Information</string>
     <string name="profile_notification">Notifications</string>
@@ -101,6 +101,7 @@
     <string name="planned_visit">Planned Visit:</string>
     <string name="modified_time">Modified Time:</string>
     <string name="edit_activity">Edit Activity</string>
+    <string name="back_to_activity">Back to Activity </string>
 
     <!-- JDI Product Stock Check ListView Details -->
     <string name="crm_no_jdi">CRM No.</string>
@@ -113,6 +114,13 @@
     <string name="action_jdi">Action</string>
     <string name="add_jdi_product_stock_check"> Add JDI Product Stock Check</string>
 
+    <!-- JDI Product Stock Check Details -->
+    <string name="jdi_product_stock_check_details">JDI PRODUCT STOCK CHECK DETAILS</string>
+    <string name="supplier_jdi_product_stock_check">Supplier</string>
+    <string name="created_time_jdi_product_stock_check">Created Time</string>
+    <string name="modified_time_jdi_product_stock_check">Modified Time</string>
+    <string name="edit_jdi_product_stock_check_detail">Edit JDI Product Stock Check</string>
+
     <!-- JDI Merchandising Check -->
     <string name="crm_no_jdi_merchandising">CRM No</string>
     <string name="activity_jdi_merchandising">Activity</string>
@@ -121,6 +129,12 @@
     <string name="assigned_to_merchandising">Assigned To</string>
     <string name="action_merchandising">Action</string>
     <string name="add_jdi_merchandising_check">Add JDI Merchandising Check</string>
+
+    <!-- JDI Merchandising Check Detail -->
+    <string name="jdi_merchandising_check_details">JDI MERCHANDISING CHECK DETAILS</string>
+    <string name="created_time_jdi_merchandising">Created Time</string>
+    <string name="modified_time_jdi_merchandising">Modified Time</string>
+    <string name="edit_jdi_merchandising_check_details">Edit JDI Merchandising Check</string>
 
     <!-- Competitor Product Stock Check -->
     <string name="crm_no_competitor_stock_check">CRM No</string>
@@ -132,6 +146,12 @@
     <string name="action_competitor_product_stock_check">Action</string>
     <string name="add_competitor_product_stock_check">Add Competitor Product Stock Check</string>
 
+    <!-- Competitor Product Stock Check Detail -->
+    <string name="competitor_product_stock_check_details">COMPETITOR PRODUCT STOCK CHECK DETAILS</string>
+    <string name="edit_competitor_product_stock_check_details">Edit Competitor Product Stock Check</string>
+    <string name="created_time_competitor_stock_check">Created Time</string>
+    <string name="modified_time_competitor_stock_check">Modified Time</string>
+
     <!-- Marketing Intel -->
     <string name="crm_no_marketing_intel">CRM No</string>
     <string name="activity_marketing_intel">Activity</string>
@@ -142,6 +162,12 @@
     <string name="action_marketing_intel">Action</string>
     <string name="add_marketing_intel">Add Marketing Intel</string>
 
+    <!-- Marketing Intel Details -->
+    <string name="marketing_intel_details">MARKETING INTEL DETAILS</string>
+    <string name="created_time_marketing_intel">Created Time</string>
+    <string name="modified_time_marketing_intel">Modified Time</string>
+    <string name="edit_marketing_intel">Edit Marketing Intel</string>
+
     <!-- Project Requirements -->
     <string name="crm_proj_requirements">CRM No</string>
     <string name="activity_proj_requirements">Activity</string>
@@ -151,10 +177,19 @@
     <string name="action_proj_requirement">Action</string>
     <string name="add_proj_requirement">Add Project Requirement</string>
 
+    <!-- Project Requirements Detail -->
+    <string name="project_requirement_details">PROJECT REQUIREMENT DETAILS</string>
+    <string name="square_meters_proj_requirements">Square Meters</string>
+    <string name="products_used_proj_requirements">Products Used</string>
+    <string name="other_details_proj_requirements">Other Details</string>
+    <string name="created_time_proj_requirements">Created Time</string>
+    <string name="modified_time_proj_requirements">Modified Time</string>
+    <string name="edit_proj_requirements">Edit Project Requirement</string>
+
     <!-- DIY or Supermarket Photos -->
     <string name="title">Title</string>
     <string name="filename">Filename</string>
-    <string name="modified_time">Modified Time</string>
+    <string name="modified_time_diy_supermarket_photos">Modified Time</string>
     <string name="add_diy_or_supermarket_photos">Add DIY or Supermarket Photo</string>
 
     <!-- Customer Contact Person -->
@@ -168,6 +203,15 @@
     <string name="action_contact_person">Action</string>
     <string name="add_customer_contact_person">Add Customer Contact Person</string>
     <string name="select_customer_contact_person">Select Customer Contact Person</string>
+
+    <!-- Customer Contact Person Details -->
+    <string name="customer_contact_person_details">CUSTOMER CONTACT PERSON DETAILS</string>
+    <string name="birthday_contact_person">Birthday</string>
+    <string name="email_contact_person">Email Address</string>
+    <string name="is_active_contact_person">Is Active</string>
+    <string name="created_time_contact_person">Created Time</string>
+    <string name="modified_time_contact_person">Modified Time</string>
+    <string name="edit_customer_contact_person">Edit Customer Contact Person</string>
 
     <!-- Products -->
     <string name="crm_no_products">CRM No</string>
