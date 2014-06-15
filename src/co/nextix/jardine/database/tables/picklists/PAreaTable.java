@@ -12,13 +12,13 @@ import android.util.Log;
 import co.nextix.jardine.database.DatabaseAdapter;
 import co.nextix.jardine.database.records.PicklistRecord;
 
-public class EventTypeTable {
+public class PAreaTable {
 	// ===========================================================
 	// Private static fields
 	// ===========================================================
 
-	private final String KEY_EVENT_TYPE_ROWID = "_id";
-	private final String KEY_EVENT_TYPE_NAME = "name";
+	private final String KEY_AREA_ROWID = "_id";
+	private final String KEY_AREA_NAME = "name";
 
 	// ===========================================================
 	// Private fields
@@ -32,7 +32,7 @@ public class EventTypeTable {
 	// Public constructor
 	// ===========================================================
 
-	public EventTypeTable(SQLiteDatabase database, String tableName) {
+	public PAreaTable(SQLiteDatabase database, String tableName) {
 		mDb = database;
 		mDatabaseTable = tableName;
 
@@ -57,9 +57,8 @@ public class EventTypeTable {
 			c = mDb.rawQuery(MY_QUERY, null);
 			if (c.moveToFirst()) {
 				do {
-					long id = c.getLong(c.getColumnIndex(KEY_EVENT_TYPE_ROWID));
-					String name = c.getString(c
-							.getColumnIndex(KEY_EVENT_TYPE_NAME));
+					long id = c.getLong(c.getColumnIndex(KEY_AREA_ROWID));
+					String name = c.getString(c.getColumnIndex(KEY_AREA_NAME));
 
 					list.add(new PicklistRecord(id, name));
 				} while (c.moveToNext());
@@ -76,25 +75,6 @@ public class EventTypeTable {
 	// Public methods
 	// ===========================================================
 
-	public boolean isExisting(String webID) {
-		boolean exists = false;
-		String MY_QUERY = "SELECT * FROM " + mDatabaseTable + " WHERE "
-				+ KEY_EVENT_TYPE_NAME + "='" + webID + "'";
-		Cursor c = null;
-		try {
-			c = mDb.rawQuery(MY_QUERY, null);
-
-			if ((c != null) && c.moveToFirst()) {
-				exists = true;
-			}
-		} finally {
-			if (c != null) {
-				c.close();
-			}
-		}
-		return exists;
-	}
-
 	public int deleteById(long[] rowIds) {
 
 		String ids = Arrays.toString(rowIds);
@@ -107,8 +87,8 @@ public class EventTypeTable {
 		// Arrays.toString()
 		ids = ids.replace("[", "").replace("]", "");
 
-		int rowsDeleted = mDb.delete(mDatabaseTable, KEY_EVENT_TYPE_ROWID
-				+ " IN (" + ids + ")", null);
+		int rowsDeleted = mDb.delete(mDatabaseTable, KEY_AREA_ROWID + " IN ("
+				+ ids + ")", null);
 
 		// if (rowsDeleted > 0) {
 		//
@@ -122,15 +102,14 @@ public class EventTypeTable {
 	public PicklistRecord getById(int ID) {
 		PicklistRecord record = null;
 		String MY_QUERY = "SELECT * FROM " + mDatabaseTable + " WHERE "
-				+ KEY_EVENT_TYPE_ROWID + "=?";
+				+ KEY_AREA_ROWID + "=?";
 		Cursor c = null;
 		try {
 			c = mDb.rawQuery(MY_QUERY, new String[] { String.valueOf(ID) });
 
 			if ((c != null) && c.moveToFirst()) {
-				long id = c.getLong(c.getColumnIndex(KEY_EVENT_TYPE_ROWID));
-				String name = c
-						.getString(c.getColumnIndex(KEY_EVENT_TYPE_NAME));
+				long id = c.getLong(c.getColumnIndex(KEY_AREA_ROWID));
+				String name = c.getString(c.getColumnIndex(KEY_AREA_NAME));
 
 				record = new PicklistRecord(id, name);
 			}
@@ -143,36 +122,12 @@ public class EventTypeTable {
 		return record;
 	}
 
-	public PicklistRecord getByWebId(String ID) {
-		PicklistRecord record = null;
-		String MY_QUERY = "SELECT * FROM " + mDatabaseTable + " WHERE "
-				+ KEY_EVENT_TYPE_NAME + "=?";
-		Cursor c = null;
-		try {
-			c = mDb.rawQuery(MY_QUERY, new String[] { String.valueOf(ID) });
-
-			if ((c != null) && c.moveToFirst()) {
-				long id = c.getLong(c.getColumnIndex(KEY_EVENT_TYPE_ROWID));
-				String name = c
-						.getString(c.getColumnIndex(KEY_EVENT_TYPE_NAME));
-
-				record = new PicklistRecord(id, name);
-			}
-		} finally {
-			if (c != null) {
-				c.close();
-			}
-		}
-
-		return record;
-	}
-
-	public long insertUser(String no) {
+	public long insertArea(String no) {
 		// ActivityTypeCollection collection = getRecords();
 
 		ContentValues initialValues = new ContentValues();
 
-		initialValues.put(KEY_EVENT_TYPE_NAME, no);
+		initialValues.put(KEY_AREA_NAME, no);
 
 		long ids = mDb.insert(mDatabaseTable, null, initialValues);
 		if (ids >= 0) {
@@ -184,8 +139,8 @@ public class EventTypeTable {
 		return ids;
 	}
 
-	public boolean deleteUser(long rowId) {
-		if (mDb.delete(mDatabaseTable, KEY_EVENT_TYPE_ROWID + "=" + rowId, null) > 0) {
+	public boolean deleteArea(long rowId) {
+		if (mDb.delete(mDatabaseTable, KEY_AREA_ROWID + "=" + rowId, null) > 0) {
 			// getRecords().deleteById(rowId);
 			return true;
 		} else {
@@ -193,12 +148,10 @@ public class EventTypeTable {
 		}
 	}
 
-	public boolean updateUser(long id, String no, long category, int isActive,
-			long user) {
+	public boolean updateArea(long id, String no) {
 		ContentValues args = new ContentValues();
-		args.put(KEY_EVENT_TYPE_NAME, no);
-		if (mDb.update(mDatabaseTable, args, KEY_EVENT_TYPE_ROWID + "=" + id,
-				null) > 0) {
+		args.put(KEY_AREA_NAME, no);
+		if (mDb.update(mDatabaseTable, args, KEY_AREA_ROWID + "=" + id, null) > 0) {
 			// getRecords().update(id, no, category, isActive, user);
 			return true;
 		} else {

@@ -10,15 +10,16 @@ import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 import co.nextix.jardine.database.DatabaseAdapter;
-import co.nextix.jardine.database.records.PicklistRecord;
+import co.nextix.jardine.database.records.ProvinceRecord;
 
-public class JDImerchandisingCheckStatusTable {
+public class PProvinceTable {
 	// ===========================================================
 	// Private static fields
 	// ===========================================================
 
-	private final String KEY_JDI_MERCHANDISING_CHECK_STATUS_ROWID = "_id";
-	private final String KEY_JDI_MERCHANDISING_CHECK_STATUS_NAME = "name";
+	private final String KEY_PROVINCE_ROWID = "_id";
+	private final String KEY_PROVINCE_NAME = "name";
+	private final String KEY_PROVINCE_AREA = "area";
 
 	// ===========================================================
 	// Private fields
@@ -32,8 +33,7 @@ public class JDImerchandisingCheckStatusTable {
 	// Public constructor
 	// ===========================================================
 
-	public JDImerchandisingCheckStatusTable(SQLiteDatabase database,
-			String tableName) {
+	public PProvinceTable(SQLiteDatabase database, String tableName) {
 		mDb = database;
 		mDatabaseTable = tableName;
 
@@ -50,22 +50,20 @@ public class JDImerchandisingCheckStatusTable {
 	// Private methods
 	// ===========================================================
 
-	private List<PicklistRecord> getAllRecords() {
+	private List<ProvinceRecord> getAllRecords() {
 		Cursor c = null;
-		List<PicklistRecord> list = new ArrayList<PicklistRecord>();
+		List<ProvinceRecord> list = new ArrayList<ProvinceRecord>();
 		String MY_QUERY = "SELECT * FROM " + mDatabaseTable;
 		try {
 			c = mDb.rawQuery(MY_QUERY, null);
 			if (c.moveToFirst()) {
 				do {
-					long id = c
-							.getLong(c
-									.getColumnIndex(KEY_JDI_MERCHANDISING_CHECK_STATUS_ROWID));
-					String name = c
-							.getString(c
-									.getColumnIndex(KEY_JDI_MERCHANDISING_CHECK_STATUS_NAME));
+					long id = c.getLong(c.getColumnIndex(KEY_PROVINCE_ROWID));
+					String name = c.getString(c
+							.getColumnIndex(KEY_PROVINCE_NAME));
+					long area = c.getLong(c.getColumnIndex(KEY_PROVINCE_AREA));
 
-					list.add(new PicklistRecord(id, name));
+					list.add(new ProvinceRecord(id, name, area));
 				} while (c.moveToNext());
 			}
 		} finally {
@@ -80,25 +78,6 @@ public class JDImerchandisingCheckStatusTable {
 	// Public methods
 	// ===========================================================
 
-	public boolean isExisting(String webID) {
-		boolean exists = false;
-		String MY_QUERY = "SELECT * FROM " + mDatabaseTable + " WHERE "
-				+ KEY_JDI_MERCHANDISING_CHECK_STATUS_NAME + "='" + webID + "'";
-		Cursor c = null;
-		try {
-			c = mDb.rawQuery(MY_QUERY, null);
-
-			if ((c != null) && c.moveToFirst()) {
-				exists = true;
-			}
-		} finally {
-			if (c != null) {
-				c.close();
-			}
-		}
-		return exists;
-	}
-
 	public int deleteById(long[] rowIds) {
 
 		String ids = Arrays.toString(rowIds);
@@ -111,10 +90,8 @@ public class JDImerchandisingCheckStatusTable {
 		// Arrays.toString()
 		ids = ids.replace("[", "").replace("]", "");
 
-		int rowsDeleted = mDb
-				.delete(mDatabaseTable,
-						KEY_JDI_MERCHANDISING_CHECK_STATUS_ROWID + " IN ("
-								+ ids + ")", null);
+		int rowsDeleted = mDb.delete(mDatabaseTable, KEY_PROVINCE_ROWID
+				+ " IN (" + ids + ")", null);
 
 		// if (rowsDeleted > 0) {
 		//
@@ -125,23 +102,20 @@ public class JDImerchandisingCheckStatusTable {
 		return rowsDeleted;
 	}
 
-	public PicklistRecord getById(int ID) {
-		PicklistRecord record = null;
+	public ProvinceRecord getById(int ID) {
+		ProvinceRecord record = null;
 		String MY_QUERY = "SELECT * FROM " + mDatabaseTable + " WHERE "
-				+ KEY_JDI_MERCHANDISING_CHECK_STATUS_ROWID + "=?";
+				+ KEY_PROVINCE_ROWID + "=?";
 		Cursor c = null;
 		try {
 			c = mDb.rawQuery(MY_QUERY, new String[] { String.valueOf(ID) });
 
 			if ((c != null) && c.moveToFirst()) {
-				long id = c
-						.getLong(c
-								.getColumnIndex(KEY_JDI_MERCHANDISING_CHECK_STATUS_ROWID));
-				String name = c
-						.getString(c
-								.getColumnIndex(KEY_JDI_MERCHANDISING_CHECK_STATUS_NAME));
+				long id = c.getLong(c.getColumnIndex(KEY_PROVINCE_ROWID));
+				String name = c.getString(c.getColumnIndex(KEY_PROVINCE_NAME));
+				long area = c.getLong(c.getColumnIndex(KEY_PROVINCE_AREA));
 
-				record = new PicklistRecord(id, name);
+				record = new ProvinceRecord(id, name, area);
 			}
 		} finally {
 			if (c != null) {
@@ -152,39 +126,13 @@ public class JDImerchandisingCheckStatusTable {
 		return record;
 	}
 
-	public PicklistRecord getByWebId(String ID) {
-		PicklistRecord record = null;
-		String MY_QUERY = "SELECT * FROM " + mDatabaseTable + " WHERE "
-				+ KEY_JDI_MERCHANDISING_CHECK_STATUS_NAME + "=?";
-		Cursor c = null;
-		try {
-			c = mDb.rawQuery(MY_QUERY, new String[] { String.valueOf(ID) });
-
-			if ((c != null) && c.moveToFirst()) {
-				long id = c
-						.getLong(c
-								.getColumnIndex(KEY_JDI_MERCHANDISING_CHECK_STATUS_ROWID));
-				String name = c
-						.getString(c
-								.getColumnIndex(KEY_JDI_MERCHANDISING_CHECK_STATUS_NAME));
-
-				record = new PicklistRecord(id, name);
-			}
-		} finally {
-			if (c != null) {
-				c.close();
-			}
-		}
-
-		return record;
-	}
-
-	public long insertUser(String no) {
+	public long insertProvince(String no, long area) {
 		// ActivityTypeCollection collection = getRecords();
 
 		ContentValues initialValues = new ContentValues();
 
-		initialValues.put(KEY_JDI_MERCHANDISING_CHECK_STATUS_NAME, no);
+		initialValues.put(KEY_PROVINCE_NAME, no);
+		initialValues.put(KEY_PROVINCE_AREA, area);
 
 		long ids = mDb.insert(mDatabaseTable, null, initialValues);
 		if (ids >= 0) {
@@ -196,9 +144,8 @@ public class JDImerchandisingCheckStatusTable {
 		return ids;
 	}
 
-	public boolean deleteUser(long rowId) {
-		if (mDb.delete(mDatabaseTable,
-				KEY_JDI_MERCHANDISING_CHECK_STATUS_ROWID + "=" + rowId, null) > 0) {
+	public boolean deleteProvince(long rowId) {
+		if (mDb.delete(mDatabaseTable, KEY_PROVINCE_ROWID + "=" + rowId, null) > 0) {
 			// getRecords().deleteById(rowId);
 			return true;
 		} else {
@@ -206,12 +153,12 @@ public class JDImerchandisingCheckStatusTable {
 		}
 	}
 
-	public boolean updateUser(long id, String no, long category, int isActive,
-			long user) {
+	public boolean updateProvince(long id, String no, long area) {
 		ContentValues args = new ContentValues();
-		args.put(KEY_JDI_MERCHANDISING_CHECK_STATUS_NAME, no);
-		if (mDb.update(mDatabaseTable, args,
-				KEY_JDI_MERCHANDISING_CHECK_STATUS_ROWID + "=" + id, null) > 0) {
+		args.put(KEY_PROVINCE_NAME, no);
+		args.put(KEY_PROVINCE_AREA, area);
+		if (mDb.update(mDatabaseTable, args, KEY_PROVINCE_ROWID + "=" + id,
+				null) > 0) {
 			// getRecords().update(id, no, category, isActive, user);
 			return true;
 		} else {

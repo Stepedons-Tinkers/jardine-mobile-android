@@ -12,13 +12,13 @@ import android.util.Log;
 import co.nextix.jardine.database.DatabaseAdapter;
 import co.nextix.jardine.database.records.PicklistRecord;
 
-public class CompetitorProductStockStatusTable {
+public class PCustSizeTable {
 	// ===========================================================
 	// Private static fields
 	// ===========================================================
 
-	private final String KEY_COMPETITOR_PRODUCT_STOCK_STATUS_ROWID = "_id";
-	private final String KEY_COMPETITOR_PRODUCT_STOCK_STATUS_NAME = "name";
+	private final String KEY_CUSTOMER_SIZE_ROWID = "_id";
+	private final String KEY_CUSTOMER_SIZE_NAME = "name";
 
 	// ===========================================================
 	// Private fields
@@ -32,8 +32,7 @@ public class CompetitorProductStockStatusTable {
 	// Public constructor
 	// ===========================================================
 
-	public CompetitorProductStockStatusTable(SQLiteDatabase database,
-			String tableName) {
+	public PCustSizeTable(SQLiteDatabase database, String tableName) {
 		mDb = database;
 		mDatabaseTable = tableName;
 
@@ -58,12 +57,10 @@ public class CompetitorProductStockStatusTable {
 			c = mDb.rawQuery(MY_QUERY, null);
 			if (c.moveToFirst()) {
 				do {
-					long id = c
-							.getLong(c
-									.getColumnIndex(KEY_COMPETITOR_PRODUCT_STOCK_STATUS_ROWID));
-					String name = c
-							.getString(c
-									.getColumnIndex(KEY_COMPETITOR_PRODUCT_STOCK_STATUS_NAME));
+					long id = c.getLong(c
+							.getColumnIndex(KEY_CUSTOMER_SIZE_ROWID));
+					String name = c.getString(c
+							.getColumnIndex(KEY_CUSTOMER_SIZE_NAME));
 
 					list.add(new PicklistRecord(id, name));
 				} while (c.moveToNext());
@@ -83,7 +80,7 @@ public class CompetitorProductStockStatusTable {
 	public boolean isExisting(String webID) {
 		boolean exists = false;
 		String MY_QUERY = "SELECT * FROM " + mDatabaseTable + " WHERE "
-				+ KEY_COMPETITOR_PRODUCT_STOCK_STATUS_NAME + "='" + webID + "'";
+				+ KEY_CUSTOMER_SIZE_NAME + "='" + webID + "'";
 		Cursor c = null;
 		try {
 			c = mDb.rawQuery(MY_QUERY, null);
@@ -111,10 +108,8 @@ public class CompetitorProductStockStatusTable {
 		// Arrays.toString()
 		ids = ids.replace("[", "").replace("]", "");
 
-		int rowsDeleted = mDb
-				.delete(mDatabaseTable,
-						KEY_COMPETITOR_PRODUCT_STOCK_STATUS_ROWID + " IN ("
-								+ ids + ")", null);
+		int rowsDeleted = mDb.delete(mDatabaseTable, KEY_CUSTOMER_SIZE_ROWID
+				+ " IN (" + ids + ")", null);
 
 		// if (rowsDeleted > 0) {
 		//
@@ -128,18 +123,15 @@ public class CompetitorProductStockStatusTable {
 	public PicklistRecord getById(int ID) {
 		PicklistRecord record = null;
 		String MY_QUERY = "SELECT * FROM " + mDatabaseTable + " WHERE "
-				+ KEY_COMPETITOR_PRODUCT_STOCK_STATUS_ROWID + "=?";
+				+ KEY_CUSTOMER_SIZE_ROWID + "=?";
 		Cursor c = null;
 		try {
 			c = mDb.rawQuery(MY_QUERY, new String[] { String.valueOf(ID) });
 
 			if ((c != null) && c.moveToFirst()) {
-				long id = c
-						.getLong(c
-								.getColumnIndex(KEY_COMPETITOR_PRODUCT_STOCK_STATUS_ROWID));
-				String name = c
-						.getString(c
-								.getColumnIndex(KEY_COMPETITOR_PRODUCT_STOCK_STATUS_NAME));
+				long id = c.getLong(c.getColumnIndex(KEY_CUSTOMER_SIZE_ROWID));
+				String name = c.getString(c
+						.getColumnIndex(KEY_CUSTOMER_SIZE_NAME));
 
 				record = new PicklistRecord(id, name);
 			}
@@ -155,18 +147,15 @@ public class CompetitorProductStockStatusTable {
 	public PicklistRecord getByWebId(String ID) {
 		PicklistRecord record = null;
 		String MY_QUERY = "SELECT * FROM " + mDatabaseTable + " WHERE "
-				+ KEY_COMPETITOR_PRODUCT_STOCK_STATUS_NAME + "=?";
+				+ KEY_CUSTOMER_SIZE_NAME + "=?";
 		Cursor c = null;
 		try {
 			c = mDb.rawQuery(MY_QUERY, new String[] { String.valueOf(ID) });
 
 			if ((c != null) && c.moveToFirst()) {
-				long id = c
-						.getLong(c
-								.getColumnIndex(KEY_COMPETITOR_PRODUCT_STOCK_STATUS_ROWID));
-				String name = c
-						.getString(c
-								.getColumnIndex(KEY_COMPETITOR_PRODUCT_STOCK_STATUS_NAME));
+				long id = c.getLong(c.getColumnIndex(KEY_CUSTOMER_SIZE_ROWID));
+				String name = c.getString(c
+						.getColumnIndex(KEY_CUSTOMER_SIZE_NAME));
 
 				record = new PicklistRecord(id, name);
 			}
@@ -184,7 +173,7 @@ public class CompetitorProductStockStatusTable {
 
 		ContentValues initialValues = new ContentValues();
 
-		initialValues.put(KEY_COMPETITOR_PRODUCT_STOCK_STATUS_NAME, no);
+		initialValues.put(KEY_CUSTOMER_SIZE_NAME, no);
 
 		long ids = mDb.insert(mDatabaseTable, null, initialValues);
 		if (ids >= 0) {
@@ -197,8 +186,8 @@ public class CompetitorProductStockStatusTable {
 	}
 
 	public boolean deleteUser(long rowId) {
-		if (mDb.delete(mDatabaseTable,
-				KEY_COMPETITOR_PRODUCT_STOCK_STATUS_ROWID + "=" + rowId, null) > 0) {
+		if (mDb.delete(mDatabaseTable, KEY_CUSTOMER_SIZE_ROWID + "=" + rowId,
+				null) > 0) {
 			// getRecords().deleteById(rowId);
 			return true;
 		} else {
@@ -209,9 +198,9 @@ public class CompetitorProductStockStatusTable {
 	public boolean updateUser(long id, String no, long category, int isActive,
 			long user) {
 		ContentValues args = new ContentValues();
-		args.put(KEY_COMPETITOR_PRODUCT_STOCK_STATUS_NAME, no);
+		args.put(KEY_CUSTOMER_SIZE_NAME, no);
 		if (mDb.update(mDatabaseTable, args,
-				KEY_COMPETITOR_PRODUCT_STOCK_STATUS_ROWID + "=" + id, null) > 0) {
+				KEY_CUSTOMER_SIZE_ROWID + "=" + id, null) > 0) {
 			// getRecords().update(id, no, category, isActive, user);
 			return true;
 		} else {

@@ -12,13 +12,13 @@ import android.util.Log;
 import co.nextix.jardine.database.DatabaseAdapter;
 import co.nextix.jardine.database.records.PicklistRecord;
 
-public class ActivityTypeCategoryTable {
+public class PProjReqTypeTable {
 	// ===========================================================
 	// Private static fields
 	// ===========================================================
 
-	private final String KEY_ACTIVITY_TYPE_CATEGORY_ROWID = "_id";
-	private final String KEY_ACTIVITY_TYPE_CATEGORY_NAME = "name";
+	private final String KEY_PROJECT_REQUIREMENT_TYPE_ROWID = "_id";
+	private final String KEY_PROJECT_REQUIREMENT_TYPE_NAME = "name";
 
 	// ===========================================================
 	// Private fields
@@ -32,7 +32,7 @@ public class ActivityTypeCategoryTable {
 	// Public constructor
 	// ===========================================================
 
-	public ActivityTypeCategoryTable(SQLiteDatabase database, String tableName) {
+	public PProjReqTypeTable(SQLiteDatabase database, String tableName) {
 		mDb = database;
 		mDatabaseTable = tableName;
 
@@ -57,9 +57,11 @@ public class ActivityTypeCategoryTable {
 			c = mDb.rawQuery(MY_QUERY, null);
 			if (c.moveToFirst()) {
 				do {
-					long id = c.getLong(c.getColumnIndex(KEY_ACTIVITY_TYPE_CATEGORY_ROWID));
+					long id = c
+							.getLong(c
+									.getColumnIndex(KEY_PROJECT_REQUIREMENT_TYPE_ROWID));
 					String name = c.getString(c
-							.getColumnIndex(KEY_ACTIVITY_TYPE_CATEGORY_NAME));
+							.getColumnIndex(KEY_PROJECT_REQUIREMENT_TYPE_NAME));
 
 					list.add(new PicklistRecord(id, name));
 				} while (c.moveToNext());
@@ -79,7 +81,7 @@ public class ActivityTypeCategoryTable {
 	public boolean isExisting(String webID) {
 		boolean exists = false;
 		String MY_QUERY = "SELECT * FROM " + mDatabaseTable + " WHERE "
-				+ KEY_ACTIVITY_TYPE_CATEGORY_NAME + "='" + webID + "'";
+				+ KEY_PROJECT_REQUIREMENT_TYPE_NAME + "='" + webID + "'";
 		Cursor c = null;
 		try {
 			c = mDb.rawQuery(MY_QUERY, null);
@@ -107,8 +109,8 @@ public class ActivityTypeCategoryTable {
 		// Arrays.toString()
 		ids = ids.replace("[", "").replace("]", "");
 
-		int rowsDeleted = mDb.delete(mDatabaseTable, KEY_ACTIVITY_TYPE_CATEGORY_ROWID
-				+ " IN (" + ids + ")", null);
+		int rowsDeleted = mDb.delete(mDatabaseTable,
+				KEY_PROJECT_REQUIREMENT_TYPE_ROWID + " IN (" + ids + ")", null);
 
 		// if (rowsDeleted > 0) {
 		//
@@ -122,15 +124,16 @@ public class ActivityTypeCategoryTable {
 	public PicklistRecord getById(int ID) {
 		PicklistRecord record = null;
 		String MY_QUERY = "SELECT * FROM " + mDatabaseTable + " WHERE "
-				+ KEY_ACTIVITY_TYPE_CATEGORY_ROWID + "=?";
+				+ KEY_PROJECT_REQUIREMENT_TYPE_ROWID + "=?";
 		Cursor c = null;
 		try {
 			c = mDb.rawQuery(MY_QUERY, new String[] { String.valueOf(ID) });
 
 			if ((c != null) && c.moveToFirst()) {
-				long id = c.getLong(c.getColumnIndex(KEY_ACTIVITY_TYPE_CATEGORY_ROWID));
-				String name = c
-						.getString(c.getColumnIndex(KEY_ACTIVITY_TYPE_CATEGORY_NAME));
+				long id = c.getLong(c
+						.getColumnIndex(KEY_PROJECT_REQUIREMENT_TYPE_ROWID));
+				String name = c.getString(c
+						.getColumnIndex(KEY_PROJECT_REQUIREMENT_TYPE_NAME));
 
 				record = new PicklistRecord(id, name);
 			}
@@ -146,15 +149,16 @@ public class ActivityTypeCategoryTable {
 	public PicklistRecord getByWebId(String ID) {
 		PicklistRecord record = null;
 		String MY_QUERY = "SELECT * FROM " + mDatabaseTable + " WHERE "
-				+ KEY_ACTIVITY_TYPE_CATEGORY_NAME + "=?";
+				+ KEY_PROJECT_REQUIREMENT_TYPE_NAME + "=?";
 		Cursor c = null;
 		try {
 			c = mDb.rawQuery(MY_QUERY, new String[] { String.valueOf(ID) });
 
 			if ((c != null) && c.moveToFirst()) {
-				long id = c.getLong(c.getColumnIndex(KEY_ACTIVITY_TYPE_CATEGORY_ROWID));
-				String name = c
-						.getString(c.getColumnIndex(KEY_ACTIVITY_TYPE_CATEGORY_NAME));
+				long id = c.getLong(c
+						.getColumnIndex(KEY_PROJECT_REQUIREMENT_TYPE_ROWID));
+				String name = c.getString(c
+						.getColumnIndex(KEY_PROJECT_REQUIREMENT_TYPE_NAME));
 
 				record = new PicklistRecord(id, name);
 			}
@@ -172,7 +176,7 @@ public class ActivityTypeCategoryTable {
 
 		ContentValues initialValues = new ContentValues();
 
-		initialValues.put(KEY_ACTIVITY_TYPE_CATEGORY_NAME, no);
+		initialValues.put(KEY_PROJECT_REQUIREMENT_TYPE_NAME, no);
 
 		long ids = mDb.insert(mDatabaseTable, null, initialValues);
 		if (ids >= 0) {
@@ -185,7 +189,8 @@ public class ActivityTypeCategoryTable {
 	}
 
 	public boolean deleteUser(long rowId) {
-		if (mDb.delete(mDatabaseTable, KEY_ACTIVITY_TYPE_CATEGORY_ROWID + "=" + rowId, null) > 0) {
+		if (mDb.delete(mDatabaseTable, KEY_PROJECT_REQUIREMENT_TYPE_ROWID + "="
+				+ rowId, null) > 0) {
 			// getRecords().deleteById(rowId);
 			return true;
 		} else {
@@ -196,9 +201,9 @@ public class ActivityTypeCategoryTable {
 	public boolean updateUser(long id, String no, long category, int isActive,
 			long user) {
 		ContentValues args = new ContentValues();
-		args.put(KEY_ACTIVITY_TYPE_CATEGORY_NAME, no);
-		if (mDb.update(mDatabaseTable, args, KEY_ACTIVITY_TYPE_CATEGORY_ROWID + "=" + id,
-				null) > 0) {
+		args.put(KEY_PROJECT_REQUIREMENT_TYPE_NAME, no);
+		if (mDb.update(mDatabaseTable, args, KEY_PROJECT_REQUIREMENT_TYPE_ROWID
+				+ "=" + id, null) > 0) {
 			// getRecords().update(id, no, category, isActive, user);
 			return true;
 		} else {

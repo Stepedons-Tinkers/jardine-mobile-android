@@ -12,13 +12,13 @@ import android.util.Log;
 import co.nextix.jardine.database.DatabaseAdapter;
 import co.nextix.jardine.database.records.PicklistRecord;
 
-public class SMRentryTable {
+public class PCustTypeTable {
 	// ===========================================================
 	// Private static fields
 	// ===========================================================
 
-	private final String KEY_SMR_ENTRY_ROWID = "_id";
-	private final String KEY_SMR_ENTRY_NAME = "name";
+	private final String KEY_CUSTOMER_TYPE_ROWID = "_id";
+	private final String KEY_CUSTOMER_TYPE_NAME = "name";
 
 	// ===========================================================
 	// Private fields
@@ -32,7 +32,7 @@ public class SMRentryTable {
 	// Public constructor
 	// ===========================================================
 
-	public SMRentryTable(SQLiteDatabase database, String tableName) {
+	public PCustTypeTable(SQLiteDatabase database, String tableName) {
 		mDb = database;
 		mDatabaseTable = tableName;
 
@@ -57,9 +57,10 @@ public class SMRentryTable {
 			c = mDb.rawQuery(MY_QUERY, null);
 			if (c.moveToFirst()) {
 				do {
-					long id = c.getLong(c.getColumnIndex(KEY_SMR_ENTRY_ROWID));
+					long id = c.getLong(c
+							.getColumnIndex(KEY_CUSTOMER_TYPE_ROWID));
 					String name = c.getString(c
-							.getColumnIndex(KEY_SMR_ENTRY_NAME));
+							.getColumnIndex(KEY_CUSTOMER_TYPE_NAME));
 
 					list.add(new PicklistRecord(id, name));
 				} while (c.moveToNext());
@@ -79,7 +80,7 @@ public class SMRentryTable {
 	public boolean isExisting(String webID) {
 		boolean exists = false;
 		String MY_QUERY = "SELECT * FROM " + mDatabaseTable + " WHERE "
-				+ KEY_SMR_ENTRY_NAME + "='" + webID + "'";
+				+ KEY_CUSTOMER_TYPE_NAME + "='" + webID + "'";
 		Cursor c = null;
 		try {
 			c = mDb.rawQuery(MY_QUERY, null);
@@ -107,7 +108,7 @@ public class SMRentryTable {
 		// Arrays.toString()
 		ids = ids.replace("[", "").replace("]", "");
 
-		int rowsDeleted = mDb.delete(mDatabaseTable, KEY_SMR_ENTRY_ROWID
+		int rowsDeleted = mDb.delete(mDatabaseTable, KEY_CUSTOMER_TYPE_ROWID
 				+ " IN (" + ids + ")", null);
 
 		// if (rowsDeleted > 0) {
@@ -122,14 +123,15 @@ public class SMRentryTable {
 	public PicklistRecord getById(int ID) {
 		PicklistRecord record = null;
 		String MY_QUERY = "SELECT * FROM " + mDatabaseTable + " WHERE "
-				+ KEY_SMR_ENTRY_ROWID + "=?";
+				+ KEY_CUSTOMER_TYPE_ROWID + "=?";
 		Cursor c = null;
 		try {
 			c = mDb.rawQuery(MY_QUERY, new String[] { String.valueOf(ID) });
 
 			if ((c != null) && c.moveToFirst()) {
-				long id = c.getLong(c.getColumnIndex(KEY_SMR_ENTRY_ROWID));
-				String name = c.getString(c.getColumnIndex(KEY_SMR_ENTRY_NAME));
+				long id = c.getLong(c.getColumnIndex(KEY_CUSTOMER_TYPE_ROWID));
+				String name = c.getString(c
+						.getColumnIndex(KEY_CUSTOMER_TYPE_NAME));
 
 				record = new PicklistRecord(id, name);
 			}
@@ -145,14 +147,15 @@ public class SMRentryTable {
 	public PicklistRecord getByWebId(String ID) {
 		PicklistRecord record = null;
 		String MY_QUERY = "SELECT * FROM " + mDatabaseTable + " WHERE "
-				+ KEY_SMR_ENTRY_NAME + "=?";
+				+ KEY_CUSTOMER_TYPE_NAME + "=?";
 		Cursor c = null;
 		try {
 			c = mDb.rawQuery(MY_QUERY, new String[] { String.valueOf(ID) });
 
 			if ((c != null) && c.moveToFirst()) {
-				long id = c.getLong(c.getColumnIndex(KEY_SMR_ENTRY_ROWID));
-				String name = c.getString(c.getColumnIndex(KEY_SMR_ENTRY_NAME));
+				long id = c.getLong(c.getColumnIndex(KEY_CUSTOMER_TYPE_ROWID));
+				String name = c.getString(c
+						.getColumnIndex(KEY_CUSTOMER_TYPE_NAME));
 
 				record = new PicklistRecord(id, name);
 			}
@@ -170,7 +173,7 @@ public class SMRentryTable {
 
 		ContentValues initialValues = new ContentValues();
 
-		initialValues.put(KEY_SMR_ENTRY_NAME, no);
+		initialValues.put(KEY_CUSTOMER_TYPE_NAME, no);
 
 		long ids = mDb.insert(mDatabaseTable, null, initialValues);
 		if (ids >= 0) {
@@ -183,7 +186,8 @@ public class SMRentryTable {
 	}
 
 	public boolean deleteUser(long rowId) {
-		if (mDb.delete(mDatabaseTable, KEY_SMR_ENTRY_ROWID + "=" + rowId, null) > 0) {
+		if (mDb.delete(mDatabaseTable, KEY_CUSTOMER_TYPE_ROWID + "=" + rowId,
+				null) > 0) {
 			// getRecords().deleteById(rowId);
 			return true;
 		} else {
@@ -194,9 +198,9 @@ public class SMRentryTable {
 	public boolean updateUser(long id, String no, long category, int isActive,
 			long user) {
 		ContentValues args = new ContentValues();
-		args.put(KEY_SMR_ENTRY_NAME, no);
-		if (mDb.update(mDatabaseTable, args, KEY_SMR_ENTRY_ROWID + "=" + id,
-				null) > 0) {
+		args.put(KEY_CUSTOMER_TYPE_NAME, no);
+		if (mDb.update(mDatabaseTable, args,
+				KEY_CUSTOMER_TYPE_ROWID + "=" + id, null) > 0) {
 			// getRecords().update(id, no, category, isActive, user);
 			return true;
 		} else {

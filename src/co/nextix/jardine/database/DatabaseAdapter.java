@@ -25,6 +25,23 @@ import co.nextix.jardine.database.tables.SupplierTable;
 import co.nextix.jardine.database.tables.UserTable;
 import co.nextix.jardine.database.tables.WorkplanEntryTable;
 import co.nextix.jardine.database.tables.WorkplanTable;
+import co.nextix.jardine.database.tables.picklists.PActProjCategoryTable;
+import co.nextix.jardine.database.tables.picklists.PActProjStageTable;
+import co.nextix.jardine.database.tables.picklists.PActtypeCategoryTable;
+import co.nextix.jardine.database.tables.picklists.PActtypeTypeTable;
+import co.nextix.jardine.database.tables.picklists.PAreaTable;
+import co.nextix.jardine.database.tables.picklists.PCityTownTable;
+import co.nextix.jardine.database.tables.picklists.PComptProdStockStatusTable;
+import co.nextix.jardine.database.tables.picklists.PCustConPositionTable;
+import co.nextix.jardine.database.tables.picklists.PCustSizeTable;
+import co.nextix.jardine.database.tables.picklists.PCustTypeTable;
+import co.nextix.jardine.database.tables.picklists.PEventTypeTable;
+import co.nextix.jardine.database.tables.picklists.PJDImerchCheckStatusTable;
+import co.nextix.jardine.database.tables.picklists.PJDIprodStatusTable;
+import co.nextix.jardine.database.tables.picklists.PProjReqTypeTable;
+import co.nextix.jardine.database.tables.picklists.PProvinceTable;
+import co.nextix.jardine.database.tables.picklists.PSMRentryTypeTable;
+import co.nextix.jardine.database.tables.picklists.PWorkEntryStatusTable;
 
 public class DatabaseAdapter {
 
@@ -297,6 +314,25 @@ public class DatabaseAdapter {
 	private final String KEY_MARKETINGMATERIALS_MODIFIEDTIME = "modified_time";
 	private final String KEY_MARKETINGMATERIALS_USER = "user";
 
+	// Picklists
+	private final String KEY_PICKLISTS_ROWID = "_id";
+	private final String KEY_PICKLISTS_NAME = "name";
+
+	// Picklist Activitytype Type
+	private final String KEY_ACTIVITYTYPE_TYPE_ROWID = "_id";
+	private final String KEY_ACTIVITYTYPE_TYPE_NAME = "name";
+	private final String KEY_ACTIVITYTYPE_TYPE_CATEGORY = "activity_category";
+
+	// Location Province
+	private final String KEY_PROVINCE_ROWID = "_id";
+	private final String KEY_PROVINCE_NAME = "name";
+	private final String KEY_PROVINCE_AREA = "area";
+
+	// Location CityTown
+	private final String KEY_CITYTOWN_ROWID = "_id";
+	private final String KEY_CITYTOWN_NAME = "name";
+	private final String KEY_CITYTOWN_PROVINCE = "province";
+
 	// ===========================================================
 	// Table Create String
 	// ===========================================================
@@ -321,6 +357,8 @@ public class DatabaseAdapter {
 	private String TABLE_CREATE_WORKPLAN_ENTRY = "create table %s (%s integer primary key autoincrement, %s text , %s real, %s text, %s real, %s real, %s real, %s real, %s text, %s real, %s real, %s text, %s text, %s real, foreign key(%s) references %s(%s), foreign key(%s) references %s(%s), foreign key(%s) references %s(%s), foreign key(%s) references %s(%s))";
 	private String TABLE_CREATE_WORKPLAN = "create table %s (%s integer primary key autoincrement, %s text , %s text, %s text, %s integer, %s text, %s text, %s real, foreign key(%s) references %s(%s))";
 	private String TABLE_CREATE_MARKETING_MATERIALS = "create table %s (%s integer primary key autoincrement, %s text , %s text, %s text, %s text, %s text, %s text, %s real, foreign key(%s) references %s(%s))";
+	private String TABLE_CREATE_PICKLISTS = "create table %s (%s integer primary key autoincrement, %s text)";
+	private String TABLE_CREATE_PICKLISTS_W_DEPENDENCIES = "create table %s (%s integer primary key autoincrement, %s text, %s real)";
 
 	// ===========================================================
 	// Public static field
@@ -328,7 +366,7 @@ public class DatabaseAdapter {
 
 	public static final String USER_TABLE = "User";
 	public static final String ACTIVITY_TABLE = "Activity";
-	public static final String ACTIVITY_TYPE_TABLE = "Activity_Table";
+	public static final String ACTIVITY_TYPE_TABLE = "Activity_Type";
 	public static final String BUSINESS_UNIT_TABLE = "Business_Unit";
 	public static final String COMPETITOR_PRODUCT_TABLE = "Competitor_Product";
 	public static final String COMPETITOR_PRODUCT_STOCK_CHECK_TABLE = "Competitor_Product_Stock_Check";
@@ -346,6 +384,27 @@ public class DatabaseAdapter {
 	public static final String WORKPLAN_ENTRY_TABLE = "Workplan_Entry";
 	public static final String WORKPLAN_TABLE = "Workplan";
 	public static final String MARKETING_MATERIALS_TABLE = "Marketing_Materials";
+
+	// Picklists
+	public static final String ACTIVITY_PROJECT_CATEGORY_TABLE = "Activity_Project_Category";
+	public static final String ACTIVITY_PROJECT_STAGE_TABLE = "Activity_Project_Stage";
+	public static final String ACTIVITYTYPE_CATEGORY_TABLE = "ActivityType_Category";
+	public static final String ACTIVITYTYPE_TYPE_TABLE = "ActivityType_Type";
+	public static final String COMPETITOR_PRODUCT_STOCKSTATUS_TABLE = "Competitor_Product_StockStatus";
+	public static final String CUSTOMERCONTACT_POSITION_TABLE = "Customer_Contact_Position";
+	public static final String CUSTOMER_SIZE_TABLE = "Customer_Size";
+	public static final String CUSTOMER_TYPE_TABLE = "Customer_Type";
+	public static final String EVENT_TYPE_TABLE = "Event_Type";
+	public static final String JDI_MERCHANDISING_CHECK_STATUS_TABLE = "JDI_Merchandising_Check_Status";
+	public static final String JDI_PRODUCT_STOCK_STATUS_TABLE = "JDI_Product_Stock_Status";
+	public static final String PROJECT_REQUIREMENTS_TYPE_TABLE = "Project_Requirements_Type";
+	public static final String SMR_TIMECARD_ENTRY_TABLE = "SMR_TimeCard_Entry";
+	public static final String WORKPLAN_ENTRY_STATUS_TABLE = "Workplan_Entry_Status";
+
+	// Location
+	public static final String AREA_TABLE = "Area";
+	public static final String CITYTOWN_TABLE = "City_Town";
+	public static final String PROVINCE_TABLE = "Province";
 
 	// ===========================================================
 	// Private fields
@@ -374,6 +433,27 @@ public class DatabaseAdapter {
 	private WorkplanEntryTable mWorkplanEntry;
 	private WorkplanTable mWorkplan;
 	private MarketingMaterialsTable mMarketingMaterials;
+
+	// Picklists
+	private PActProjCategoryTable mActivityProjectCategory;
+	private PActProjStageTable mActivityProjectStage;
+	private PActtypeCategoryTable mActivitytypeCategory;
+	private PActtypeTypeTable mActivitytypeType;
+	private PComptProdStockStatusTable mCompetitorProductStockStatus;
+	private PCustConPositionTable mCustomerContactPosition;
+	private PCustSizeTable mCustomerSize;
+	private PCustTypeTable mCustomerType;
+	private PEventTypeTable mEventProtocolType;
+	private PJDImerchCheckStatusTable mJDImerchCheckStatus;
+	private PJDIprodStatusTable mJDIproductStatus;
+	private PProjReqTypeTable mProjectRequirementType;
+	private PSMRentryTypeTable mSMRentryType;
+	private PWorkEntryStatusTable mWorkplanEntryStatus;
+
+	// Location
+	private PAreaTable mArea;
+	private PCityTownTable mCityTown;
+	private PProvinceTable mProvince;
 
 	// ===========================================================
 	// Private constructor
@@ -562,6 +642,140 @@ public class DatabaseAdapter {
 					MARKETING_MATERIALS_TABLE);
 		}
 		return mMarketingMaterials;
+	}
+
+	// Picklists
+
+	public PActProjCategoryTable getActivityProjectCategory() {
+		if (mActivityProjectCategory == null) {
+			mActivityProjectCategory = new PActProjCategoryTable(mDb,
+					ACTIVITY_PROJECT_CATEGORY_TABLE);
+		}
+		return mActivityProjectCategory;
+	}
+
+	public PActProjStageTable getActivityProjectStage() {
+		if (mActivityProjectStage == null) {
+			mActivityProjectStage = new PActProjStageTable(mDb,
+					ACTIVITY_PROJECT_STAGE_TABLE);
+		}
+		return mActivityProjectStage;
+	}
+
+	public PActtypeCategoryTable getActivitytypeCategory() {
+		if (mActivitytypeCategory == null) {
+			mActivitytypeCategory = new PActtypeCategoryTable(mDb,
+					ACTIVITYTYPE_CATEGORY_TABLE);
+		}
+		return mActivitytypeCategory;
+	}
+
+	public PActtypeTypeTable getActivitytypeType() {
+		if (mActivitytypeType == null) {
+			mActivitytypeType = new PActtypeTypeTable(mDb,
+					ACTIVITYTYPE_TYPE_TABLE);
+		}
+		return mActivitytypeType;
+	}
+
+	public PComptProdStockStatusTable getCompetitorProductStockStatus() {
+		if (mCompetitorProductStockStatus == null) {
+			mCompetitorProductStockStatus = new PComptProdStockStatusTable(mDb,
+					COMPETITOR_PRODUCT_STOCKSTATUS_TABLE);
+		}
+		return mCompetitorProductStockStatus;
+	}
+
+	public PCustConPositionTable getCustomerContactPosition() {
+		if (mCustomerContactPosition == null) {
+			mCustomerContactPosition = new PCustConPositionTable(mDb,
+					CUSTOMERCONTACT_POSITION_TABLE);
+		}
+		return mCustomerContactPosition;
+	}
+
+	public PCustSizeTable getCustomerSize() {
+		if (mCustomerSize == null) {
+			mCustomerSize = new PCustSizeTable(mDb, CUSTOMER_SIZE_TABLE);
+		}
+		return mCustomerSize;
+	}
+
+	public PCustTypeTable getCustomerType() {
+		if (mCustomerType == null) {
+			mCustomerType = new PCustTypeTable(mDb, CUSTOMER_TYPE_TABLE);
+		}
+		return mCustomerType;
+	}
+
+	public PEventTypeTable getEventProtocolType() {
+		if (mEventProtocolType == null) {
+			mEventProtocolType = new PEventTypeTable(mDb, EVENT_TYPE_TABLE);
+		}
+		return mEventProtocolType;
+	}
+
+	public PJDImerchCheckStatusTable getJDImerchCheckStatus() {
+		if (mJDImerchCheckStatus == null) {
+			mJDImerchCheckStatus = new PJDImerchCheckStatusTable(mDb,
+					JDI_MERCHANDISING_CHECK_STATUS_TABLE);
+		}
+		return mJDImerchCheckStatus;
+	}
+
+	public PJDIprodStatusTable getJDIproductStatus() {
+		if (mJDIproductStatus == null) {
+			mJDIproductStatus = new PJDIprodStatusTable(mDb,
+					JDI_PRODUCT_STOCK_STATUS_TABLE);
+		}
+		return mJDIproductStatus;
+	}
+
+	public PProjReqTypeTable getProjectRequirementType() {
+		if (mProjectRequirementType == null) {
+			mProjectRequirementType = new PProjReqTypeTable(mDb,
+					PROJECT_REQUIREMENTS_TYPE_TABLE);
+		}
+		return mProjectRequirementType;
+	}
+
+	public PSMRentryTypeTable getSMRentryType() {
+		if (mSMRentryType == null) {
+			mSMRentryType = new PSMRentryTypeTable(mDb,
+					SMR_TIMECARD_ENTRY_TABLE);
+		}
+		return mSMRentryType;
+	}
+
+	public PWorkEntryStatusTable getWorkplanEntryStatus() {
+		if (mWorkplanEntryStatus == null) {
+			mWorkplanEntryStatus = new PWorkEntryStatusTable(mDb,
+					WORKPLAN_ENTRY_STATUS_TABLE);
+		}
+		return mWorkplanEntryStatus;
+	}
+
+	// Location
+
+	public PAreaTable getArea() {
+		if (mArea == null) {
+			mArea = new PAreaTable(mDb, AREA_TABLE);
+		}
+		return mArea;
+	}
+
+	public PCityTownTable getCityTown() {
+		if (mCityTown == null) {
+			mCityTown = new PCityTownTable(mDb, CITYTOWN_TABLE);
+		}
+		return mCityTown;
+	}
+
+	public PProvinceTable getProvince() {
+		if (mProvince == null) {
+			mProvince = new PProvinceTable(mDb, PROVINCE_TABLE);
+		}
+		return mProvince;
 	}
 
 	// ===========================================================
@@ -858,6 +1072,81 @@ public class DatabaseAdapter {
 			db.execSQL(workplanEntry);
 			db.execSQL(workplan);
 			db.execSQL(marketingMaterials);
+
+			// Picklists
+
+			String activityProjectCategory = String.format(
+					TABLE_CREATE_PICKLISTS, ACTIVITY_PROJECT_CATEGORY_TABLE,
+					KEY_PICKLISTS_ROWID, KEY_PICKLISTS_NAME);
+			String activityProjectStage = String.format(
+					TABLE_CREATE_PICKLISTS, ACTIVITY_PROJECT_STAGE_TABLE,
+					KEY_PICKLISTS_ROWID, KEY_PICKLISTS_NAME);
+			String activitytypeCategory = String.format(TABLE_CREATE_PICKLISTS,
+					ACTIVITYTYPE_CATEGORY_TABLE, KEY_PICKLISTS_ROWID,
+					KEY_PICKLISTS_NAME);
+			String activitytypeType = String.format(
+					TABLE_CREATE_PICKLISTS_W_DEPENDENCIES,
+					ACTIVITYTYPE_TYPE_TABLE, KEY_ACTIVITYTYPE_TYPE_ROWID,
+					KEY_ACTIVITYTYPE_TYPE_NAME, KEY_ACTIVITYTYPE_TYPE_CATEGORY);
+			String competitorproductStockStatus = String.format(
+					TABLE_CREATE_PICKLISTS,
+					COMPETITOR_PRODUCT_STOCKSTATUS_TABLE, KEY_PICKLISTS_ROWID,
+					KEY_PICKLISTS_NAME);
+			String customercontactPosition = String.format(
+					TABLE_CREATE_PICKLISTS, CUSTOMERCONTACT_POSITION_TABLE,
+					KEY_PICKLISTS_ROWID, KEY_PICKLISTS_NAME);
+			String customerSize = String.format(TABLE_CREATE_PICKLISTS,
+					CUSTOMER_SIZE_TABLE, KEY_PICKLISTS_ROWID,
+					KEY_PICKLISTS_NAME);
+			String customerType = String.format(TABLE_CREATE_PICKLISTS,
+					CUSTOMER_TYPE_TABLE, KEY_PICKLISTS_ROWID,
+					KEY_PICKLISTS_NAME);
+			String eventType = String.format(TABLE_CREATE_PICKLISTS,
+					EVENT_TYPE_TABLE, KEY_PICKLISTS_ROWID, KEY_PICKLISTS_NAME);
+			String jdiMerchandisingCheckStatus = String.format(
+					TABLE_CREATE_PICKLISTS,
+					JDI_MERCHANDISING_CHECK_STATUS_TABLE, KEY_PICKLISTS_ROWID,
+					KEY_PICKLISTS_NAME);
+			String jdiProductStockStatus = String.format(
+					TABLE_CREATE_PICKLISTS, JDI_PRODUCT_STOCK_STATUS_TABLE,
+					KEY_PICKLISTS_ROWID, KEY_PICKLISTS_NAME);
+			String projectRequirementsType = String.format(
+					TABLE_CREATE_PICKLISTS, PROJECT_REQUIREMENTS_TYPE_TABLE,
+					KEY_PICKLISTS_ROWID, KEY_PICKLISTS_NAME);
+			String smrTimecardEntry = String.format(TABLE_CREATE_PICKLISTS,
+					SMR_TIMECARD_ENTRY_TABLE, KEY_PICKLISTS_ROWID,
+					KEY_PICKLISTS_NAME);
+			String workplanentryStatus = String.format(TABLE_CREATE_PICKLISTS,
+					WORKPLAN_ENTRY_STATUS_TABLE, KEY_PICKLISTS_ROWID,
+					KEY_PICKLISTS_NAME);
+			db.execSQL(activityProjectCategory);
+			db.execSQL(activityProjectStage);
+			db.execSQL(activitytypeCategory);
+			db.execSQL(activitytypeType);
+			db.execSQL(competitorproductStockStatus);
+			db.execSQL(customercontactPosition);
+			db.execSQL(customerSize);
+			db.execSQL(customerType);
+			db.execSQL(eventType);
+			db.execSQL(jdiMerchandisingCheckStatus);
+			db.execSQL(jdiProductStockStatus);
+			db.execSQL(projectRequirementsType);
+			db.execSQL(smrTimecardEntry);
+			db.execSQL(workplanentryStatus);
+
+			// Location
+			String area = String.format(TABLE_CREATE_PICKLISTS, AREA_TABLE,
+					KEY_PICKLISTS_ROWID, KEY_PICKLISTS_NAME);
+			String province = String.format(
+					TABLE_CREATE_PICKLISTS_W_DEPENDENCIES, PROVINCE_TABLE,
+					KEY_PROVINCE_ROWID, KEY_PROVINCE_NAME, KEY_PROVINCE_AREA);
+			String cityTown = String.format(
+					TABLE_CREATE_PICKLISTS_W_DEPENDENCIES, CITYTOWN_TABLE,
+					KEY_CITYTOWN_ROWID, KEY_CITYTOWN_NAME,
+					KEY_CITYTOWN_PROVINCE);
+			db.execSQL(area);
+			db.execSQL(province);
+			db.execSQL(cityTown);
 		}
 		// private void dropTable(SQLiteDatabase db, String tableName) {
 		// db.execSQL(String.format("DROP TABLE IF EXISTS %s", tableName));

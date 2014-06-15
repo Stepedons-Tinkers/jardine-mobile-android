@@ -12,13 +12,14 @@ import android.util.Log;
 import co.nextix.jardine.database.DatabaseAdapter;
 import co.nextix.jardine.database.records.PicklistRecord;
 
-public class ActivityProjectStageTable {
+public class PActtypeTypeTable {
 	// ===========================================================
 	// Private static fields
 	// ===========================================================
 
-	private final String KEY_ACTIVITY_PROJECT_STAGE_ROWID = "_id";
-	private final String KEY_ACTIVITY_PROJECT_STAGE_NAME = "name";
+	private final String KEY_ACTIVITYTYPE_TYPE_ROWID = "_id";
+	private final String KEY_ACTIVITYTYPE_TYPE_NAME = "name";
+	private final String KEY_ACTIVITYTYPE_TYPE_CATEGORY = "activity_category";
 
 	// ===========================================================
 	// Private fields
@@ -32,7 +33,7 @@ public class ActivityProjectStageTable {
 	// Public constructor
 	// ===========================================================
 
-	public ActivityProjectStageTable(SQLiteDatabase database, String tableName) {
+	public PActtypeTypeTable(SQLiteDatabase database, String tableName) {
 		mDb = database;
 		mDatabaseTable = tableName;
 
@@ -58,9 +59,9 @@ public class ActivityProjectStageTable {
 			if (c.moveToFirst()) {
 				do {
 					long id = c.getLong(c
-							.getColumnIndex(KEY_ACTIVITY_PROJECT_STAGE_ROWID));
+							.getColumnIndex(KEY_ACTIVITYTYPE_TYPE_ROWID));
 					String name = c.getString(c
-							.getColumnIndex(KEY_ACTIVITY_PROJECT_STAGE_NAME));
+							.getColumnIndex(KEY_ACTIVITYTYPE_TYPE_NAME));
 
 					list.add(new PicklistRecord(id, name));
 				} while (c.moveToNext());
@@ -77,25 +78,6 @@ public class ActivityProjectStageTable {
 	// Public methods
 	// ===========================================================
 
-	public boolean isExisting(String webID) {
-		boolean exists = false;
-		String MY_QUERY = "SELECT * FROM " + mDatabaseTable + " WHERE "
-				+ KEY_ACTIVITY_PROJECT_STAGE_NAME + "='" + webID + "'";
-		Cursor c = null;
-		try {
-			c = mDb.rawQuery(MY_QUERY, null);
-
-			if ((c != null) && c.moveToFirst()) {
-				exists = true;
-			}
-		} finally {
-			if (c != null) {
-				c.close();
-			}
-		}
-		return exists;
-	}
-
 	public int deleteById(long[] rowIds) {
 
 		String ids = Arrays.toString(rowIds);
@@ -109,7 +91,7 @@ public class ActivityProjectStageTable {
 		ids = ids.replace("[", "").replace("]", "");
 
 		int rowsDeleted = mDb.delete(mDatabaseTable,
-				KEY_ACTIVITY_PROJECT_STAGE_ROWID + " IN (" + ids + ")", null);
+				KEY_ACTIVITYTYPE_TYPE_ROWID + " IN (" + ids + ")", null);
 
 		// if (rowsDeleted > 0) {
 		//
@@ -123,16 +105,16 @@ public class ActivityProjectStageTable {
 	public PicklistRecord getById(int ID) {
 		PicklistRecord record = null;
 		String MY_QUERY = "SELECT * FROM " + mDatabaseTable + " WHERE "
-				+ KEY_ACTIVITY_PROJECT_STAGE_ROWID + "=?";
+				+ KEY_ACTIVITYTYPE_TYPE_ROWID + "=?";
 		Cursor c = null;
 		try {
 			c = mDb.rawQuery(MY_QUERY, new String[] { String.valueOf(ID) });
 
 			if ((c != null) && c.moveToFirst()) {
 				long id = c.getLong(c
-						.getColumnIndex(KEY_ACTIVITY_PROJECT_STAGE_ROWID));
+						.getColumnIndex(KEY_ACTIVITYTYPE_TYPE_ROWID));
 				String name = c.getString(c
-						.getColumnIndex(KEY_ACTIVITY_PROJECT_STAGE_NAME));
+						.getColumnIndex(KEY_ACTIVITYTYPE_TYPE_NAME));
 
 				record = new PicklistRecord(id, name);
 			}
@@ -145,37 +127,13 @@ public class ActivityProjectStageTable {
 		return record;
 	}
 
-	public PicklistRecord getByWebId(String ID) {
-		PicklistRecord record = null;
-		String MY_QUERY = "SELECT * FROM " + mDatabaseTable + " WHERE "
-				+ KEY_ACTIVITY_PROJECT_STAGE_NAME + "=?";
-		Cursor c = null;
-		try {
-			c = mDb.rawQuery(MY_QUERY, new String[] { String.valueOf(ID) });
-
-			if ((c != null) && c.moveToFirst()) {
-				long id = c.getLong(c
-						.getColumnIndex(KEY_ACTIVITY_PROJECT_STAGE_ROWID));
-				String name = c.getString(c
-						.getColumnIndex(KEY_ACTIVITY_PROJECT_STAGE_NAME));
-
-				record = new PicklistRecord(id, name);
-			}
-		} finally {
-			if (c != null) {
-				c.close();
-			}
-		}
-
-		return record;
-	}
-
-	public long insertUser(String no) {
+	public long insert(String no, long category) {
 		// ActivityTypeCollection collection = getRecords();
 
 		ContentValues initialValues = new ContentValues();
 
-		initialValues.put(KEY_ACTIVITY_PROJECT_STAGE_NAME, no);
+		initialValues.put(KEY_ACTIVITYTYPE_TYPE_NAME, no);
+		initialValues.put(KEY_ACTIVITYTYPE_TYPE_CATEGORY, category);
 
 		long ids = mDb.insert(mDatabaseTable, null, initialValues);
 		if (ids >= 0) {
@@ -187,8 +145,8 @@ public class ActivityProjectStageTable {
 		return ids;
 	}
 
-	public boolean deleteUser(long rowId) {
-		if (mDb.delete(mDatabaseTable, KEY_ACTIVITY_PROJECT_STAGE_ROWID + "="
+	public boolean delete(long rowId) {
+		if (mDb.delete(mDatabaseTable, KEY_ACTIVITYTYPE_TYPE_ROWID + "="
 				+ rowId, null) > 0) {
 			// getRecords().deleteById(rowId);
 			return true;
@@ -197,12 +155,12 @@ public class ActivityProjectStageTable {
 		}
 	}
 
-	public boolean updateUser(long id, String no, long category, int isActive,
-			long user) {
+	public boolean update(long id, String no, long category) {
 		ContentValues args = new ContentValues();
-		args.put(KEY_ACTIVITY_PROJECT_STAGE_NAME, no);
-		if (mDb.update(mDatabaseTable, args, KEY_ACTIVITY_PROJECT_STAGE_ROWID
-				+ "=" + id, null) > 0) {
+		args.put(KEY_ACTIVITYTYPE_TYPE_NAME, no);
+		args.put(KEY_ACTIVITYTYPE_TYPE_CATEGORY, category);
+		if (mDb.update(mDatabaseTable, args, KEY_ACTIVITYTYPE_TYPE_ROWID + "="
+				+ id, null) > 0) {
 			// getRecords().update(id, no, category, isActive, user);
 			return true;
 		} else {
