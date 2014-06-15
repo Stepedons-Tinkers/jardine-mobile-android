@@ -41,6 +41,10 @@
     <string name="customer_header_name">Name</string>
     <string name="customer_header_type">Type</string>
     <string name="customer_header_province">Province</string>
+    
+    <!-- Profile -->
+    <string name="profile_information">Information</string>
+    <string name="profile_notification">Notifications</string>
 
     <!-- Profile Info View -->
     <string name="profile_info_userinformation">User Information</string>

@@ -2,26 +2,29 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     android:orientation="vertical" >
 
     <TextView
         android:id="@+id/profileinfo_txt_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="20dp"
         android:layout_marginBottom="20dp"
         android:gravity="center"
         android:text="Johndoe"
-        android:textSize="@dimen/text_superxlarge" />
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_xxxxlarge" />
 
     <TextView
         android:id="@+id/profileinfo_txt_infoheader"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
-        android:background="@color/counter_text_bg"
+        android:background="@color/dark_gray"
+        android:textColor="@color/mild_gray"
         android:text="@string/profile_info_userinformation"
-        android:textSize="@dimen/text_superlarge" />
+        android:textSize="@dimen/text_xxxlarge" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -43,26 +46,26 @@
                 android:layout_marginRight="5dp"
                 android:gravity="right"
                 android:text="@string/profile_info_firstname"
-                android:textColor="@color/text_color"
-                android:textSize="@dimen/text_xxxxlarge" />
+                android:textColor="@color/mild_gray"
+                android:textSize="@dimen/text_xxxlarge" />
 
             <TextView
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="5dp"
                 android:gravity="right"
-                android:textColor="@color/text_color"
                 android:text="@string/profile_info_lastname"
-                android:textSize="@dimen/text_xxxxlarge" />
+                android:textColor="@color/mild_gray"
+                android:textSize="@dimen/text_xxxlarge" />
 
             <TextView
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="5dp"
-                android:textColor="@color/text_color"
                 android:gravity="right"
                 android:text="@string/profile_info_area"
-                android:textSize="@dimen/text_xxxxlarge" />
+                android:textColor="@color/mild_gray"
+                android:textSize="@dimen/text_xxxlarge" />
         </LinearLayout>
 
         <LinearLayout
@@ -79,8 +82,8 @@
                 android:layout_height="wrap_content"
                 android:gravity="left"
                 android:text="John"
-                android:textColor="@color/list_item_title"
-                android:textSize="@dimen/text_xxxxlarge" />
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_xxxlarge" />
 
             <TextView
                 android:id="@+id/profileinfo_txt_lastname"
@@ -88,17 +91,17 @@
                 android:layout_height="wrap_content"
                 android:gravity="left"
                 android:text="Doe"
-                android:textColor="@color/list_item_title"
-                android:textSize="@dimen/text_xxxxlarge" />
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_xxxlarge" />
 
             <TextView
                 android:id="@+id/profileinfo_txt_area"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:gravity="left"
-                android:textColor="@color/list_item_title"
                 android:text="Area 1, area 2, area 3"
-                android:textSize="@dimen/text_xxxxlarge" />
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_xxxlarge" />
         </LinearLayout>
     </LinearLayout>
 
@@ -107,9 +110,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
-        android:background="@color/counter_text_bg"
+        android:background="@color/dark_gray"
+        android:textColor="@color/mild_gray"
         android:text="@string/profile_info_lastsync"
-        android:textSize="@dimen/text_superlarge" />
+        android:textSize="@dimen/text_xxxlarge" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -129,9 +133,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginRight="5dp"
                 android:gravity="right"
-                android:textColor="@color/text_color"
                 android:text="@string/profile_info_lastsync"
-                android:textSize="@dimen/text_xxxxlarge" />
+                android:textColor="@color/mild_gray"
+                android:textSize="@dimen/text_xxxlarge" />
         </LinearLayout>
 
         <LinearLayout
@@ -146,10 +150,10 @@
                 android:id="@+id/profileinfo_txt_lastsync"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:textColor="@color/list_item_title"
                 android:gravity="left"
                 android:text="June 6, 2014 10:55am"
-                android:textSize="@dimen/text_xxxxlarge" />
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_xxxlarge" />
         </LinearLayout>
     </LinearLayout>
 

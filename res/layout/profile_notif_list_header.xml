@@ -9,12 +9,12 @@
     <TextView
         android:layout_width="1dp"
         android:layout_height="wrap_content"
-        android:layout_weight="2"
+        android:layout_weight="3"
         android:textColor="@color/dark_gray"
         android:background="@drawable/notif_list_header_left"
         android:gravity="center"
         android:text="@string/profile_notif_date"
-        android:textSize="@dimen/text_xxxlarge" />
+        android:textSize="@dimen/text_xlarge" />
 
     <TextView
         android:layout_width="1dp"
@@ -24,16 +24,16 @@
         android:gravity="center"
         android:textColor="@color/dark_gray"
         android:text="@string/profile_notif_notification"
-        android:textSize="@dimen/text_xxxlarge" />
+        android:textSize="@dimen/text_xlarge" />
 
     <TextView
         android:layout_width="1dp"
         android:layout_height="wrap_content"
-        android:layout_weight="3"
+        android:layout_weight="2"
         android:textColor="@color/dark_gray"
         android:background="@drawable/notif_list_header_right"
         android:gravity="center"
         android:text="@string/profile_notif_action"
-        android:textSize="@dimen/text_xxxlarge" />
+        android:textSize="@dimen/text_xlarge" />
 
 </LinearLayout>

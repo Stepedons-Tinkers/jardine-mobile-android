@@ -8,6 +8,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="20dp"
         android:gravity="center"
         android:orientation="horizontal" >
 
@@ -15,8 +17,8 @@
             android:id="@+id/profilenotif_image_clear"
             android:layout_width="25dp"
             android:layout_height="20dp"
-            android:contentDescription="@string/desc_list_item_icon" />
-        <!-- android:src="@drawable/delete_icon" /> -->
+            android:contentDescription="@string/desc_list_item_icon"
+            android:src="@drawable/delete_icon" />
 
         <TextView
             android:id="@+id/profilenotif_text_clear"
@@ -24,17 +26,19 @@
             android:layout_height="wrap_content"
             android:text="Clear Notifications"
             android:textColor="@color/black"
-            android:textSize="@dimen/text_xxxlarge" />
+            android:textSize="@dimen/text_xxlarge" />
     </LinearLayout>
 
     <ListView
         android:id="@+id/profilenotif_listview"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/list_background"
-        android:choiceMode="singleChoice"
-        android:divider="@color/list_divider"
-        android:dividerHeight="1dp"
-        android:listSelector="@drawable/list_selector" />
+        android:background="@color/list_cell_white"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:background="@color/gray"
+        android:orientation="vertical" />
 
 </LinearLayout>
