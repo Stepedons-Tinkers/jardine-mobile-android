@@ -93,7 +93,7 @@
                         android:layout_gravity="right"
                         android:onClick="editActivity"
                         android:text="@string/edit_proj_requirements" />
-                </RelativeLayout>
+                </RelativeLayout> 
             </TableRow>
 
             <!-- Row 2 with 2 columns -->

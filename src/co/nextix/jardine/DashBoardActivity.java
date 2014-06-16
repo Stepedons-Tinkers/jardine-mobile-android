@@ -31,6 +31,8 @@ import co.nextix.jardine.activites.fragments.JDIProductStockFragment;
 import co.nextix.jardine.activites.fragments.MarketingIntelFragment;
 import co.nextix.jardine.activites.fragments.ProductsFragment;
 import co.nextix.jardine.activites.fragments.ProjectRequirementsFragment;
+import co.nextix.jardine.activities.add.fragments.AddJDIProductStockFragment;
+import co.nextix.jardine.activities.update.fragments.EditActivityInfoFragment;
 import co.nextix.jardine.adapter.NavDrawerListAdapter;
 import co.nextix.jardine.fragments.ActivitiesMenuBarFragment;
 import co.nextix.jardine.fragments.CollateralsMenuBarFragment;
@@ -404,6 +406,29 @@ public class DashBoardActivity extends ActionBarActivity {
 		// Commit the transaction
 		transaction.commit();
 	}
+	
+	/*** Edit Activity ***/
+	public void editActivity(View view){
+		android.support.v4.app.Fragment newFragment = new EditActivityInfoFragment();
+
+		// Create new transaction
+		android.support.v4.app.FragmentTransaction transaction = getSupportFragmentManager()
+				.beginTransaction();
+
+		// Replace whatever is in the fragment_container view with this
+		// fragment,
+		// and add the transaction to the back stack
+
+		transaction.replace(R.id.activity_fragment, newFragment);
+		transaction.addToBackStack(null);
+
+		// Commit the transaction
+		transaction.commit();
+	}
+	
+	public void saveActivity(View view){
+		Toast.makeText(getApplicationContext(), "Saved!", Toast.LENGTH_SHORT).show();
+	}
 
 	public void jdiStockCheck(View view) {
 		view.getBackground().setColorFilter(
@@ -432,6 +457,30 @@ public class DashBoardActivity extends ActionBarActivity {
 		this.clearColorFilter(findViewById(R.id.diy_supermarket_photos));
 		this.clearColorFilter(findViewById(R.id.customer_contact_person));
 		this.clearColorFilter(findViewById(R.id.products));
+	}
+	
+	/** Add JDI Product Stock Check **/
+	public void addJDIProductStockCheck(View view){
+		android.support.v4.app.Fragment newFragment = new AddJDIProductStockFragment();
+
+		// Create new transaction
+		android.support.v4.app.FragmentTransaction transaction = getSupportFragmentManager()
+				.beginTransaction();
+
+		// Replace whatever is in the fragment_container view with this
+		// fragment,
+		// and add the transaction to the back stack
+
+		transaction.replace(R.id.activity_fragment, newFragment);
+		transaction.addToBackStack(null);
+
+		// Commit the transaction
+		transaction.commit();
+	}
+	
+	/** Create JDI Product Stock Check **/
+	public void createJDIProductStockCheck(View view){
+		Toast.makeText(getApplicationContext(), "Successfully Created!", Toast.LENGTH_SHORT).show();
 	}
 
 	public void jdiMerchandisingCheck(View view) {

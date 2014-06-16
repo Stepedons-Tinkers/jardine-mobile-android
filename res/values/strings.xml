@@ -103,6 +103,29 @@
     <string name="edit_activity">Edit Activity</string>
     <string name="back_to_activity">Back to Activity </string>
 
+    <!-- Create/Edit Activity Details / General Information -->
+    <string name="workplan_gen_info">Workplan</string>
+    <string name="venue">Venue:</string>
+    <string name="number_of_attendees">Number of Attendees:</string>
+    <string name="with_coSMRs">With CoSMRs</string>
+    <string name="smr">SMR:</string>
+    <string name="diy_or_supermarket_gen_info">DIY or Supermarket</string>
+    <string name="issues_identified">Issues Identified:</string>
+    <string name="feedback_from_customer">Feedback From Customer:</string>
+    <string name="ongoing_campaigns">Ongoing Campaigns:</string>
+    <string name="retail_visit">Retail Visit:</string>
+    <string name="last_delivery">Last Delivery:</string>
+    <string name="promo_stubs_details">Promo Stubs Details:</string>
+    <string name="project_visit_gen_info">Project Visit:</string>
+    <string name="project_name">Project Name:</string>
+    <string name="project_stage">Project Stage:</string>
+    <string name="project_category">Project Category:</string>
+    <string name="trainings_gen_info">Trainings</string>
+    <string name="all_training_types">All Training Types</string>
+    <string name="date_gen_info">Date:</string>
+    <string name="time_gen_info">Time:</string>
+    <string name="save">Save</string>
+
     <!-- JDI Product Stock Check ListView Details -->
     <string name="crm_no_jdi">CRM No.</string>
     <string name="activity_jdi">Activity</string>
@@ -120,6 +143,7 @@
     <string name="created_time_jdi_product_stock_check">Created Time</string>
     <string name="modified_time_jdi_product_stock_check">Modified Time</string>
     <string name="edit_jdi_product_stock_check_detail">Edit JDI Product Stock Check</string>
+    <string name="create">Create</string>
 
     <!-- JDI Merchandising Check -->
     <string name="crm_no_jdi_merchandising">CRM No</string>

@@ -15,6 +15,7 @@ public class ActivityInfoFragment extends Fragment {
 
 		View myFragmentView = inflater.inflate(R.layout.fragment_activity_detail,
 				container, false);
+		
 		return myFragmentView;
 	}
 }

@@ -212,7 +212,7 @@
                     android:layout_marginLeft="4dp"
                     android:layout_marginRight="2dp"
                     android:layout_weight="0.3"
-                    android:background="#b0b0b0" >
+                    android:background="#dcdcdc" >
 
                     <TextView
                         android:id="@+id/TextView04"
@@ -237,7 +237,7 @@
                     android:layout_marginLeft="2dp"
                     android:layout_marginRight="2dp"
                     android:layout_weight="0.3"
-                    android:background="#b0b0b0" >
+                    android:background="#dcdcdc" >
 
                     <TextView
                         android:id="@+id/TextView05"
@@ -263,7 +263,7 @@
                     android:layout_marginLeft="2dp"
                     android:layout_marginRight="2dp"
                     android:layout_weight="0.3"
-                    android:background="#b0b0b0" >
+                    android:background="#dcdcdc" >
 
                     <TextView
                         android:id="@+id/TextView06"
@@ -289,7 +289,7 @@
                     android:layout_marginLeft="2dp"
                     android:layout_marginRight="2dp"
                     android:layout_weight="0.3"
-                    android:background="#b0b0b0" >
+                    android:background="#dcdcdc" >
 
                     <TextView
                         android:id="@+id/TextView07"
@@ -315,7 +315,7 @@
                     android:layout_marginLeft="2dp"
                     android:layout_marginRight="2dp"
                     android:layout_weight="0.3"
-                    android:background="#b0b0b0" >
+                    android:background="#dcdcdc" >
 
                     <TextView
                         android:id="@+id/TextView08"
@@ -341,7 +341,7 @@
                     android:layout_marginLeft="2dp"
                     android:layout_marginRight="2dp"
                     android:layout_weight="0.3"
-                    android:background="#b0b0b0" >
+                    android:background="#dcdcdc" >
 
                     <TextView
                         android:id="@+id/TextView09"
@@ -367,7 +367,7 @@
                     android:layout_marginLeft="2dp"
                     android:layout_marginRight="4dp"
                     android:layout_weight="0.3"
-                    android:background="#b0b0b0" >
+                    android:background="#dcdcdc" >
 
                     <TextView
                         android:id="@+id/TextView09"
@@ -558,7 +558,7 @@
                     android:layout_marginLeft="4dp"
                     android:layout_marginRight="2dp"
                     android:layout_weight="0.3"
-                    android:background="#cac9c9" >
+                    android:background="#dcdcdc" >
 
                     <TextView
                         android:id="@+id/TextView04"
@@ -579,7 +579,7 @@
                     android:layout_marginLeft="2dp"
                     android:layout_marginRight="2dp"
                     android:layout_weight="0.3"
-                    android:background="#cac9c9" >
+                    android:background="#dcdcdc" >
 
                     <TextView
                         android:id="@+id/TextView05"
@@ -600,7 +600,7 @@
                     android:layout_marginLeft="2dp"
                     android:layout_marginRight="2dp"
                     android:layout_weight="0.3"
-                    android:background="#cac9c9" >
+                    android:background="#dcdcdc" >
 
                     <TextView
                         android:id="@+id/TextView06"
@@ -621,7 +621,7 @@
                     android:layout_marginLeft="2dp"
                     android:layout_marginRight="2dp"
                     android:layout_weight="0.3"
-                    android:background="#cac9c9" >
+                    android:background="#dcdcdc" >
 
                     <TextView
                         android:id="@+id/TextView07"
@@ -642,7 +642,7 @@
                     android:layout_marginLeft="2dp"
                     android:layout_marginRight="2dp"
                     android:layout_weight="0.3"
-                    android:background="#cac9c9" >
+                    android:background="#dcdcdc" >
 
                     <TextView
                         android:id="@+id/TextView08"
@@ -663,7 +663,7 @@
                     android:layout_marginLeft="2dp"
                     android:layout_marginRight="2dp"
                     android:layout_weight="0.3"
-                    android:background="#cac9c9" >
+                    android:background="#dcdcdc" >
 
                     <TextView
                         android:id="@+id/TextView09"
@@ -684,7 +684,7 @@
                     android:layout_marginLeft="2dp"
                     android:layout_marginRight="4dp"
                     android:layout_weight="0.3"
-                    android:background="#cac9c9" >
+                    android:background="#dcdcdc" >
 
                     <TextView
                         android:id="@+id/TextView09"
@@ -870,7 +870,7 @@
                     android:layout_marginLeft="4dp"
                     android:layout_marginRight="2dp"
                     android:layout_weight="0.3"
-                    android:background="#cac9c9" >
+                    android:background="#dcdcdc" >
 
                     <TextView
                         android:id="@+id/TextView04"
@@ -891,7 +891,7 @@
                     android:layout_marginLeft="2dp"
                     android:layout_marginRight="2dp"
                     android:layout_weight="0.3"
-                    android:background="#cac9c9" >
+                    android:background="#dcdcdc" >
 
                     <TextView
                         android:id="@+id/TextView05"
@@ -912,7 +912,7 @@
                     android:layout_marginLeft="2dp"
                     android:layout_marginRight="2dp"
                     android:layout_weight="0.3"
-                    android:background="#cac9c9" >
+                    android:background="#dcdcdc" >
 
                     <TextView
                         android:id="@+id/TextView06"
@@ -933,7 +933,7 @@
                     android:layout_marginLeft="2dp"
                     android:layout_marginRight="2dp"
                     android:layout_weight="0.3"
-                    android:background="#cac9c9" >
+                    android:background="#dcdcdc" >
 
                     <TextView
                         android:id="@+id/TextView07"
@@ -954,7 +954,7 @@
                     android:layout_marginLeft="2dp"
                     android:layout_marginRight="2dp"
                     android:layout_weight="0.3"
-                    android:background="#cac9c9" >
+                    android:background="#dcdcdc" >
 
                     <TextView
                         android:id="@+id/TextView08"
@@ -975,7 +975,7 @@
                     android:layout_marginLeft="2dp"
                     android:layout_marginRight="2dp"
                     android:layout_weight="0.3"
-                    android:background="#cac9c9" >
+                    android:background="#dcdcdc" >
 
                     <TextView
                         android:id="@+id/TextView09"
@@ -996,7 +996,7 @@
                     android:layout_marginLeft="2dp"
                     android:layout_marginRight="4dp"
                     android:layout_weight="0.3"
-                    android:background="#cac9c9" >
+                    android:background="#dcdcdc" >
 
                     <TextView
                         android:id="@+id/TextView09"
@@ -1192,26 +1192,29 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignBottom="@+id/add_btn_jdi_product_stock_check"
+                android:layout_alignTop="@+id/add_btn_jdi_product_stock_check"
                 android:layout_marginRight="24dp"
                 android:layout_toLeftOf="@+id/add_btn_jdi_product_stock_check"
                 android:onClick="next"
-                android:src="@android:drawable/ic_media_next" />
+                android:src="@drawable/next" />
 
             <ImageButton
                 android:id="@+id/imageButton1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignBottom="@+id/imageButton3"
+                android:layout_alignTop="@+id/imageButton3"
                 android:layout_centerVertical="true"
                 android:layout_toLeftOf="@+id/status_count_text"
                 android:onClick="prev"
-                android:src="@android:drawable/ic_media_previous" />
+                android:src="@drawable/prev" />
 
             <TextView
                 android:id="@+id/status_count_text"
                 android:layout_width="74dp"
                 android:layout_height="wrap_content"
-                android:layout_alignTop="@+id/imageButton1"
+                android:layout_alignBaseline="@+id/add_btn_jdi_product_stock_check"
+                android:layout_alignBottom="@+id/add_btn_jdi_product_stock_check"
                 android:layout_toLeftOf="@+id/imageButton3"
                 android:gravity="center"
                 android:padding="14dip"

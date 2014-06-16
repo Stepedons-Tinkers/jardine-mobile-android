@@ -1043,26 +1043,28 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignBottom="@+id/add_btn_jdi_product_stock_check"
+                android:layout_alignTop="@+id/add_btn_jdi_product_stock_check"
                 android:layout_marginRight="24dp"
                 android:layout_toLeftOf="@+id/add_btn_jdi_product_stock_check"
                 android:onClick="next"
-                android:src="@android:drawable/ic_media_next" />
+                android:src="@drawable/next" />
 
             <ImageButton
                 android:id="@+id/imageButton1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignBottom="@+id/imageButton3"
+                android:layout_alignTop="@+id/imageButton3"
                 android:layout_centerVertical="true"
                 android:layout_toLeftOf="@+id/status_count_text"
                 android:onClick="prev"
-                android:src="@android:drawable/ic_media_previous" />
+                android:src="@drawable/prev" />
 
             <TextView
                 android:id="@+id/status_count_text"
                 android:layout_width="74dp"
                 android:layout_height="wrap_content"
-                android:layout_alignTop="@+id/imageButton1"
+                android:layout_alignParentTop="true"
                 android:layout_toLeftOf="@+id/imageButton3"
                 android:gravity="center"
                 android:padding="14dip"
