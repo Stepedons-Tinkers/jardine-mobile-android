@@ -406,9 +406,9 @@ public class DashBoardActivity extends ActionBarActivity {
 		// Commit the transaction
 		transaction.commit();
 	}
-	
+
 	/*** Edit Activity ***/
-	public void editActivity(View view){
+	public void editActivity(View view) {
 		android.support.v4.app.Fragment newFragment = new EditActivityInfoFragment();
 
 		// Create new transaction
@@ -425,9 +425,10 @@ public class DashBoardActivity extends ActionBarActivity {
 		// Commit the transaction
 		transaction.commit();
 	}
-	
-	public void saveActivity(View view){
-		Toast.makeText(getApplicationContext(), "Saved!", Toast.LENGTH_SHORT).show();
+
+	public void saveActivity(View view) {
+		Toast.makeText(getApplicationContext(), "Saved!", Toast.LENGTH_SHORT)
+				.show();
 	}
 
 	public void jdiStockCheck(View view) {
@@ -458,9 +459,9 @@ public class DashBoardActivity extends ActionBarActivity {
 		this.clearColorFilter(findViewById(R.id.customer_contact_person));
 		this.clearColorFilter(findViewById(R.id.products));
 	}
-	
+
 	/** Add JDI Product Stock Check **/
-	public void addJDIProductStockCheck(View view){
+	public void addJDIProductStockCheck(View view) {
 		android.support.v4.app.Fragment newFragment = new AddJDIProductStockFragment();
 
 		// Create new transaction
@@ -477,10 +478,11 @@ public class DashBoardActivity extends ActionBarActivity {
 		// Commit the transaction
 		transaction.commit();
 	}
-	
+
 	/** Create JDI Product Stock Check **/
-	public void createJDIProductStockCheck(View view){
-		Toast.makeText(getApplicationContext(), "Successfully Created!", Toast.LENGTH_SHORT).show();
+	public void createJDIProductStockCheck(View view) {
+		Toast.makeText(getApplicationContext(), "Successfully Created!",
+				Toast.LENGTH_SHORT).show();
 	}
 
 	public void jdiMerchandisingCheck(View view) {

@@ -125,6 +125,8 @@
     <string name="date_gen_info">Date:</string>
     <string name="time_gen_info">Time:</string>
     <string name="save">Save</string>
+    <string name="error">Error saving</string>
+    <string name="complete">Saved!</string>
 
     <!-- JDI Product Stock Check ListView Details -->
     <string name="crm_no_jdi">CRM No.</string>

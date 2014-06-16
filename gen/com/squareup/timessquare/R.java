@@ -8,55 +8,55 @@ package com.squareup.timessquare;
 
 public final class R {
 	public static final class attr {
-		public static final int dayBackground = 0x7f01006b;
-		public static final int dayTextColor = 0x7f01006c;
-		public static final int dividerColor = 0x7f01006a;
-		public static final int headerTextColor = 0x7f01006e;
-		public static final int state_current_month = 0x7f010070;
-		public static final int state_highlighted = 0x7f010075;
-		public static final int state_range_first = 0x7f010072;
-		public static final int state_range_last = 0x7f010074;
-		public static final int state_range_middle = 0x7f010073;
-		public static final int state_selectable = 0x7f01006f;
-		public static final int state_today = 0x7f010071;
-		public static final int titleTextColor = 0x7f01006d;
+		public static final int dayBackground = 0x7f010077;
+		public static final int dayTextColor = 0x7f010078;
+		public static final int dividerColor = 0x7f010076;
+		public static final int headerTextColor = 0x7f01007a;
+		public static final int state_current_month = 0x7f01007c;
+		public static final int state_highlighted = 0x7f010081;
+		public static final int state_range_first = 0x7f01007e;
+		public static final int state_range_last = 0x7f010080;
+		public static final int state_range_middle = 0x7f01007f;
+		public static final int state_selectable = 0x7f01007b;
+		public static final int state_today = 0x7f01007d;
+		public static final int titleTextColor = 0x7f010079;
 	}
 	public static final class color {
-		public static final int calendar_active_month_bg = 0x7f070003;
-		public static final int calendar_bg = 0x7f070004;
-		public static final int calendar_divider = 0x7f070005;
-		public static final int calendar_highlighted_day_bg = 0x7f070008;
-		public static final int calendar_inactive_month_bg = 0x7f070006;
-		public static final int calendar_selected_day_bg = 0x7f070007;
-		public static final int calendar_selected_range_bg = 0x7f070009;
-		public static final int calendar_text_active = 0x7f07000b;
-		public static final int calendar_text_inactive = 0x7f07000a;
-		public static final int calendar_text_selected = 0x7f07000c;
-		public static final int calendar_text_selector = 0x7f070020;
-		public static final int calendar_text_unselectable = 0x7f07000d;
+		public static final int calendar_active_month_bg = 0x7f050008;
+		public static final int calendar_bg = 0x7f050009;
+		public static final int calendar_divider = 0x7f05000a;
+		public static final int calendar_highlighted_day_bg = 0x7f05000d;
+		public static final int calendar_inactive_month_bg = 0x7f05000b;
+		public static final int calendar_selected_day_bg = 0x7f05000c;
+		public static final int calendar_selected_range_bg = 0x7f05000e;
+		public static final int calendar_text_active = 0x7f050010;
+		public static final int calendar_text_inactive = 0x7f05000f;
+		public static final int calendar_text_selected = 0x7f050011;
+		public static final int calendar_text_selector = 0x7f050024;
+		public static final int calendar_text_unselectable = 0x7f050012;
 	}
 	public static final class dimen {
-		public static final int calendar_day_headers_paddingbottom = 0x7f080011;
-		public static final int calendar_month_title_bottommargin = 0x7f080013;
-		public static final int calendar_month_topmargin = 0x7f080012;
-		public static final int calendar_text_medium = 0x7f080014;
-		public static final int calendar_text_small = 0x7f080015;
+		public static final int calendar_day_headers_paddingbottom = 0x7f060012;
+		public static final int calendar_month_title_bottommargin = 0x7f060014;
+		public static final int calendar_month_topmargin = 0x7f060013;
+		public static final int calendar_text_medium = 0x7f060015;
+		public static final int calendar_text_small = 0x7f060016;
 	}
 	public static final class drawable {
-		public static final int calendar_bg_selector = 0x7f02006a;
+		public static final int calendar_bg_selector = 0x7f02006b;
 	}
 	public static final class id {
-		public static final int calendar_grid = 0x7f05007c;
-		public static final int title = 0x7f05002b;
+		public static final int calendar_grid = 0x7f08007d;
+		public static final int title = 0x7f08002b;
 	}
 	public static final class layout {
 		public static final int month = 0x7f03003e;
 		public static final int week = 0x7f030046;
 	}
 	public static final class string {
-		public static final int day_name_format = 0x7f0a000d;
-		public static final int invalid_date = 0x7f0a000e;
-		public static final int month_name_format = 0x7f0a000f;
+		public static final int day_name_format = 0x7f07000e;
+		public static final int invalid_date = 0x7f07000f;
+		public static final int month_name_format = 0x7f070010;
 	}
 	public static final class style {
 		public static final int CalendarCell = 0x7f0b0084;
@@ -65,14 +65,14 @@ public final class R {
 		public static final int CalendarTitle = 0x7f0b0083;
 	}
 	public static final class styleable {
-		public static final int[] CalendarPickerView = { 0x010100d4, 0x7f01006a, 0x7f01006b, 0x7f01006c, 0x7f01006d, 0x7f01006e };
+		public static final int[] CalendarPickerView = { 0x010100d4, 0x7f010076, 0x7f010077, 0x7f010078, 0x7f010079, 0x7f01007a };
 		public static final int CalendarPickerView_android_background = 0;
 		public static final int CalendarPickerView_dayBackground = 2;
 		public static final int CalendarPickerView_dayTextColor = 3;
 		public static final int CalendarPickerView_dividerColor = 1;
 		public static final int CalendarPickerView_headerTextColor = 5;
 		public static final int CalendarPickerView_titleTextColor = 4;
-		public static final int[] calendar_cell = { 0x7f01006f, 0x7f010070, 0x7f010071, 0x7f010072, 0x7f010073, 0x7f010074, 0x7f010075 };
+		public static final int[] calendar_cell = { 0x7f01007b, 0x7f01007c, 0x7f01007d, 0x7f01007e, 0x7f01007f, 0x7f010080, 0x7f010081 };
 		public static final int calendar_cell_state_current_month = 1;
 		public static final int calendar_cell_state_highlighted = 6;
 		public static final int calendar_cell_state_range_first = 3;
