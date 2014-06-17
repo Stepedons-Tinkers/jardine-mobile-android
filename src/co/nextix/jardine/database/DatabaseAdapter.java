@@ -66,6 +66,7 @@ public class DatabaseAdapter {
 	private final String KEY_USER_FIRSTNAME = "first_name";
 	private final String KEY_USER_LOGGEDIN = "logged_in";
 	private final String KEY_USER_STATUS = "status";
+	private final String KEY_USER_LASTSYNC = "last_sync";
 	private final String KEY_USER_CREATEDTIME = "created_time";
 
 	// Activity
@@ -337,7 +338,7 @@ public class DatabaseAdapter {
 	// Table Create String
 	// ===========================================================
 
-	private String TABLE_CREATE_USER = "create table %s (%s integer primary key autoincrement, %s text, %s text, %s text, %s text, %s text, %s text, %s text, %s integer, %s integer, %s text);";
+	private String TABLE_CREATE_USER = "create table %s (%s integer primary key autoincrement, %s text, %s text, %s text, %s text, %s text, %s text, %s text, %s integer, %s integer, %s text, %s text);";
 	private String TABLE_CREATE_ACTIVITY = "create table %s (%s integer primary key autoincrement, %s text, %s real, %s text, %s text, %s real, %s real, %s text, %s text, %s text, %s text, %s text, %s real, %s real, %s real, %s integer, %s integer, %s text, %s text, %s real, %s real, %s text, %s text, %s text, %s text, %s text, %s text, %s text, %s text, foreign key(%s) references %s(%s), foreign key(%s) references %s(%s), foreign key(%s) references %s(%s), foreign key(%s) references %s(%s), foreign key(%s) references %s(%s), foreign key(%s) references %s(%s));";
 	private String TABLE_CREATE_ACTIVITY_TYPE = "create table %s (%s integer primary key autoincrement, %s text, %s real, %s real, %s integer, %s real, foreign key(%s) references %s(%s))";
 	private String TABLE_CREATE_BUSINESS_UNIT = "create table %s (%s integer primary key autoincrement, %s text, %s text, %s text, %s integer, %s text, %s text, %s real, foreign key(%s) references %s(%s))";
@@ -850,7 +851,8 @@ public class DatabaseAdapter {
 					KEY_USER_ROWID, KEY_USER_NO, KEY_USER_USERNAME,
 					KEY_USER_PASSWORD, KEY_USER_EMAILADDRESS,
 					KEY_USER_LASTNAME, KEY_USER_MIDDLENAME, KEY_USER_FIRSTNAME,
-					KEY_USER_LOGGEDIN, KEY_USER_STATUS, KEY_USER_CREATEDTIME);
+					KEY_USER_LOGGEDIN, KEY_USER_STATUS, KEY_USER_LASTSYNC,
+					KEY_USER_CREATEDTIME);
 			String activity = String.format(TABLE_CREATE_ACTIVITY,
 					ACTIVITY_TABLE, KEY_ACTIVITY_ROWID, KEY_ACTIVITY_NO,
 					KEY_ACTIVITY_WORKPLAN, KEY_ACTIVITY_STARTTIME,
@@ -1078,9 +1080,9 @@ public class DatabaseAdapter {
 			String activityProjectCategory = String.format(
 					TABLE_CREATE_PICKLISTS, ACTIVITY_PROJECT_CATEGORY_TABLE,
 					KEY_PICKLISTS_ROWID, KEY_PICKLISTS_NAME);
-			String activityProjectStage = String.format(
-					TABLE_CREATE_PICKLISTS, ACTIVITY_PROJECT_STAGE_TABLE,
-					KEY_PICKLISTS_ROWID, KEY_PICKLISTS_NAME);
+			String activityProjectStage = String.format(TABLE_CREATE_PICKLISTS,
+					ACTIVITY_PROJECT_STAGE_TABLE, KEY_PICKLISTS_ROWID,
+					KEY_PICKLISTS_NAME);
 			String activitytypeCategory = String.format(TABLE_CREATE_PICKLISTS,
 					ACTIVITYTYPE_CATEGORY_TABLE, KEY_PICKLISTS_ROWID,
 					KEY_PICKLISTS_NAME);
