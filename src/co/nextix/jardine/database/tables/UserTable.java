@@ -5,6 +5,7 @@ import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 
+import co.nextix.jardine.JardineApp;
 import co.nextix.jardine.database.DatabaseAdapter;
 import co.nextix.jardine.database.records.UserRecord;
 import android.content.ContentValues;
@@ -30,13 +31,14 @@ public class UserTable {
 	private final String KEY_USER_FIRSTNAME = "first_name";
 	private final String KEY_USER_LOGGEDIN = "logged_in";
 	private final String KEY_USER_STATUS = "status";
+	private final String KEY_USER_LASTSYNC = "last_sync";
 	private final String KEY_USER_CREATEDTIME = "created_time";
 
 	// ===========================================================
 	// Private fields
 	// ===========================================================
 
-	private UserCollection userRecords;
+	// private UserCollection userRecords;
 	private SQLiteDatabase mDb;
 	private String mDatabaseTable;
 	private DatabaseAdapter mDBAdapter;
@@ -87,12 +89,14 @@ public class UserTable {
 					int loggedin = c
 							.getInt(c.getColumnIndex(KEY_USER_LOGGEDIN));
 					int status = c.getInt(c.getColumnIndex(KEY_USER_STATUS));
+					String lastSync = c.getString(c
+							.getColumnIndex(KEY_USER_LASTSYNC));
 					String createdTime = c.getString(c
 							.getColumnIndex(KEY_USER_CREATEDTIME));
 
 					list.add(new UserRecord(id, no, username, password, email,
 							lastname, middlename, firstname, loggedin, status,
-							createdTime));
+							lastSync, createdTime));
 				} while (c.moveToNext());
 			}
 		} finally {
@@ -151,12 +155,15 @@ public class UserTable {
 						.getColumnIndex(KEY_USER_FIRSTNAME));
 				int loggedin = c.getInt(c.getColumnIndex(KEY_USER_LOGGEDIN));
 				int status = c.getInt(c.getColumnIndex(KEY_USER_STATUS));
+				String lastSync = c.getString(c
+						.getColumnIndex(KEY_USER_LASTSYNC));
 				String createdTime = c.getString(c
 						.getColumnIndex(KEY_USER_CREATEDTIME));
 
 				record = new UserRecord(id, no, username, password, email,
 						lastname, middlename, firstname, loggedin, status,
-						createdTime);
+						lastSync, createdTime);
+				Log.i(JardineApp.TAG, "Usertable: getCurrent");
 			}
 		} finally {
 			if (c != null) {
@@ -215,12 +222,14 @@ public class UserTable {
 						.getColumnIndex(KEY_USER_FIRSTNAME));
 				int loggedin = c.getInt(c.getColumnIndex(KEY_USER_LOGGEDIN));
 				int status = c.getInt(c.getColumnIndex(KEY_USER_STATUS));
+				String lastSync = c.getString(c
+						.getColumnIndex(KEY_USER_LASTSYNC));
 				String createdTime = c.getString(c
 						.getColumnIndex(KEY_USER_CREATEDTIME));
 
 				user = new UserRecord(id, no, username, password, email,
 						lastname, middlename, firstname, loggedin, status,
-						createdTime);
+						lastSync, createdTime);
 			}
 		} finally {
 			if (c != null) {
@@ -256,12 +265,14 @@ public class UserTable {
 						.getColumnIndex(KEY_USER_FIRSTNAME));
 				int loggedin = c.getInt(c.getColumnIndex(KEY_USER_LOGGEDIN));
 				int status = c.getInt(c.getColumnIndex(KEY_USER_STATUS));
+				String lastSync = c.getString(c
+						.getColumnIndex(KEY_USER_LASTSYNC));
 				String createdTime = c.getString(c
 						.getColumnIndex(KEY_USER_CREATEDTIME));
 
 				user = new UserRecord(id, no, username, password, email,
 						lastname, middlename, firstname, loggedin, status,
-						createdTime);
+						lastSync, createdTime);
 			}
 		} finally {
 			if (c != null) {
@@ -274,14 +285,11 @@ public class UserTable {
 
 	public long insertUser(String no, String username, String password,
 			String email, String lastname, String middlename, String firstname,
-			int loggedin, String address, String avatar,
-			String avatarThumbnail, String coverphoto,
-			String coverphotoThumbnail, String fbId, String fbSession,
-			String gender, int status, String privacy, String createdTime) {
+			int loggedin, int status, String lastSync, String createdTime) {
 		// if (name == null) {
 		// throw new NullPointerException("name");
 		// }
-		UserCollection collection = getRecords();
+		// UserCollection collection = getRecords();
 
 		ContentValues initialValues = new ContentValues();
 
@@ -294,12 +302,13 @@ public class UserTable {
 		initialValues.put(KEY_USER_FIRSTNAME, firstname);
 		initialValues.put(KEY_USER_LOGGEDIN, loggedin);
 		initialValues.put(KEY_USER_STATUS, status);
+		initialValues.put(KEY_USER_LASTSYNC, lastSync);
 		initialValues.put(KEY_USER_CREATEDTIME, createdTime);
 
 		long ids = mDb.insert(mDatabaseTable, null, initialValues);
 		if (ids >= 0) {
-			collection.add(ids, no, username, password, email, lastname,
-					middlename, firstname, loggedin, status, createdTime);
+			// collection.add(ids, no, username, password, email, lastname,
+			// middlename, firstname, loggedin, status, createdTime);
 			Log.i("WEB", "DB insert " + no);
 		} else {
 			throw new SQLException("insert failed");
@@ -309,7 +318,7 @@ public class UserTable {
 
 	public boolean deleteUser(long rowId) {
 		if (mDb.delete(mDatabaseTable, KEY_USER_ROWID + "=" + rowId, null) > 0) {
-			getRecords().deleteById(rowId);
+			// getRecords().deleteById(rowId);
 			return true;
 		} else {
 			return false;
@@ -318,7 +327,7 @@ public class UserTable {
 
 	public boolean updateUser(long id, String no, String username,
 			String password, String email, String lastname, String middlename,
-			String firstname, int loggedin) {
+			String firstname, int loggedin, String lastSync) {
 		ContentValues args = new ContentValues();
 		args.put(KEY_USER_NO, no);
 		args.put(KEY_USER_USERNAME, username);
@@ -328,9 +337,10 @@ public class UserTable {
 		args.put(KEY_USER_MIDDLENAME, middlename);
 		args.put(KEY_USER_FIRSTNAME, firstname);
 		args.put(KEY_USER_LOGGEDIN, loggedin);
+		args.put(KEY_USER_LASTSYNC, lastSync);
 		if (mDb.update(mDatabaseTable, args, KEY_USER_ROWID + "=" + id, null) > 0) {
-			getRecords().update(id, no, username, password, email, lastname,
-					middlename, firstname, loggedin);
+			// getRecords().update(id, no, username, password, email, lastname,
+			// middlename, firstname, loggedin, lastSync);
 			return true;
 		} else {
 			return false;
@@ -341,7 +351,7 @@ public class UserTable {
 		ContentValues args = new ContentValues();
 		args.put(KEY_USER_LOGGEDIN, loggedin);
 		if (mDb.update(mDatabaseTable, args, KEY_USER_ROWID + "=" + id, null) > 0) {
-			getRecords().updateLogStat(id, loggedin);
+			// getRecords().updateLogStat(id, loggedin);
 			return true;
 		} else {
 			return false;
@@ -352,7 +362,7 @@ public class UserTable {
 		String MY_QUERY = "DELETE FROM " + mDatabaseTable;
 		try {
 			mDb.execSQL(MY_QUERY);
-			getRecords().clear();
+			// getRecords().clear();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
@@ -365,102 +375,102 @@ public class UserTable {
 	// ===========================================================
 	// Collection
 	// ===========================================================
-
-	public UserCollection getRecords() {
-		if (userRecords == null) {
-			userRecords = new UserCollection();
-			userRecords.users = getAllRecords();
-		}
-		return userRecords;
-	}
-
-	public final class UserCollection implements Iterable<UserRecord> {
-
-		private List<UserRecord> users;
-
-		private UserCollection() {
-		}
-
-		public int size() {
-			return users.size();
-		}
-
-		public UserRecord get(int i) {
-			return users.get(i);
-		}
-
-		public UserRecord getById(long id) {
-			for (UserRecord record : users) {
-				if (record.getId() == id) {
-					return record;
-				}
-			}
-			return null;
-		}
-
-		private void add(long id, String no, String username, String password,
-				String email, String lastname, String middlename,
-				String firstname, int loggedin, int status, String createdTime) {
-			users.add(new UserRecord(id, no, username, password, email,
-					lastname, middlename, firstname, loggedin, status,
-					createdTime));
-		}
-
-		private void clear() {
-			users.clear();
-		}
-
-		private void deleteById(long id) {
-			users.remove(getById(id));
-		}
-
-		private void update(long id, String no, String username,
-				String password, String email, String lastname,
-				String middlename, String firstname, int loggedin) {
-			UserRecord record = getById(id);
-			record.setNo(no);
-			record.setUsername(username);
-			record.setPassword(password);
-			record.setEmail(email);
-			record.setLastname(lastname);
-			record.setMiddleName(middlename);
-			record.setFirstNameName(firstname);
-			record.setLoggedIn(loggedin);
-		}
-
-		private void updateLogStat(long id, int loggedin) {
-			UserRecord record = getById(id);
-			record.setLoggedIn(loggedin);
-		}
-
-		@Override
-		public Iterator<UserRecord> iterator() {
-			Iterator<UserRecord> iter = new Iterator<UserRecord>() {
-				private int current = 0;
-
-				@Override
-				public void remove() {
-					if (users.size() > 0) {
-						deleteUser(users.get(current).getId());
-						deleteById(users.get(current).getId());
-						users.remove(current);
-					}
-				}
-
-				@Override
-				public UserRecord next() {
-					if (users.size() > 0) {
-						return users.get(current++);
-					}
-					return null;
-				}
-
-				@Override
-				public boolean hasNext() {
-					return users.size() > 0 && current < users.size();
-				}
-			};
-			return iter;
-		}
-	}
+	//
+	// public UserCollection getRecords() {
+	// if (userRecords == null) {
+	// userRecords = new UserCollection();
+	// userRecords.users = getAllRecords();
+	// }
+	// return userRecords;
+	// }
+	//
+	// public final class UserCollection implements Iterable<UserRecord> {
+	//
+	// private List<UserRecord> users;
+	//
+	// private UserCollection() {
+	// }
+	//
+	// public int size() {
+	// return users.size();
+	// }
+	//
+	// public UserRecord get(int i) {
+	// return users.get(i);
+	// }
+	//
+	// public UserRecord getById(long id) {
+	// for (UserRecord record : users) {
+	// if (record.getId() == id) {
+	// return record;
+	// }
+	// }
+	// return null;
+	// }
+	//
+	// private void add(long id, String no, String username, String password,
+	// String email, String lastname, String middlename,
+	// String firstname, int loggedin, int status, String createdTime) {
+	// users.add(new UserRecord(id, no, username, password, email,
+	// lastname, middlename, firstname, loggedin, status,
+	// createdTime));
+	// }
+	//
+	// private void clear() {
+	// users.clear();
+	// }
+	//
+	// private void deleteById(long id) {
+	// users.remove(getById(id));
+	// }
+	//
+	// private void update(long id, String no, String username,
+	// String password, String email, String lastname,
+	// String middlename, String firstname, int loggedin) {
+	// UserRecord record = getById(id);
+	// record.setNo(no);
+	// record.setUsername(username);
+	// record.setPassword(password);
+	// record.setEmail(email);
+	// record.setLastname(lastname);
+	// record.setMiddleName(middlename);
+	// record.setFirstNameName(firstname);
+	// record.setLoggedIn(loggedin);
+	// }
+	//
+	// private void updateLogStat(long id, int loggedin) {
+	// UserRecord record = getById(id);
+	// record.setLoggedIn(loggedin);
+	// }
+	//
+	// @Override
+	// public Iterator<UserRecord> iterator() {
+	// Iterator<UserRecord> iter = new Iterator<UserRecord>() {
+	// private int current = 0;
+	//
+	// @Override
+	// public void remove() {
+	// if (users.size() > 0) {
+	// deleteUser(users.get(current).getId());
+	// deleteById(users.get(current).getId());
+	// users.remove(current);
+	// }
+	// }
+	//
+	// @Override
+	// public UserRecord next() {
+	// if (users.size() > 0) {
+	// return users.get(current++);
+	// }
+	// return null;
+	// }
+	//
+	// @Override
+	// public boolean hasNext() {
+	// return users.size() > 0 && current < users.size();
+	// }
+	// };
+	// return iter;
+	// }
+	// }
 }
