@@ -1035,7 +1035,7 @@
                 android:layout_marginLeft="124dp"
                 android:layout_marginRight="14dp"
                 android:layout_marginTop="5dp"
-                android:onClick="addJDIProductStockCheck"
+                android:onClick="addProjectRequirements"
                 android:text="@string/add_proj_requirement" />
 
             <ImageButton

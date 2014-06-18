@@ -125,6 +125,8 @@
     <string name="date_gen_info">Date:</string>
     <string name="time_gen_info">Time:</string>
     <string name="save">Save</string>
+    <string name="cancel">Cancel</string>
+    <string name="complete_cancel">Canceled!</string>
     <string name="error">Error saving</string>
     <string name="complete">Saved!</string>
 
@@ -229,6 +231,7 @@
     <string name="action_contact_person">Action</string>
     <string name="add_customer_contact_person">Add Customer Contact Person</string>
     <string name="select_customer_contact_person">Select Customer Contact Person</string>
+    <string name="select">Select</string>
 
     <!-- Customer Contact Person Details -->
     <string name="customer_contact_person_details">CUSTOMER CONTACT PERSON DETAILS</string>

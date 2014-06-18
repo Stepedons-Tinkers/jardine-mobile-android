@@ -1336,7 +1336,7 @@
                 android:layout_marginLeft="24dp"
                 android:layout_marginRight="14dp"
                 android:layout_marginTop="5dp"
-                android:onClick="addJDIProductStockCheck"
+                android:onClick="addCustomerContactPerson"
                 android:text="@string/add_customer_contact_person" />
 
             <ImageButton
@@ -1359,7 +1359,7 @@
                 android:layout_below="@+id/add_btn_jdi_product_stock_check"
                 android:layout_marginTop="4dp"
                 android:layout_toRightOf="@+id/imageButton3"
-                android:onClick="addJDIProductStockCheck"
+                android:onClick="selectCustomerContactPerson"
                 android:text="@string/select_customer_contact_person" />
 
             <ImageButton
