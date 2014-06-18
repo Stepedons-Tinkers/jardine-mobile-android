@@ -367,26 +367,24 @@ public class DashBoardActivity extends ActionBarActivity {
 
 	/************* Activites *********************/
 	public void startActivity(View view) {
+
+		// get an instance of FragmentTransaction from your Activity
+		android.support.v4.app.FragmentManager fragmentActivityDetailManager = getSupportFragmentManager();
+		android.support.v4.app.FragmentTransaction fragmentTransaction = fragmentActivityDetailManager
+				.beginTransaction().setTransition(
+						FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+
 		android.support.v4.app.Fragment fragment = new StartActivityFragment();
-		android.support.v4.app.FragmentManager fragmentManager = getSupportFragmentManager();
-		fragmentManager.beginTransaction()
+		fragmentActivityDetailManager.beginTransaction()
 				.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
 				.replace(R.id.frame_container, fragment).addToBackStack(null)
 				.commit();
 
 		setTitle("Activities");
 
-		// get an instance of FragmentTransaction from your Activity
-		int count = fragmentManager.getBackStackEntryCount();
-		android.support.v4.app.FragmentManager fragmentActivityDetailManager = getSupportFragmentManager();
-		android.support.v4.app.FragmentTransaction fragmentTransaction = fragmentActivityDetailManager
-				.beginTransaction().setTransition(
-						FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
-
 		// Add a fucking fragment
 		ActivityInfoFragment myFragment = new ActivityInfoFragment();
 		fragmentTransaction.add(R.id.activity_fragment, myFragment);
-		fragmentTransaction.addToBackStack(String.valueOf(count));
 		fragmentTransaction.commit();
 	}
 
@@ -407,7 +405,8 @@ public class DashBoardActivity extends ActionBarActivity {
 
 		// Create new transaction
 		android.support.v4.app.FragmentTransaction transaction = getSupportFragmentManager()
-				.beginTransaction();
+				.beginTransaction().setTransition(
+						FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
 
 		// Replace whatever is in the fragment_container view with this
 		// fragment,
@@ -426,7 +425,8 @@ public class DashBoardActivity extends ActionBarActivity {
 
 		// Create new transaction
 		android.support.v4.app.FragmentTransaction transaction = getSupportFragmentManager()
-				.beginTransaction();
+				.beginTransaction().setTransition(
+						FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
 
 		transaction.setCustomAnimations(R.anim.slide_in_left,
 				R.anim.slide_out_left);
@@ -455,7 +455,8 @@ public class DashBoardActivity extends ActionBarActivity {
 
 		// Create new transaction
 		android.support.v4.app.FragmentTransaction transaction = getSupportFragmentManager()
-				.beginTransaction();
+				.beginTransaction().setTransition(
+						FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
 
 		// Replace whatever is in the fragment_container view with this
 		// fragment,
@@ -482,7 +483,11 @@ public class DashBoardActivity extends ActionBarActivity {
 
 		// Create new transaction
 		android.support.v4.app.FragmentTransaction transaction = getSupportFragmentManager()
-				.beginTransaction();
+				.beginTransaction().setTransition(
+						FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+
+		transaction.setCustomAnimations(R.anim.slide_in_left,
+				R.anim.slide_out_left);
 
 		transaction.setCustomAnimations(R.anim.slide_in_left,
 				R.anim.slide_out_left);
@@ -491,7 +496,7 @@ public class DashBoardActivity extends ActionBarActivity {
 		// fragment,
 		// and add the transaction to the back stack
 
-		transaction.replace(R.id.activity_fragment, newFragment);
+		transaction.replace(R.id.frame_container, newFragment);
 		transaction.addToBackStack(null);
 
 		// Commit the transaction
@@ -512,8 +517,8 @@ public class DashBoardActivity extends ActionBarActivity {
 
 		// Create new transaction
 		android.support.v4.app.FragmentTransaction transaction = getSupportFragmentManager()
-				.beginTransaction();
-
+				.beginTransaction().setTransition(
+						FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
 		// Replace whatever is in the fragment_container view with this
 		// fragment,
 		// and add the transaction to the back stack
@@ -539,7 +544,11 @@ public class DashBoardActivity extends ActionBarActivity {
 
 		// Create new transaction
 		android.support.v4.app.FragmentTransaction transaction = getSupportFragmentManager()
-				.beginTransaction();
+				.beginTransaction().setTransition(
+						FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+
+		transaction.setCustomAnimations(R.anim.slide_in_left,
+				R.anim.slide_out_left);
 
 		transaction.setCustomAnimations(R.anim.slide_in_left,
 				R.anim.slide_out_left);
@@ -548,7 +557,7 @@ public class DashBoardActivity extends ActionBarActivity {
 		// fragment,
 		// and add the transaction to the back stack
 
-		transaction.replace(R.id.activity_fragment, newFragment);
+		transaction.replace(R.id.frame_container, newFragment);
 		transaction.addToBackStack(null);
 
 		// Commit the transaction
@@ -563,7 +572,11 @@ public class DashBoardActivity extends ActionBarActivity {
 
 		// Create new transaction
 		android.support.v4.app.FragmentTransaction transaction = getSupportFragmentManager()
-				.beginTransaction();
+				.beginTransaction().setTransition(
+						FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+
+		transaction.setCustomAnimations(R.anim.slide_in_left,
+				R.anim.slide_out_left);
 
 		// Replace whatever is in the fragment_container view with this
 		// fragment,
@@ -590,7 +603,8 @@ public class DashBoardActivity extends ActionBarActivity {
 
 		// Create new transaction
 		android.support.v4.app.FragmentTransaction transaction = getSupportFragmentManager()
-				.beginTransaction();
+				.beginTransaction().setTransition(
+						FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
 
 		transaction.setCustomAnimations(R.anim.slide_in_left,
 				R.anim.slide_out_left);
@@ -599,7 +613,7 @@ public class DashBoardActivity extends ActionBarActivity {
 		// fragment,
 		// and add the transaction to the back stack
 
-		transaction.replace(R.id.activity_fragment, newFragment);
+		transaction.replace(R.id.frame_container, newFragment);
 		transaction.addToBackStack(null);
 
 		// Commit the transaction
@@ -614,7 +628,8 @@ public class DashBoardActivity extends ActionBarActivity {
 
 		// Create new transaction
 		android.support.v4.app.FragmentTransaction transaction = getSupportFragmentManager()
-				.beginTransaction();
+				.beginTransaction().setTransition(
+						FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
 
 		// Replace whatever is in the fragment_container view with this
 		// fragment,
@@ -641,7 +656,8 @@ public class DashBoardActivity extends ActionBarActivity {
 
 		// Create new transaction
 		android.support.v4.app.FragmentTransaction transaction = getSupportFragmentManager()
-				.beginTransaction();
+				.beginTransaction().setTransition(
+						FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
 
 		transaction.setCustomAnimations(R.anim.slide_in_left,
 				R.anim.slide_out_left);
@@ -650,7 +666,7 @@ public class DashBoardActivity extends ActionBarActivity {
 		// fragment,
 		// and add the transaction to the back stack
 
-		transaction.replace(R.id.activity_fragment, newFragment);
+		transaction.replace(R.id.frame_container, newFragment);
 		transaction.addToBackStack(null);
 
 		// Commit the transaction
@@ -665,7 +681,8 @@ public class DashBoardActivity extends ActionBarActivity {
 
 		// Create new transaction
 		android.support.v4.app.FragmentTransaction transaction = getSupportFragmentManager()
-				.beginTransaction();
+				.beginTransaction().setTransition(
+						FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
 
 		// Replace whatever is in the fragment_container view with this
 		// fragment,
@@ -692,7 +709,8 @@ public class DashBoardActivity extends ActionBarActivity {
 
 		// Create new transaction
 		android.support.v4.app.FragmentTransaction transaction = getSupportFragmentManager()
-				.beginTransaction();
+				.beginTransaction().setTransition(
+						FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
 
 		transaction.setCustomAnimations(R.anim.slide_in_left,
 				R.anim.slide_out_left);
@@ -701,7 +719,7 @@ public class DashBoardActivity extends ActionBarActivity {
 		// fragment,
 		// and add the transaction to the back stack
 
-		transaction.replace(R.id.activity_fragment, newFragment);
+		transaction.replace(R.id.frame_container, newFragment);
 		transaction.addToBackStack(null);
 
 		// Commit the transaction
@@ -716,7 +734,8 @@ public class DashBoardActivity extends ActionBarActivity {
 
 		// Create new transaction
 		android.support.v4.app.FragmentTransaction transaction = getSupportFragmentManager()
-				.beginTransaction();
+				.beginTransaction().setTransition(
+						FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
 
 		// Replace whatever is in the fragment_container view with this
 		// fragment,
@@ -745,7 +764,8 @@ public class DashBoardActivity extends ActionBarActivity {
 
 		// Create new transaction
 		android.support.v4.app.FragmentTransaction transaction = getSupportFragmentManager()
-				.beginTransaction();
+				.beginTransaction().setTransition(
+						FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
 
 		// Replace whatever is in the fragment_container view with this
 		// fragment,
@@ -772,7 +792,8 @@ public class DashBoardActivity extends ActionBarActivity {
 
 		// Create new transaction
 		android.support.v4.app.FragmentTransaction transaction = getSupportFragmentManager()
-				.beginTransaction();
+				.beginTransaction().setTransition(
+						FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
 
 		transaction.setCustomAnimations(R.anim.slide_in_left,
 				R.anim.slide_out_left);
@@ -781,7 +802,7 @@ public class DashBoardActivity extends ActionBarActivity {
 		// fragment,
 		// and add the transaction to the back stack
 
-		transaction.replace(R.id.activity_fragment, newFragment);
+		transaction.replace(R.id.frame_container, newFragment);
 		transaction.addToBackStack(null);
 
 		// Commit the transaction
@@ -809,7 +830,8 @@ public class DashBoardActivity extends ActionBarActivity {
 
 		// Create new transaction
 		android.support.v4.app.FragmentTransaction transaction = getSupportFragmentManager()
-				.beginTransaction();
+				.beginTransaction().setTransition(
+						FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
 
 		// Replace whatever is in the fragment_container view with this
 		// fragment,

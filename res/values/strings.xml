@@ -140,6 +140,7 @@
     <string name="assigned_to_jdi">Assigned To</string>
     <string name="action_jdi">Action</string>
     <string name="add_jdi_product_stock_check"> Add JDI Product Stock Check</string>
+    <string name="all_caps_add_jdi_product_stock_check">ADD JDI PRODUCT STOCK CHECK</string>
 
     <!-- JDI Product Stock Check Details -->
     <string name="jdi_product_stock_check_details">JDI PRODUCT STOCK CHECK DETAILS</string>
@@ -157,6 +158,7 @@
     <string name="assigned_to_merchandising">Assigned To</string>
     <string name="action_merchandising">Action</string>
     <string name="add_jdi_merchandising_check">Add JDI Merchandising Check</string>
+    <string name="all_caps_add_jdi_merchandising_check">ADD JDI MERCHANDISING CHECK</string>
 
     <!-- JDI Merchandising Check Detail -->
     <string name="jdi_merchandising_check_details">JDI MERCHANDISING CHECK DETAILS</string>
@@ -173,6 +175,7 @@
     <string name="assigned_to_competitor_product">Assigned To</string>
     <string name="action_competitor_product_stock_check">Action</string>
     <string name="add_competitor_product_stock_check">Add Competitor Product Stock Check</string>
+    <string name="all_caps_add_competitor_product_stock_check">ADD COMPETITOR PRODUCT STOCK CHECK</string>
 
     <!-- Competitor Product Stock Check Detail -->
     <string name="competitor_product_stock_check_details">COMPETITOR PRODUCT STOCK CHECK DETAILS</string>
@@ -189,6 +192,7 @@
     <string name="assigned_to_marketing_intel">Assigned To</string>
     <string name="action_marketing_intel">Action</string>
     <string name="add_marketing_intel">Add Marketing Intel</string>
+    <string name="all_caps_add_marketing_intel">ADD MARKETING INTEL</string>
 
     <!-- Marketing Intel Details -->
     <string name="marketing_intel_details">MARKETING INTEL DETAILS</string>
@@ -204,6 +208,7 @@
     <string name="assigned_to_proj_requirement">Assigned To</string>
     <string name="action_proj_requirement">Action</string>
     <string name="add_proj_requirement">Add Project Requirement</string>
+    <string name="all_caps_add_proj_requirement">ADD PROJECT REQUIREMENT</string>
 
     <!-- Project Requirements Detail -->
     <string name="project_requirement_details">PROJECT REQUIREMENT DETAILS</string>
@@ -219,6 +224,7 @@
     <string name="filename">Filename</string>
     <string name="modified_time_diy_supermarket_photos">Modified Time</string>
     <string name="add_diy_or_supermarket_photos">Add DIY or Supermarket Photo</string>
+    <string name="all_caps_add_diy_or_supermarket_photos">ADD DIY OR SUPERMARKET PHOTO</string>
 
     <!-- Customer Contact Person -->
     <string name="crm_no_contact_person">CRM No</string>
@@ -230,7 +236,9 @@
     <string name="assigned_to_contact_person">Assigned To</string>
     <string name="action_contact_person">Action</string>
     <string name="add_customer_contact_person">Add Customer Contact Person</string>
+    <string name="all_caps_add_customer_contact_person">ADD CUSTOMER CONTACT PERSON</string>
     <string name="select_customer_contact_person">Select Customer Contact Person</string>
+    <string name="all_caps_select_customer_contact_person">SELECT CUSTOMER CONTACT PERSON</string>
     <string name="select">Select</string>
 
     <!-- Customer Contact Person Details -->
@@ -250,5 +258,6 @@
     <string name="assigned_to_products">Assigned To</string>
     <string name="action_products">Action</string>
     <string name="select_products">Select Product</string>
+    <string name="all_caps_select_products">SELECT PRODUCT</string>
 
 </resources>
